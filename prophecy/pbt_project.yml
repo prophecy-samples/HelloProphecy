@@ -14,8 +14,8 @@ pipelines:
     createdAt: '2022-12-14 19:37:58'
     datasets:
       inputs:
-      - datasets/orders
       - datasets/customers
+      - datasets/orders
       outputs:
       - datasets/customers_orders
     dependencies: {}
@@ -67,6 +67,7 @@ datasets:
     description: All the orders placed by the customers
     author: scott+demo2@prophecy.io
     createdAt: '2022-12-14 19:37:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1342
@@ -79,6 +80,7 @@ datasets:
     description: Irs zipcode data
     author: scott+demo2@prophecy.io
     createdAt: '2022-12-14 19:37:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1342
@@ -91,6 +93,7 @@ datasets:
     description: Customers by total of their purchases
     author: scott+demo2@prophecy.io
     createdAt: '2022-12-14 19:37:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1342
@@ -103,6 +106,7 @@ datasets:
     description: All the customers
     author: scott+demo2@prophecy.io
     createdAt: '2022-12-14 19:37:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1342
@@ -115,6 +119,7 @@ datasets:
     description: Farmer's market tax report
     author: scott+demo2@prophecy.io
     createdAt: '2022-12-14 19:37:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1342
@@ -127,6 +132,7 @@ datasets:
     description: Farmer's Market data
     author: scott+demo2@prophecy.io
     createdAt: '2022-12-14 19:37:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1342
@@ -139,6 +145,7 @@ datasets:
     description: Historic events flat
     author: scott+demo2@prophecy.io
     createdAt: '2022-12-14 19:37:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1342
@@ -151,6 +158,7 @@ datasets:
     description: Final report for the bank
     author: scott+demo2@prophecy.io
     createdAt: '2022-12-14 19:37:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1342
@@ -163,6 +171,7 @@ datasets:
     description: Old events data
     author: scott+demo2@prophecy.io
     createdAt: '2022-12-14 19:37:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1342
@@ -175,6 +184,7 @@ datasets:
     description: Customers by total of their purchases
     author: scott+demo2@prophecy.io
     createdAt: '2022-12-14 19:37:58'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1342
@@ -183,7 +193,57 @@ datasets:
         author: scott+demo2@prophecy.io
         createdAt: '2022-12-14 19:37:58'
 templates: {}
-jobs: {}
+jobs:
+  jobs/HelloDev-customers:
+    name: HelloDev-customers
+    description: ''
+    fabricUID: 1571
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? *
+    timeout: null
+    alerting:
+      emails: scott@prophecy.io
+      onStart: false
+      onSuccess: true
+      onFailure: true
+    pipelines:
+    - pipelines/customers_orders
+    - pipelines/report_top_customers
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-02-10 03:24:54'
+    author: scott+demo2@prophecy.io
+  jobs/HelloProd-customers:
+    name: HelloProd-customers
+    description: ''
+    fabricUID: 1572
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 12 * * ? *
+    timeout: null
+    alerting:
+      emails: scott@prophecy.io
+      onStart: false
+      onSuccess: true
+      onFailure: true
+    pipelines:
+    - pipelines/customers_orders
+    - pipelines/report_top_customers
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2023-02-10 03:28:19'
+    author: scott+demo2@prophecy.io
 libraries: []
 subgraphs: {}
 sqlModels: {}

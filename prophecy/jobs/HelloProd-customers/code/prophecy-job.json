@@ -1,0 +1,182 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "1572",
+    "jobId" : "jobs/HelloProd-customers",
+    "name" : "HelloProd-customers",
+    "schedule" : "0 0 12 * * ? *",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : true,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "scott@prophecy.io",
+      "onStart" : false,
+      "onSuccess" : true,
+      "onFailure" : true
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "1571",
+      "name" : "HelloDev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1409",
+      "name" : "SuperCoolFabric",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1343",
+      "name" : "MyDemoFabric",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1342",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1572",
+      "name" : "HelloProd",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    } ]
+  },
+  "processes" : {
+    "2JdfNxvAMTTQvClrLRI3m$$B3SdXiCfDQVBx1UKbvvtK" : {
+      "id" : "2JdfNxvAMTTQvClrLRI3m$$B3SdXiCfDQVBx1UKbvvtK",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "customers_orders_0",
+        "slug" : "customers_orders",
+        "x" : 380,
+        "y" : 340
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7j5azvfhCe4B1IK-Y_Aro$$0cjwqgRPC_bSB-uefHqRo"
+        } ],
+        "outputs" : [ {
+          "id" : "_7KZ-J6pXuBHVtz2xQhrP$$LKY-2QGDRMFf6nZerPHrN"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/customers_orders",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "XafYao6RoqaTAMRDBH6RJ$$17gLD8YeUZTOhVn9h7rHX" : {
+      "id" : "XafYao6RoqaTAMRDBH6RJ$$17gLD8YeUZTOhVn9h7rHX",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "report_top_customers_1",
+        "slug" : "report_top_customers",
+        "x" : 580,
+        "y" : 340
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "6_L-wwnOkuEYg1n-j9n_i$$LdXcHyy4_DuZrlmacbzse"
+        } ],
+        "outputs" : [ {
+          "id" : "xXDqf0TghNjErks8lWHmt$$ys78K5LQrmnUk8HPBjXwG"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/report_top_customers",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "S2HimoSOEljjhOatZs_P7",
+    "source" : "2JdfNxvAMTTQvClrLRI3m$$B3SdXiCfDQVBx1UKbvvtK",
+    "target" : "XafYao6RoqaTAMRDBH6RJ$$17gLD8YeUZTOhVn9h7rHX",
+    "sourcePort" : "_7KZ-J6pXuBHVtz2xQhrP$$LKY-2QGDRMFf6nZerPHrN",
+    "targetPort" : "6_L-wwnOkuEYg1n-j9n_i$$LdXcHyy4_DuZrlmacbzse"
+  } ]
+}
