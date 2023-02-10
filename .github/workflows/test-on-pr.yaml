@@ -4,12 +4,13 @@ on:
       - 'main'
       - 'prod'
 
+# This ensures that both 'Push' and 'PR' trigger tests at the same time
 concurrency: 
   group: pr-push-test
   cancel-in-progress: true
 
 jobs:
-  test:
+  test-pr:
     runs-on: ubuntu-latest
     env:
       PACKAGE_MANAGER: pip3
