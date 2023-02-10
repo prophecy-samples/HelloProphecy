@@ -42,7 +42,7 @@ jobs:
       # Not required, but a useful example
       - name: pytester-cov
         id: pytester-cov
-        uses: dima-engineer/pytest-cover@main
+        uses: dima-engineer/pytester@v0.1
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           package-manager: ${{ env.PACKAGE_MANAGER }}
