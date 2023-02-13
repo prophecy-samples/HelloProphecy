@@ -42,8 +42,8 @@ pipelines:
     createdAt: '2022-12-14 19:37:59'
     datasets:
       inputs:
-      - datasets/orders
       - datasets/customers
+      - datasets/orders
       outputs:
       - datasets/customer_totals
     dependencies: {}
@@ -56,8 +56,8 @@ pipelines:
     createdAt: '2022-12-14 19:37:59'
     datasets:
       inputs:
-      - datasets/irs-zipcode-data
       - datasets/farmers-markets
+      - datasets/irs-zipcode-data
       outputs:
       - datasets/farmers_market_tax_report
     dependencies: {}
