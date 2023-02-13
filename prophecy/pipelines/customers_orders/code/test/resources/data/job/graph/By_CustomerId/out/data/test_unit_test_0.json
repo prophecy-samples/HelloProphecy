@@ -1,10 +1,1 @@
-{"values":[["2019-12-17","1","26","586.08","Waite","Petschelt"],
-["2019-12-17","2","26","9.85","Waite","Petschelt"],
-["2020-03-07","3","94","915.25","Ogdan","Bussetti"],
-["2019-06-21","4","65","556.41","Evelyn","Goulbourne"],
-["2020-02-20","5","13","877.45","Violet","Alston"],
-["2019-07-10","6","77","776.76","Deeanne","Kaye"],
-["2019-07-10","7","77","843.36","Deeanne","Kaye"],
-["2020-03-11","8","64","71.47","Aguistin","Lipman"],
-["2019-08-10","9","25","305.39","Alyssa","Mance"],
-["2019-09-09","10","48","696.56","Queenie","Basire"]],"columns":["account_open_date","order_id","customer_id","amount","first_name","last_name"]}
+{"values":[["1","1","1","1","1","1"]],"columns":["account_open_date","order_id","customer_id","amount","first_name","last_name"]}
