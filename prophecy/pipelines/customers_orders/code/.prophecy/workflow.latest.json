@@ -162,6 +162,14 @@
           },
           "description" : "",
           "_row_id" : null
+        }, {
+          "target" : "phone",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.phone"
+          },
+          "description" : "",
+          "_row_id" : ""
         } ],
         "hints" : [ {
           "id" : "47810",
@@ -176,7 +184,7 @@
         } ],
         "allIn1" : null,
         "activeTab" : "expressions",
-        "columnsSelector" : [ "47810##customer_id", "2322##customer_id", "47810##order_id", "2322##account_open_date", "47810##amount", "47810##customer_id", "2322##first_name", "2322##last_name" ],
+        "columnsSelector" : [ "47810##customer_id", "2322##customer_id", "47810##order_id", "2322##account_open_date", "47810##amount", "2322##phone", "47810##customer_id", "2322##first_name", "2322##last_name" ],
         "allIn0" : null,
         "whereClause" : null,
         "headAlias" : "in0"
