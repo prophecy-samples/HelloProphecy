@@ -2,13 +2,6 @@ version: 1
 schema:
   type: struct
   fields:
-  - name: order_id
-    type: integer
-    nullable: true
-    metadata:
-      description: ''
-      mappings: []
-      tags: []
   - name: customer_id
     type: integer
     nullable: true
@@ -16,29 +9,29 @@ schema:
       description: ''
       mappings: []
       tags: []
-  - name: order_status
-    type: string
+  - name: orders
+    type: long
     nullable: true
     metadata:
       description: ''
       mappings: []
       tags: []
-  - name: order_category
-    type: string
-    nullable: true
-    metadata:
-      description: ''
-      mappings: []
-      tags: []
-  - name: order_date
-    type: string
-    nullable: true
-    metadata:
-      description: ''
-      mappings: []
-      tags: []
-  - name: amount
+  - name: amounts
     type: double
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: account_length_days
+    type: integer
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: customer_is_cool
+    type: boolean
     nullable: true
     metadata:
       description: ''

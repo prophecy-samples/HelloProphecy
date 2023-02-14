@@ -80,8 +80,8 @@
       "metadata" : {
         "label" : "By CustomerId",
         "slug" : "By_CustomerId",
-        "x" : 305,
-        "y" : 212.5,
+        "x" : 300,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -121,7 +121,7 @@
             "expression" : "in1.account_open_date"
           },
           "description" : "",
-          "_row_id" : null
+          "_row_id" : ""
         }, {
           "target" : "order_id",
           "expression" : {
@@ -176,7 +176,7 @@
         } ],
         "allIn1" : null,
         "activeTab" : "expressions",
-        "columnsSelector" : [ "47810##customer_id", "2322##customer_id", "47810##customer_id", "2322##first_name", "2322##last_name", "2322##account_open_date", "47810##amount", "47810##order_id" ],
+        "columnsSelector" : [ "47810##customer_id", "2322##customer_id", "47810##order_id", "2322##account_open_date", "47810##amount", "47810##customer_id", "2322##first_name", "2322##last_name" ],
         "allIn0" : null,
         "whereClause" : null,
         "headAlias" : "in0"
@@ -188,8 +188,8 @@
       "metadata" : {
         "label" : "Customer Orders",
         "slug" : "Customer_Orders",
-        "x" : 860.0004611735,
-        "y" : 212.5,
+        "x" : 860,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -215,8 +215,8 @@
       "metadata" : {
         "label" : "Cleanup",
         "slug" : "Cleanup",
-        "x" : 490.0000025792598,
-        "y" : 212.5,
+        "x" : 500,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -237,7 +237,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "94427##account_open_date", "94427##order_id", "94427##customer_id", "94427##amount" ],
+        "importLanguage" : "python",
         "expressions" : [ {
           "target" : "account_length_days",
           "expression" : {
@@ -266,7 +266,10 @@
             "expression" : "amount"
           },
           "description" : ""
-        } ]
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "94427##account_open_date", "94427##order_id", "94427##amount", "94427##customer_id" ]
       }
     },
     "Source_51275" : {
@@ -275,8 +278,8 @@
       "metadata" : {
         "label" : "Customers",
         "slug" : "Customers",
-        "x" : 120.00036007024839,
-        "y" : 305,
+        "x" : 120,
+        "y" : 300,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -329,8 +332,8 @@
       "metadata" : {
         "label" : "Sum Amounts",
         "slug" : "Sum_Amounts",
-        "x" : 675.0001168802635,
-        "y" : 212.5,
+        "x" : 680,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -351,6 +354,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
+        "allIns" : false,
         "doPivot" : false,
         "aggregate" : [ {
           "target" : "orders",
@@ -358,36 +362,38 @@
             "format" : "sql",
             "expression" : "count(order_id)"
           },
-          "description" : ""
+          "description" : "",
+          "_row_id" : null
         }, {
           "target" : "amounts",
           "expression" : {
             "format" : "sql",
             "expression" : "sum(amount)"
           },
-          "description" : ""
+          "description" : "",
+          "_row_id" : null
         }, {
           "target" : "account_length_days",
           "expression" : {
             "format" : "sql",
             "expression" : "first(account_length_days)"
           },
-          "description" : ""
+          "description" : "",
+          "_row_id" : null
         } ],
-        "pivotColumn" : {
-          "format" : "sql",
-          "expression" : "col_name"
-        },
+        "allowSelection" : true,
+        "pivotColumn" : null,
         "pivotValues" : [ ],
         "activeTab" : "aggregate",
-        "columnsSelector" : [ "42999##customer_id", "42999##order_id", "42999##amount", "42999##account_length_days" ],
+        "columnsSelector" : [ "42999##account_length_days", "42999##amount", "42999##customer_id", "42999##order_id" ],
         "groupBy" : [ {
           "target" : "customer_id",
           "expression" : {
             "format" : "sql",
             "expression" : "customer_id"
           },
-          "description" : ""
+          "description" : "",
+          "_row_id" : null
         } ]
       }
     }
