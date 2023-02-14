@@ -75,7 +75,7 @@
       "python_wheel_task" : {
         "package_name" : "report_top_customers",
         "entry_point" : "main",
-        "parameters" : [ ]
+        "parameters" : [ "-i", "default" ]
       },
       "libraries" : [ {
         "maven" : {
