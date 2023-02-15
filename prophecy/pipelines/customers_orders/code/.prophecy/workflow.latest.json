@@ -32,7 +32,13 @@
     "hadoopConf" : [ ],
     "codeMode" : "sparse",
     "buildSystem" : "maven",
-    "externalDependencies" : [ ],
+    "externalDependencies" : [ {
+      "type" : "pypi",
+      "id" : "_9TL0",
+      "name" : "panadas",
+      "enabled" : true,
+      "package" : "pandas"
+    } ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -67,7 +73,7 @@
     "target" : "Aggregate_74495",
     "targetPort" : "42999"
   }, {
-    "id" : "884",
+    "id" : "hySVpPjC-D_HnatwOC9W9",
     "source" : "Aggregate_74495",
     "sourcePort" : "96556",
     "target" : "Target_63106",
