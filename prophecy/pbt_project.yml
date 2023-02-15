@@ -261,6 +261,11 @@ libraries: []
 subgraphs: {}
 sqlModels: {}
 sqlPipeline: null
-dependencies: []
+dependencies:
+- type: pypi
+  id: _9TL0
+  name: panadas
+  enabled: false
+  package: pandas
 projectDependencies: {}
 pipelineConfigurations: {}

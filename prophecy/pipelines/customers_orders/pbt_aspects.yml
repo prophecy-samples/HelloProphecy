@@ -1,4 +1,8 @@
 version: 1
-dependencies: []
+dependencies:
+- type: workflow
+  id: _9TL0
+  name: panadas
+  enabled: true
 configurations:
 - default

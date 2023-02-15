@@ -101,7 +101,7 @@
       "metadata" : {
         "label" : "customers_orders_0",
         "slug" : "customers_orders",
-        "x" : 400,
+        "x" : 200,
         "y" : 380
       },
       "ports" : {
