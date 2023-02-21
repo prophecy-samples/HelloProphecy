@@ -5,20 +5,6 @@ author: scott+demo2@prophecy.io
 language: python
 buildSystem: wheel
 pipelines:
-  pipelines/customers_orders:
-    name: customers_orders
-    description: Aggregates total spending's for each customer
-    author: scott+demo2@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2022-12-14 19:37:58'
-    datasets:
-      inputs:
-      - datasets/customers
-      - datasets/orders
-      outputs:
-      - datasets/customers_orders
-    dependencies: {}
   pipelines/report_top_customers:
     name: report_top_customers
     description: Prepare a report based on customers' spending
@@ -60,6 +46,20 @@ pipelines:
       - datasets/irs-zipcode-data
       outputs:
       - datasets/farmers_market_tax_report
+    dependencies: {}
+  pipelines/customers_orders:
+    name: customers_orders
+    description: Aggregates total spending's for each customer
+    author: scott+demo2@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-12-14 19:37:58'
+    datasets:
+      inputs:
+      - datasets/customers
+      - datasets/orders
+      outputs:
+      - datasets/customers_orders
     dependencies: {}
 datasets:
   datasets/orders:
@@ -207,31 +207,6 @@ datasets:
         createdAt: '2023-02-14 19:02:49'
 templates: {}
 jobs:
-  jobs/HelloDev-customers:
-    name: HelloDev-customers
-    description: ''
-    fabricUID: 1571
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0 * * ? *
-    timeout: null
-    alerting:
-      emails: scott@prophecy.io
-      onStart: false
-      onSuccess: true
-      onFailure: true
-    pipelines:
-    - pipelines/customers_orders
-    - pipelines/report_top_customers
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: null
-    createdAt: '2023-02-10 03:24:54'
-    author: scott+demo2@prophecy.io
   jobs/HelloProd-customers:
     name: HelloProd-customers
     description: ''
@@ -256,6 +231,31 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2023-02-10 03:28:19'
+    author: scott+demo2@prophecy.io
+  jobs/HelloDev-customers:
+    name: HelloDev-customers
+    description: ''
+    fabricUID: 1571
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? *
+    timeout: null
+    alerting:
+      emails: scott@prophecy.io
+      onStart: false
+      onSuccess: true
+      onFailure: true
+    pipelines:
+    - pipelines/customers_orders
+    - pipelines/report_top_customers
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-02-10 03:24:54'
     author: scott+demo2@prophecy.io
 libraries: []
 subgraphs: {}
