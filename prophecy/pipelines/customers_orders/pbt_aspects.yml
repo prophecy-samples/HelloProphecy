@@ -1,6 +1,7 @@
 version: 1
 configurations:
 - default
-- config_a
 - config_b
+- config_a
+- config_c
 dependencies: []
