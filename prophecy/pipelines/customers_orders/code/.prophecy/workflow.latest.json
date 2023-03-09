@@ -50,18 +50,6 @@
     }
   },
   "connections" : [ {
-    "id" : "829",
-    "source" : "Join_98619",
-    "sourcePort" : "31576",
-    "target" : "Reformat_5054",
-    "targetPort" : "94427"
-  }, {
-    "id" : "386",
-    "source" : "Reformat_5054",
-    "sourcePort" : "16363",
-    "target" : "Aggregate_74495",
-    "targetPort" : "42999"
-  }, {
     "id" : "hySVpPjC-D_HnatwOC9W9",
     "source" : "Aggregate_74495",
     "sourcePort" : "96556",
@@ -79,6 +67,18 @@
     "sourcePort" : "OrkOwx7G52PPLzLAlPcDP$$AHNz-FVXovCkPb126zhH4",
     "target" : "Join_98619",
     "targetPort" : "2322"
+  }, {
+    "id" : "ChgO_rvCgUJcCw6hbcHxT$$IqbbnaORB4OpGkDLrCJKS",
+    "source" : "Join_98619",
+    "sourcePort" : "31576",
+    "target" : "gUzT1KkG7CjOa3G9brWuy$$A9w2Aqp722DypEdExDxcR",
+    "targetPort" : "3mkvfzOoRSufOntxp-K69$$dVzYdcOtDMKLXv-IB8SH_"
+  }, {
+    "id" : "jiQhNIbG6Gmde4zl4-kcI",
+    "source" : "gUzT1KkG7CjOa3G9brWuy$$A9w2Aqp722DypEdExDxcR",
+    "sourcePort" : "89gil8a--ILEBo2BpfDpi$$Lw9liBrs37GyrBaCGhsL6",
+    "target" : "Aggregate_74495",
+    "targetPort" : "42999"
   } ],
   "processes" : {
     "Join_98619" : {
@@ -249,8 +249,8 @@
       "metadata" : {
         "label" : "customers",
         "slug" : "customers",
-        "x" : 140,
-        "y" : 300,
+        "x" : 160,
+        "y" : 280,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -270,13 +270,13 @@
         "datasetId" : "datasets/customers"
       }
     },
-    "Reformat_5054" : {
-      "id" : "Reformat_5054",
-      "component" : "Reformat",
+    "gUzT1KkG7CjOa3G9brWuy$$A9w2Aqp722DypEdExDxcR" : {
+      "id" : "gUzT1KkG7CjOa3G9brWuy$$A9w2Aqp722DypEdExDxcR",
+      "component" : "Subgraph",
       "metadata" : {
-        "label" : "Cleanup",
-        "slug" : "Cleanup",
-        "x" : 500,
+        "label" : "CleanupSubgraph",
+        "slug" : "CleanupSubgraph",
+        "x" : 540,
         "y" : 220,
         "phase" : 0,
         "cache" : false,
@@ -285,52 +285,100 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "94427",
+          "id" : "3mkvfzOoRSufOntxp-K69$$dVzYdcOtDMKLXv-IB8SH_",
           "slug" : "in0",
           "isStreaming" : false
         } ],
         "outputs" : [ {
-          "id" : "16363",
-          "slug" : "out",
+          "id" : "89gil8a--ILEBo2BpfDpi$$Lw9liBrs37GyrBaCGhsL6",
+          "slug" : "out0",
           "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "importLanguage" : "python",
-        "expressions" : [ {
-          "target" : "account_length_days",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "datediff(current_date(), account_open_date)"
+        "packageName" : "com.contoso",
+        "externalId" : "subgraphs/CleanupSubgraph",
+        "name" : "CleanupSubgraph"
+      },
+      "connections" : [ {
+        "id" : "c9nEOQGsp8bwAqBOqWx03",
+        "source" : "gUzT1KkG7CjOa3G9brWuy$$A9w2Aqp722DypEdExDxcR",
+        "sourcePort" : "3mkvfzOoRSufOntxp-K69$$dVzYdcOtDMKLXv-IB8SH_",
+        "target" : "n-pGuVc9cifpqh1Zk1giN$$CALmeWZ3R23ssfZoMgV7d",
+        "targetPort" : "OYvM2gvfi9B62P0sOOKfs$$EcnXzO9MDEsSboSs-J51A"
+      }, {
+        "id" : "JQ4fqizGRqlsSKQJOgbaU",
+        "source" : "n-pGuVc9cifpqh1Zk1giN$$CALmeWZ3R23ssfZoMgV7d",
+        "sourcePort" : "R1BrRkFh55eKIv5tFbpUx$$vSTIbkyM7gKccVvQQ6-zK",
+        "target" : "gUzT1KkG7CjOa3G9brWuy$$A9w2Aqp722DypEdExDxcR",
+        "targetPort" : "89gil8a--ILEBo2BpfDpi$$Lw9liBrs37GyrBaCGhsL6"
+      } ],
+      "processes" : {
+        "n-pGuVc9cifpqh1Zk1giN$$CALmeWZ3R23ssfZoMgV7d" : {
+          "id" : "n-pGuVc9cifpqh1Zk1giN$$CALmeWZ3R23ssfZoMgV7d",
+          "component" : "Reformat",
+          "metadata" : {
+            "label" : "Cleanup",
+            "slug" : "Cleanup",
+            "x" : 460,
+            "y" : 380,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
           },
-          "description" : ""
-        }, {
-          "target" : "order_id",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "order_id"
+          "ports" : {
+            "inputs" : [ {
+              "id" : "OYvM2gvfi9B62P0sOOKfs$$EcnXzO9MDEsSboSs-J51A",
+              "slug" : "in0",
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "R1BrRkFh55eKIv5tFbpUx$$vSTIbkyM7gKccVvQQ6-zK",
+              "slug" : "out",
+              "isStreaming" : false
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false
           },
-          "description" : ""
-        }, {
-          "target" : "customer_id",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "customer_id"
-          },
-          "description" : ""
-        }, {
-          "target" : "amount",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "amount"
-          },
-          "description" : ""
-        } ],
-        "importString" : "",
-        "activeTab" : "expressions",
-        "columnsSelector" : [ "94427##account_open_date", "94427##order_id", "94427##amount", "94427##customer_id" ]
+          "properties" : {
+            "importLanguage" : "python",
+            "expressions" : [ {
+              "target" : "account_length_days",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "datediff(current_date(), account_open_date)"
+              },
+              "description" : ""
+            }, {
+              "target" : "order_id",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "order_id"
+              },
+              "description" : ""
+            }, {
+              "target" : "customer_id",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "customer_id"
+              },
+              "description" : ""
+            }, {
+              "target" : "amount",
+              "expression" : {
+                "format" : "sql",
+                "expression" : "amount"
+              },
+              "description" : ""
+            } ],
+            "importString" : "",
+            "activeTab" : "expressions",
+            "columnsSelector" : [ "94427##account_open_date", "94427##order_id", "94427##amount", "94427##customer_id" ]
+          }
+        }
       }
     },
     "Aggregate_74495" : {
@@ -339,7 +387,7 @@
       "metadata" : {
         "label" : "Sum Amounts",
         "slug" : "Sum_Amounts",
-        "x" : 680,
+        "x" : 700,
         "y" : 220,
         "phase" : 0,
         "cache" : false,
@@ -392,7 +440,7 @@
         "pivotColumn" : null,
         "pivotValues" : [ ],
         "activeTab" : "aggregate",
-        "columnsSelector" : [ "42999##account_length_days", "42999##amount", "42999##customer_id", "42999##order_id" ],
+        "columnsSelector" : [ "42999##amount", "42999##account_length_days", "42999##order_id", "42999##customer_id" ],
         "groupBy" : [ {
           "target" : "customer_id",
           "expression" : {
