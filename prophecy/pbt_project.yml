@@ -57,11 +57,9 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2023-03-09 20:33:04'
+    modifiedAt: '2023-03-09 20:16:21'
     datasets:
-      inputs:
-      - datasets/customers
-      - datasets/orders
+      inputs: []
       outputs:
       - datasets/customers_orders
     dependencies: {}
@@ -295,7 +293,7 @@ jobs:
       clusterId: null
     enabled: null
     createdAt: '2023-02-10 03:24:54'
-    modifiedAt: '2023-03-09 20:34:25'
+    modifiedAt: '2023-02-10 03:24:54'
     author: scott+demo2@prophecy.io
 libraries: []
 subgraphs:
@@ -306,7 +304,7 @@ subgraphs:
     language: python
     mode: batch
     createdAt: '2023-03-09 19:57:23'
-    modifiedAt: '2023-03-09 20:32:27'
+    modifiedAt: '2023-03-09 19:57:23'
 sqlModels: {}
 sqlPipeline: null
 dependencies: []

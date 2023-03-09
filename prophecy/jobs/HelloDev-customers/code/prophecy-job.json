@@ -32,7 +32,7 @@
       "name" : "HelloDev",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "Unity" ]
+        "availableClusterSizes" : [ "small" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -101,8 +101,8 @@
       "metadata" : {
         "label" : "customers_orders_0",
         "slug" : "customers_orders",
-        "x" : 100,
-        "y" : 100
+        "x" : 200,
+        "y" : 380
       },
       "ports" : {
         "inputs" : [ {
@@ -124,22 +124,14 @@
       "properties" : {
         "pipelineId" : "pipelines/customers_orders",
         "configurations" : {
-          "schema" : [ {
-            "name" : "source_table",
-            "kind" : {
-              "type" : "string",
-              "value" : "default_table"
-            },
-            "optional" : false
-          } ],
+          "schema" : [ ],
           "instances" : {
-            "HelloProphecy" : [ "default", "config_c", "config_b" ]
+            "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
           "selectedInstance" : "default"
         }
-      },
-      "parent" : "twTEly05AktNsmX7C5Kn1"
+      }
     },
     "8iTQIx1zS4xTKYXOqdT68$$y1YO3rtjVzoUR1quwKGfd" : {
       "id" : "8iTQIx1zS4xTKYXOqdT68$$y1YO3rtjVzoUR1quwKGfd",
@@ -177,25 +169,6 @@
           "overrides" : { },
           "selectedInstance" : "default"
         }
-      }
-    },
-    "twTEly05AktNsmX7C5Kn1" : {
-      "id" : "twTEly05AktNsmX7C5Kn1",
-      "component" : "Cluster",
-      "metadata" : {
-        "label" : "Cluster_1",
-        "slug" : "Cluster_1",
-        "x" : 100,
-        "y" : 280,
-        "width" : 280,
-        "height" : 260
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ ]
-      },
-      "properties" : {
-        "clusterSize" : "Unity"
       }
     }
   },
