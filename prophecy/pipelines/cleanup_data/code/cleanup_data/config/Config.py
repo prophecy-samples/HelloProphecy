@@ -4,12 +4,11 @@ prophecy_spark_context = None
 
 class Config(ConfigBase):
 
-    def __init__(self, source_table: str=None):
+    def __init__(self, ):
         self.spark = None
-        self.update(source_table)
+        self.update()
 
-    def update(self, source_table: str="default_table"):
+    def update(self, ):
         global prophecy_spark_context
         prophecy_spark_context = self.spark
-        self.source_table = source_table
         pass
