@@ -14,13 +14,11 @@
   "ports" : {
     "inputs" : [ {
       "id" : "3mkvfzOoRSufOntxp-K69",
-      "slug" : "in0",
-      "isStreaming" : false
+      "slug" : "in0"
     } ],
     "outputs" : [ {
       "id" : "89gil8a--ILEBo2BpfDpi",
-      "slug" : "out0",
-      "isStreaming" : false
+      "slug" : "out0"
     } ],
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false
@@ -29,13 +27,13 @@
     "packageName" : "com.contoso"
   },
   "connections" : [ {
-    "id" : "ieAI-kr61mhSUNc37_oDJ",
+    "id" : "kY0IPNcc4dKGMZw7bml7l",
     "source" : "gUzT1KkG7CjOa3G9brWuy",
     "sourcePort" : "3mkvfzOoRSufOntxp-K69",
     "target" : "n-pGuVc9cifpqh1Zk1giN",
     "targetPort" : "OYvM2gvfi9B62P0sOOKfs"
   }, {
-    "id" : "JCNxXp_PJCbUgYX1jHmZC",
+    "id" : "CoxYyFIW8OU1Di2jatABJ",
     "source" : "n-pGuVc9cifpqh1Zk1giN",
     "sourcePort" : "R1BrRkFh55eKIv5tFbpUx",
     "target" : "gUzT1KkG7CjOa3G9brWuy",
