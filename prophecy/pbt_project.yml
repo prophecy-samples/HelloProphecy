@@ -57,9 +57,11 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2023-03-16 19:56:49'
+    modifiedAt: '2023-03-16 20:21:14'
     datasets:
-      inputs: []
+      inputs:
+      - datasets/customers
+      - datasets/orders
       outputs:
       - datasets/customers_orders
     dependencies: {}
