@@ -9,7 +9,13 @@
     "phase" : 0,
     "cache" : false,
     "detailedStats" : false,
-    "isImported" : false
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    }
   },
   "ports" : {
     "inputs" : [ {
@@ -203,5 +209,6 @@
         "language" : "python"
       }
     }
-  }
+  },
+  "externalDependencies" : [ ]
 }

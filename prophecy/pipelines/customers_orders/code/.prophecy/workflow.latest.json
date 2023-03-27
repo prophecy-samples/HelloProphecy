@@ -7,7 +7,9 @@
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
-      "udfs" : [ ]
+      "udfs" : [ ],
+      "functionPackageName" : "scott_demo2_team.helloworld.functions",
+      "sharedFunctionPackageNames" : [ ]
     },
     "udafs" : {
       "language" : "python",
@@ -22,7 +24,8 @@
             "type" : "string",
             "value" : "default_table"
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         } ]
       },
       "oldCommon" : {
@@ -40,6 +43,7 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -47,7 +51,8 @@
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000
-    }
+    },
+    "configurationVersion" : "v1"
   },
   "connections" : [ ],
   "processes" : {
@@ -364,7 +369,7 @@
       }
     },
     "severity" : 1,
-    "message" : "No match found for column in1.customer_id [Conditions]",
+    "message" : "No match found for column in0.customer_id [Conditions]",
     "tags" : [ ],
     "relatedInformation" : [ ]
   }, {
@@ -380,7 +385,7 @@
       }
     },
     "severity" : 1,
-    "message" : "No match found for column in0.customer_id [Conditions]",
+    "message" : "No match found for column in1.customer_id [Conditions]",
     "tags" : [ ],
     "relatedInformation" : [ ]
   }, {

@@ -3,13 +3,21 @@ description: This is your personal project
 version: v0.7.0
 author: scott+demo2@prophecy.io
 language: python
-buildSystem: wheel
+buildSystem: ''
+buildSystemDetails:
+  artefactID: helloworld
+  parentArtefactID: scott_demo2_team
+  buildSystem: wheel
+  author: null
+  createdAt: '2023-03-27 15:13:13'
+  modifiedAt: '2023-03-27 15:13:13'
 pipelines:
   pipelines/report_top_customers:
     name: report_top_customers
     description: Prepare a report based on customers' spending
     author: scott+demo2@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
     createdAt: '2022-12-14 19:37:59'
     modifiedAt: '2022-12-14 19:37:59'
@@ -18,6 +26,7 @@ pipelines:
       - datasets/customers_orders
       outputs:
       - datasets/report
+    subgraphs: []
     dependencies: {}
   pipelines/join_agg_sort:
     name: join_agg_sort
@@ -25,6 +34,7 @@ pipelines:
       (sales by customer), sorting (by totals)
     author: scott+demo2@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
     createdAt: '2022-12-14 19:37:59'
     modifiedAt: '2022-12-14 19:37:59'
@@ -34,12 +44,14 @@ pipelines:
       - datasets/orders
       outputs:
       - datasets/customer_totals
+    subgraphs: []
     dependencies: {}
   pipelines/farmers-markets-irs:
     name: farmers-markets-irs
     description: Exploration of Farmer's Market Locations By US Zip Code
     author: scott+demo2@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
     createdAt: '2022-12-14 19:37:59'
     modifiedAt: '2022-12-14 19:37:59'
@@ -49,31 +61,37 @@ pipelines:
       - datasets/irs-zipcode-data
       outputs:
       - datasets/farmers_market_tax_report
+    subgraphs: []
     dependencies: {}
   pipelines/customers_orders:
     name: customers_orders
     description: Aggregates total spending's for each customer
     author: scott+demo2@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
     createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2023-03-20 16:08:36'
+    modifiedAt: '2023-03-27 15:13:22'
     datasets:
       inputs: []
       outputs:
       - datasets/customers_orders
+    subgraphs: []
     dependencies: {}
   pipelines/cleanup_data:
     name: cleanup_data
     description: ''
     author: scott+demo2@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
     createdAt: '2023-03-09 19:56:29'
-    modifiedAt: '2023-03-09 19:57:23'
+    modifiedAt: '2023-03-27 15:13:14'
     datasets:
       inputs: []
       outputs: []
+    subgraphs:
+    - subgraphs/CleanupSubgraph
     dependencies: {}
 datasets:
   datasets/orders:
@@ -295,16 +313,24 @@ jobs:
     createdAt: '2023-02-10 03:24:54'
     modifiedAt: '2023-02-10 03:24:54'
     author: scott+demo2@prophecy.io
-libraries: []
+functions:
+  author: null
+  createdAt: '2023-03-27 15:13:13'
+  modifiedAt: '2023-03-27 15:13:13'
+  gems: {}
+  udfs: {}
+  udafs: {}
+  expressions: {}
 subgraphs:
   subgraphs/CleanupSubgraph:
     name: CleanupSubgraph
     description: ''
     author: scott+demo2@prophecy.io
     language: python
+    artefactID: ''
     mode: batch
     createdAt: '2023-03-09 19:57:23'
-    modifiedAt: '2023-03-09 19:57:23'
+    modifiedAt: '2023-03-27 15:13:14'
 sqlModels: {}
 sqlPipeline: null
 dependencies: []

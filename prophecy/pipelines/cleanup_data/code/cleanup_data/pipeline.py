@@ -7,7 +7,7 @@ from prophecy.utils import *
 from cleanup_data.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_CleanupSubgraph = CleanupSubgraph(spark)
+    df_CleanupSubgraph = CleanupSubgraph(spark, Config.CleanupSubgraph)
 
 def main():
     spark = SparkSession.builder\
