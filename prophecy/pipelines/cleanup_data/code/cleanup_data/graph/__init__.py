@@ -1,1 +1,1 @@
-from .CleanupSubgraph import *
+from .CleanupSubgraph import CleanupSubgraph
