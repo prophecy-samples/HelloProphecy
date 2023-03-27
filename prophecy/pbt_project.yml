@@ -71,9 +71,11 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2023-03-27 15:13:22'
+    modifiedAt: '2023-03-27 15:29:21'
     datasets:
-      inputs: []
+      inputs:
+      - datasets/customers
+      - datasets/orders
       outputs:
       - datasets/customers_orders
     subgraphs: []
