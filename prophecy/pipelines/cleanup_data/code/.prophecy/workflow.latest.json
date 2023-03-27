@@ -7,9 +7,7 @@
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
-      "udfs" : [ ],
-      "functionPackageName" : "scott_demo2_team.helloworld.functions",
-      "sharedFunctionPackageNames" : [ ]
+      "udfs" : [ ]
     },
     "udafs" : {
       "language" : "python",
@@ -18,15 +16,7 @@
     "configuration" : {
       "common" : {
         "type" : "record",
-        "fields" : [ {
-          "name" : "CleanupSubgraph",
-          "kind" : {
-            "type" : "record",
-            "fields" : [ ]
-          },
-          "optional" : false,
-          "isWorkflowNodeConfiguration" : true
-        } ]
+        "fields" : [ ]
       },
       "oldCommon" : {
         "type" : "record",
@@ -43,7 +33,6 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
-    "dependentProjectExternalDependencies" : [ ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -52,8 +41,7 @@
       "enabled" : false,
       "value" : 1000
     },
-    "topLevelPackage" : "cleanup_data",
-    "configurationVersion" : "v1"
+    "topLevelPackage" : "cleanup_data"
   },
   "connections" : [ ],
   "processes" : {
@@ -83,9 +71,9 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "packageName" : "com.contoso",
         "externalId" : "subgraphs/CleanupSubgraph",
-        "name" : "CleanupSubgraph"
+        "name" : "CleanupSubgraph",
+        "packageName" : "com.contoso"
       },
       "connections" : [ {
         "id" : "kY0IPNcc4dKGMZw7bml7l",
@@ -121,7 +109,8 @@
             } ],
             "outputs" : [ {
               "id" : "R1BrRkFh55eKIv5tFbpUx$$YRljMBVtQAlxG6JSh-L-d",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -162,8 +151,7 @@
             "columnsSelector" : [ "94427##account_open_date", "94427##order_id", "94427##amount", "94427##customer_id" ]
           }
         }
-      },
-      "externalDependencies" : [ ]
+      }
     }
   },
   "ports" : {
@@ -282,6 +270,134 @@
     },
     "severity" : 1,
     "message" : "No match found for column amount",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.gUzT1KkG7CjOa3G9brWuy$$KfE1SgsGzXfCJhdj99yDm.processes.n-pGuVc9cifpqh1Zk1giN$$49ukamx1OSD6zU4dkGUyt.test.unitTests[0].data.R1BrRkFh55eKIv5tFbpUx$$YRljMBVtQAlxG6JSh-L-d.schema.fields[0].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.account_length_days used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.gUzT1KkG7CjOa3G9brWuy$$KfE1SgsGzXfCJhdj99yDm.processes.n-pGuVc9cifpqh1Zk1giN$$49ukamx1OSD6zU4dkGUyt.test.unitTests[0].data.R1BrRkFh55eKIv5tFbpUx$$YRljMBVtQAlxG6JSh-L-d.schema.fields[1].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.order_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.gUzT1KkG7CjOa3G9brWuy$$KfE1SgsGzXfCJhdj99yDm.processes.n-pGuVc9cifpqh1Zk1giN$$49ukamx1OSD6zU4dkGUyt.test.unitTests[0].data.R1BrRkFh55eKIv5tFbpUx$$YRljMBVtQAlxG6JSh-L-d.schema.fields[2].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.customer_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.gUzT1KkG7CjOa3G9brWuy$$KfE1SgsGzXfCJhdj99yDm.processes.n-pGuVc9cifpqh1Zk1giN$$49ukamx1OSD6zU4dkGUyt.test.unitTests[0].data.R1BrRkFh55eKIv5tFbpUx$$YRljMBVtQAlxG6JSh-L-d.schema.fields[3].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.amount used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.gUzT1KkG7CjOa3G9brWuy$$KfE1SgsGzXfCJhdj99yDm.processes.n-pGuVc9cifpqh1Zk1giN$$49ukamx1OSD6zU4dkGUyt.test.unitTests[0].data.OYvM2gvfi9B62P0sOOKfs$$hZHkfGGWkakEeZ43lsgZk.schema.fields[0].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.account_open_date used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.gUzT1KkG7CjOa3G9brWuy$$KfE1SgsGzXfCJhdj99yDm.processes.n-pGuVc9cifpqh1Zk1giN$$49ukamx1OSD6zU4dkGUyt.test.unitTests[0].data.OYvM2gvfi9B62P0sOOKfs$$hZHkfGGWkakEeZ43lsgZk.schema.fields[1].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.order_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.gUzT1KkG7CjOa3G9brWuy$$KfE1SgsGzXfCJhdj99yDm.processes.n-pGuVc9cifpqh1Zk1giN$$49ukamx1OSD6zU4dkGUyt.test.unitTests[0].data.OYvM2gvfi9B62P0sOOKfs$$hZHkfGGWkakEeZ43lsgZk.schema.fields[2].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.customer_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.gUzT1KkG7CjOa3G9brWuy$$KfE1SgsGzXfCJhdj99yDm.processes.n-pGuVc9cifpqh1Zk1giN$$49ukamx1OSD6zU4dkGUyt.test.unitTests[0].data.OYvM2gvfi9B62P0sOOKfs$$hZHkfGGWkakEeZ43lsgZk.schema.fields[3].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.amount used within the test Unit Test 0 is not defined.",
     "tags" : [ ],
     "relatedInformation" : [ ]
   } ]
