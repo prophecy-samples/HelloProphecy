@@ -71,9 +71,11 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2023-03-27 15:13:22'
+    modifiedAt: '2023-04-18 14:49:59'
     datasets:
-      inputs: []
+      inputs:
+      - datasets/customers
+      - datasets/orders
       outputs:
       - datasets/customers_orders
     subgraphs: []
@@ -92,6 +94,23 @@ pipelines:
       outputs: []
     subgraphs:
     - subgraphs/CleanupSubgraph
+    dependencies: {}
+  pipelines/customer_orders_2:
+    name: customer_orders_2
+    description: Aggregates total spending's for each customer
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-04-24 18:42:33'
+    modifiedAt: '2023-04-24 18:42:38'
+    datasets:
+      inputs:
+      - datasets/customers
+      - datasets/orders
+      outputs:
+      - datasets/customers_orders
+    subgraphs: []
     dependencies: {}
 datasets:
   datasets/orders:
