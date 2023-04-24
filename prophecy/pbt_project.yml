@@ -112,6 +112,23 @@ pipelines:
       - datasets/customers_orders
     subgraphs: []
     dependencies: {}
+  pipelines/customer_orders_3:
+    name: customer_orders_3
+    description: Aggregates total spending's for each customer
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-04-24 18:48:21'
+    modifiedAt: '2023-04-24 18:48:26'
+    datasets:
+      inputs:
+      - datasets/customers
+      - datasets/orders
+      outputs:
+      - datasets/customers_orders
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/orders:
     name: orders
