@@ -4,8 +4,8 @@ from pyspark.sql.types import *
 from argparse import Namespace
 from prophecy.test import BaseTestCase
 from prophecy.test.utils import *
-from job.graph.Cleanup import *
-from job.config.ConfigStore import *
+from customer_orders_2.graph.Cleanup import *
+from customer_orders_2.config.ConfigStore import *
 
 
 class CleanupTest(BaseTestCase):
@@ -13,14 +13,14 @@ class CleanupTest(BaseTestCase):
     def test_unit_test_0(self):
         dfIn0 = createDfFromResourceFiles(
             self.spark,
-            'test/resources/data/job/graph/Cleanup/in0/schema.json',
-            'test/resources/data/job/graph/Cleanup/in0/data/test_unit_test_0.json',
+            'test/resources/data/customer_orders_2/graph/Cleanup/in0/schema.json',
+            'test/resources/data/customer_orders_2/graph/Cleanup/in0/data/test_unit_test_0.json',
             'in0'
         )
         dfOut = createDfFromResourceFiles(
             self.spark,
-            'test/resources/data/job/graph/Cleanup/out/schema.json',
-            'test/resources/data/job/graph/Cleanup/out/data/test_unit_test_0.json',
+            'test/resources/data/customer_orders_2/graph/Cleanup/out/schema.json',
+            'test/resources/data/customer_orders_2/graph/Cleanup/out/data/test_unit_test_0.json',
             'out'
         )
         dfOutComputed = Cleanup(self.spark, dfIn0)

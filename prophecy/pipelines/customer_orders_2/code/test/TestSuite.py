@@ -1,7 +1,7 @@
 import unittest
 
-from test.job.graph.test_By_CustomerId import *
-from test.job.graph.test_Cleanup import *
+from test.customer_orders_2.graph.test_By_CustomerId import *
+from test.customer_orders_2.graph.test_Cleanup import *
 
 if __name__ == "__main__":
     runner = unittest.TextTestRunner()

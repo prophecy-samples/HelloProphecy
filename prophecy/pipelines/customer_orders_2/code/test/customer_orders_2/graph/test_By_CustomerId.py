@@ -4,8 +4,8 @@ from pyspark.sql.types import *
 from argparse import Namespace
 from prophecy.test import BaseTestCase
 from prophecy.test.utils import *
-from job.graph.By_CustomerId import *
-from job.config.ConfigStore import *
+from customer_orders_2.graph.By_CustomerId import *
+from customer_orders_2.config.ConfigStore import *
 
 
 class By_CustomerIdTest(BaseTestCase):
@@ -13,20 +13,20 @@ class By_CustomerIdTest(BaseTestCase):
     def test_unit_test_0(self):
         dfIn0 = createDfFromResourceFiles(
             self.spark,
-            'test/resources/data/job/graph/By_CustomerId/in0/schema.json',
-            'test/resources/data/job/graph/By_CustomerId/in0/data/test_unit_test_0.json',
+            'test/resources/data/customer_orders_2/graph/By_CustomerId/in0/schema.json',
+            'test/resources/data/customer_orders_2/graph/By_CustomerId/in0/data/test_unit_test_0.json',
             'in0'
         )
         dfIn1 = createDfFromResourceFiles(
             self.spark,
-            'test/resources/data/job/graph/By_CustomerId/in1/schema.json',
-            'test/resources/data/job/graph/By_CustomerId/in1/data/test_unit_test_0.json',
+            'test/resources/data/customer_orders_2/graph/By_CustomerId/in1/schema.json',
+            'test/resources/data/customer_orders_2/graph/By_CustomerId/in1/data/test_unit_test_0.json',
             'in1'
         )
         dfOut = createDfFromResourceFiles(
             self.spark,
-            'test/resources/data/job/graph/By_CustomerId/out/schema.json',
-            'test/resources/data/job/graph/By_CustomerId/out/data/test_unit_test_0.json',
+            'test/resources/data/customer_orders_2/graph/By_CustomerId/out/schema.json',
+            'test/resources/data/customer_orders_2/graph/By_CustomerId/out/data/test_unit_test_0.json',
             'out'
         )
         dfOutComputed = By_CustomerId(self.spark, dfIn0, dfIn1)

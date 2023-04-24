@@ -52,6 +52,7 @@
       "enabled" : false,
       "value" : 1000
     },
+    "topLevelPackage" : "customer_orders_2",
     "configurationVersion" : "v1"
   },
   "connections" : [ {

@@ -1,10 +1,10 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
-from job.config.ConfigStore import *
-from job.udfs.UDFs import *
+from customer_orders_2.config.ConfigStore import *
+from customer_orders_2.udfs.UDFs import *
 from prophecy.utils import *
-from job.graph import *
+from customer_orders_2.graph import *
 
 def pipeline(spark: SparkSession) -> None:
     df_orders = orders(spark)

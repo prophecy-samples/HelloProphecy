@@ -2,8 +2,8 @@ from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 from prophecy.libs import typed_lit
-from job.config.ConfigStore import *
-from job.udfs.UDFs import *
+from customer_orders_2.config.ConfigStore import *
+from customer_orders_2.udfs.UDFs import *
 
 def customers(spark: SparkSession) -> DataFrame:
     return spark.read\
