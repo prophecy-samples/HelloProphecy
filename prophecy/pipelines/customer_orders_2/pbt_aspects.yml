@@ -1,6 +1,0 @@
-version: 1
-configurations:
-- default
-- config_c
-- config_b
-dependencies: []

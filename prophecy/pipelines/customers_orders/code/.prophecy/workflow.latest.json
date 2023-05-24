@@ -47,44 +47,14 @@
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
-    "visualCodeInterimMode" : "Full",
+    "visualCodeInterimMode" : "Disabled",
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000
     },
     "configurationVersion" : "v1"
   },
-  "connections" : [ {
-    "id" : "CZ6aZznNVrG0oQ9ubHp8U$$8HZwtNX80MwV_PPEa8Rf2",
-    "source" : "vf2A27GAsdJVzTMFgOLCL$$w5Ht10zxYnGP3NSU_-NyT",
-    "sourcePort" : "9yPsQHtBb8hqz1PDaB9SS$$XxVnjjVffIU5S94enPx1F",
-    "target" : "Join_98619",
-    "targetPort" : "47810"
-  }, {
-    "id" : "cAcU01tR0CC29hyOsK_IX$$5OxmH6rtkECf4ywobnUDY",
-    "source" : "tzJ9exilhh61mkDGYsB7I$$5lLD6OnWV_gEBTu0TwO7Q",
-    "sourcePort" : "lhNoiYOKq-DEqOcRheXTL$$lBZQpx94e0Il9AHz1rGU5",
-    "target" : "Join_98619",
-    "targetPort" : "2322"
-  }, {
-    "id" : "UZHoBkdjXG3qm68rq52LQ$$w9rPZv5ToTR3BcwKg6Uy8",
-    "source" : "Join_98619",
-    "sourcePort" : "31576",
-    "target" : "Reformat_5054",
-    "targetPort" : "94427"
-  }, {
-    "id" : "qZHL-R30z9EnTsEkl3ayO$$0uxSaDNnvPgYWwqoSwFj6",
-    "source" : "Reformat_5054",
-    "sourcePort" : "16363",
-    "target" : "Aggregate_74495",
-    "targetPort" : "42999"
-  }, {
-    "id" : "tsx5EMW1VgqGKJa6tzEFj$$MajwgXQBvH-9ZoHiyS6SJ",
-    "source" : "Aggregate_74495",
-    "sourcePort" : "96556",
-    "target" : "Target_63106",
-    "targetPort" : "17728"
-  } ],
+  "connections" : [ ],
   "processes" : {
     "Join_98619" : {
       "id" : "Join_98619",
@@ -93,7 +63,7 @@
         "label" : "By CustomerId",
         "slug" : "By_CustomerId",
         "x" : 320,
-        "y" : 200,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -102,146 +72,10 @@
       "ports" : {
         "inputs" : [ {
           "id" : "47810",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "order_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "customer_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "order_status",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "order_category",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "order_date",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "amount",
-              "type" : "double",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
+          "slug" : "in0"
         }, {
           "id" : "2322",
-          "slug" : "in1",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "customer_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "first_name",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "last_name",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "phone",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "email",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "country_code",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "account_open_date",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "account_flags",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
+          "slug" : "in1"
         } ],
         "outputs" : [ {
           "id" : "31576",
@@ -321,36 +155,10 @@
         } ],
         "allIn1" : null,
         "activeTab" : "expressions",
-        "columnsSelector" : [ "47810##customer_id", "47810##amount", "47810##customer_id", "47810##order_id" ],
+        "columnsSelector" : [ ],
         "allIn0" : null,
         "whereClause" : null,
         "headAlias" : "in0"
-      }
-    },
-    "vf2A27GAsdJVzTMFgOLCL$$w5Ht10zxYnGP3NSU_-NyT" : {
-      "id" : "vf2A27GAsdJVzTMFgOLCL$$w5Ht10zxYnGP3NSU_-NyT",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "orders",
-        "slug" : "orders",
-        "x" : 200,
-        "y" : 120,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "9yPsQHtBb8hqz1PDaB9SS$$XxVnjjVffIU5S94enPx1F",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/orders"
       }
     },
     "Target_63106" : {
@@ -359,8 +167,8 @@
       "metadata" : {
         "label" : "Customer Orders",
         "slug" : "Customer_Orders",
-        "x" : 760,
-        "y" : 200,
+        "x" : 860,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -369,48 +177,7 @@
       "ports" : {
         "inputs" : [ {
           "id" : "17728",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "customer_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "orders",
-              "type" : "long",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "amounts",
-              "type" : "double",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "account_length_days",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
+          "slug" : "in0"
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
@@ -426,8 +193,8 @@
       "metadata" : {
         "label" : "Cleanup",
         "slug" : "Cleanup",
-        "x" : 460,
-        "y" : 200,
+        "x" : 500,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -436,66 +203,7 @@
       "ports" : {
         "inputs" : [ {
           "id" : "94427",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "account_open_date",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "order_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "customer_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "amount",
-              "type" : "double",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "first_name",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "last_name",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
+          "slug" : "in0"
         } ],
         "outputs" : [ {
           "id" : "16363",
@@ -540,40 +248,14 @@
         "columnsSelector" : [ ]
       }
     },
-    "tzJ9exilhh61mkDGYsB7I$$5lLD6OnWV_gEBTu0TwO7Q" : {
-      "id" : "tzJ9exilhh61mkDGYsB7I$$5lLD6OnWV_gEBTu0TwO7Q",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "customers",
-        "slug" : "customers",
-        "x" : 200,
-        "y" : 240,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "lhNoiYOKq-DEqOcRheXTL$$lBZQpx94e0Il9AHz1rGU5",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/customers"
-      }
-    },
     "Aggregate_74495" : {
       "id" : "Aggregate_74495",
       "component" : "Aggregate",
       "metadata" : {
         "label" : "Sum Amounts",
         "slug" : "Sum_Amounts",
-        "x" : 600,
-        "y" : 200,
+        "x" : 680,
+        "y" : 220,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -582,48 +264,7 @@
       "ports" : {
         "inputs" : [ {
           "id" : "42999",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "account_length_days",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "order_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "customer_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "amount",
-              "type" : "double",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
+          "slug" : "in0"
         } ],
         "outputs" : [ {
           "id" : "96556",
@@ -664,7 +305,7 @@
         "pivotColumn" : null,
         "pivotValues" : [ ],
         "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "42999##account_length_days", "42999##amount", "42999##customer_id", "42999##order_id" ],
         "groupBy" : [ {
           "target" : "customer_id",
           "expression" : {
@@ -682,5 +323,614 @@
     "outputs" : [ ],
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false
-  }
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.Join_98619",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in1",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.conditions[0].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in0.customer_id [Conditions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.conditions[0].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in1.customer_id [Conditions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.expressions[0].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in1.account_open_date [Expressions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.expressions[1].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in0.order_id [Expressions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.expressions[2].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in0.customer_id [Expressions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.expressions[3].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in0.amount [Expressions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.expressions[4].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in1.first_name [Expressions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.properties.expressions[5].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column in1.last_name [Expressions]",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Target_63106",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.properties.expressions[0].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column account_open_date",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.properties.expressions[1].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column order_id",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.properties.expressions[2].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column customer_id",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.properties.expressions[3].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column amount",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Aggregate_74495",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.47810.schema.fields[0].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.order_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.47810.schema.fields[1].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.customer_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.47810.schema.fields[2].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.amount used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.2322.schema.fields[0].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in1.customer_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.2322.schema.fields[1].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in1.first_name used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.2322.schema.fields[2].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in1.last_name used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.2322.schema.fields[3].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in1.account_open_date used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.31576.schema.fields[0].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.account_open_date used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.31576.schema.fields[1].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.order_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.31576.schema.fields[2].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.customer_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.31576.schema.fields[3].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.amount used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.31576.schema.fields[4].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.first_name used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Join_98619.test.unitTests[0].data.31576.schema.fields[5].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.last_name used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.test.unitTests[0].data.94427.schema.fields[0].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.account_open_date used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.test.unitTests[0].data.94427.schema.fields[1].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.order_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.test.unitTests[0].data.94427.schema.fields[2].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.customer_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.test.unitTests[0].data.94427.schema.fields[3].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column in0.amount used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.test.unitTests[0].data.16363.schema.fields[0].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.account_length_days used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.test.unitTests[0].data.16363.schema.fields[1].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.order_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.test.unitTests[0].data.16363.schema.fields[2].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.customer_id used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.Reformat_5054.test.unitTests[0].data.16363.schema.fields[3].name",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Column out.amount used within the test Unit Test 0 is not defined.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
 }

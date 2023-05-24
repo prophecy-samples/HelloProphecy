@@ -71,11 +71,9 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2023-05-02 17:45:40'
+    modifiedAt: '2023-03-27 15:13:22'
     datasets:
-      inputs:
-      - datasets/customers
-      - datasets/orders
+      inputs: []
       outputs:
       - datasets/customers_orders
     subgraphs: []
@@ -94,40 +92,6 @@ pipelines:
       outputs: []
     subgraphs:
     - subgraphs/CleanupSubgraph
-    dependencies: {}
-  pipelines/customer_orders_2:
-    name: customer_orders_2
-    description: Aggregates total spending's for each customer
-    author: scott+demo2@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2023-04-24 18:42:33'
-    modifiedAt: '2023-04-24 18:44:53'
-    datasets:
-      inputs:
-      - datasets/customers
-      - datasets/orders
-      outputs:
-      - datasets/customers_orders
-    subgraphs: []
-    dependencies: {}
-  pipelines/customer_orders_3:
-    name: customer_orders_3
-    description: Aggregates total spending's for each customer
-    author: scott+demo2@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2023-04-24 18:48:21'
-    modifiedAt: '2023-04-24 18:48:26'
-    datasets:
-      inputs:
-      - datasets/customers
-      - datasets/orders
-      outputs:
-      - datasets/customers_orders
-    subgraphs: []
     dependencies: {}
 datasets:
   datasets/orders:
@@ -347,7 +311,7 @@ jobs:
       clusterId: null
     enabled: null
     createdAt: '2023-02-10 03:24:54'
-    modifiedAt: '2023-05-02 17:45:22'
+    modifiedAt: '2023-02-10 03:24:54'
     author: scott+demo2@prophecy.io
 functions:
   author: null
@@ -368,10 +332,6 @@ subgraphs:
     createdAt: '2023-03-09 19:57:23'
     modifiedAt: '2023-03-27 15:13:14'
 sqlModels: {}
-sqlMacros: {}
-sqlSeeds: {}
-sqlSources: {}
-sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies: []
 projectDependencies: {}
