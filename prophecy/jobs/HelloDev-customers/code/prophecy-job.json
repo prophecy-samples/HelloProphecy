@@ -147,7 +147,7 @@
         }
       },
       "properties" : {
-        "pipelineId" : "pipelines/report_top_customers",
+        "pipelineId" : "pipelines/report_top_customerz",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
