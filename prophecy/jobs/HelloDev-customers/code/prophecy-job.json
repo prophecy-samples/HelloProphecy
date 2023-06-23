@@ -28,6 +28,19 @@
       }
     },
     "availableFabrics" : [ {
+      "id" : "1571",
+      "name" : "HelloDev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "1409",
       "name" : "SuperCoolFabric",
       "clusterSizes" : {
@@ -41,11 +54,24 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "1571",
-      "name" : "HelloDev",
+      "id" : "1343",
+      "name" : "MyDemoFabric",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small", "Unity", "Photon" ]
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1342",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -80,12 +106,10 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "U-IMNwHkammklBEmIu05a$$ssu1DdMBVKQJpwF4mSrbh",
-          "slug" : ""
+          "id" : "U-IMNwHkammklBEmIu05a$$ssu1DdMBVKQJpwF4mSrbh"
         } ],
         "outputs" : [ {
-          "id" : "kxmNy7gt26VYnHRCfrRHb$$AESwxMyEx8Ot_WJHRlaRj",
-          "slug" : ""
+          "id" : "kxmNy7gt26VYnHRCfrRHb$$AESwxMyEx8Ot_WJHRlaRj"
         } ]
       },
       "settings" : {
@@ -100,18 +124,9 @@
       "properties" : {
         "pipelineId" : "pipelines/customers_orders",
         "configurations" : {
-          "schema" : [ {
-            "name" : "source_table",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "default_table"
-            },
-            "isReferenced" : false,
-            "isWorkflowNodeConfiguration" : false
-          } ],
+          "schema" : [ ],
           "instances" : {
-            "HelloProphecy" : [ "default", "config_c", "config_b" ]
+            "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
           "selectedInstance" : "default"
@@ -129,12 +144,10 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "uKGv1OiUJghsGWM859u_L$$ug3LEPnocQ7gIfFLU-Lpr",
-          "slug" : ""
+          "id" : "uKGv1OiUJghsGWM859u_L$$ug3LEPnocQ7gIfFLU-Lpr"
         } ],
         "outputs" : [ {
-          "id" : "tTb0gJqlTFuogJkSwToK2$$rt4axNjaXtNHKhZbpnRSq",
-          "slug" : ""
+          "id" : "tTb0gJqlTFuogJkSwToK2$$rt4axNjaXtNHKhZbpnRSq"
         } ]
       },
       "settings" : {
