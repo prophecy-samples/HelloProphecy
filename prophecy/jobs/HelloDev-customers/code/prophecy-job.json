@@ -96,7 +96,7 @@
           "onSuccess" : false,
           "onFailure" : false
         }
-      }, 
+      },
       "properties" : {
         "pipelineId" : "pipelines/customers_orders",
         "configurations" : {
