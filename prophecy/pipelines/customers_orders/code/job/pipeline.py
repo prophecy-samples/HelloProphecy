@@ -4,13 +4,17 @@ from pyspark.sql.types import *
 from job.config.ConfigStore import *
 from job.udfs.UDFs import *
 from prophecy.utils import *
+from prophecy.transpiler import call_spark_fcn
+from prophecy.transpiler.fixed_file_schema import *
 from job.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_By_CustomerId = By_CustomerId(spark)
-    Customer_Orders(spark)
-    df_Cleanup = Cleanup(spark)
-    df_Sum_Amounts = Sum_Amounts(spark)
+    df_orders = orders(spark)
+    df_customers = customers(spark)
+    df_By_CustomerId = By_CustomerId(spark, df_orders, df_customers)
+    df_Cleanup = Cleanup(spark, df_By_CustomerId)
+    df_Sum_Amounts = Sum_Amounts(spark, df_Cleanup)
+    Customer_Orders(spark, df_Sum_Amounts)
 
 def main():
     spark = SparkSession.builder\
@@ -22,6 +26,7 @@ def main():
                 .newSession()
     Utils.initializeFromArgs(spark, parse_args())
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/customers_orders")
+    registerUDFs(spark)
     
     MetricsCollector.start(spark = spark, pipelineId = "pipelines/customers_orders")
     pipeline(spark)
