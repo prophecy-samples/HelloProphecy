@@ -1,0 +1,286 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "1571",
+    "jobId" : "jobs/EndToEndJob",
+    "name" : "EndToEndJob",
+    "schedule" : "0 0 0 ? * 1 *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "1571",
+      "name" : "HelloDev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "Unity", "Photon" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1572",
+      "name" : "HelloProd",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    } ]
+  },
+  "processes" : {
+    "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY" : {
+      "id" : "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "silver_zip_codes",
+        "slug" : "silver_zip_codes",
+        "x" : 640,
+        "y" : 440
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9SBpUfUKNNtvmvR2Xb9bQ$$FK-nU0qpgvL_1ugWz9uFn",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "mVOpOILZa7_KJoemjUubZ$$dHSz5GppEqUILVy6XeCgN",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/silver_zip_codes",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "RPMwjvRCF4gh0GyPqS6tH$$3iOuiHEFYwFRuE-py0k8C" : {
+      "id" : "RPMwjvRCF4gh0GyPqS6tH$$3iOuiHEFYwFRuE-py0k8C",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "raw_bronze",
+        "slug" : "raw_bronze",
+        "x" : 460,
+        "y" : 440
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "tvI_1445EjNwE_pxxF_TC$$3lVkA47LpboL1rnuw8eAG",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "BnfWeBedbZ_49y7JvNOuk$$2QMkwUGHkFpniAkmOaQho",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/raw_bronze",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "mK5TjFICbE4kEVgdecp5q$$o_CjDujc7g8C3z8mvDSn9" : {
+      "id" : "mK5TjFICbE4kEVgdecp5q$$o_CjDujc7g8C3z8mvDSn9",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "gold_sales",
+        "slug" : "gold_sales",
+        "x" : 1040,
+        "y" : 440
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "lZSG2qqJE-PWdHd2rGLKu$$9GsaEqnu10Vg4WkwqGnBk",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "yCvh_gejRoI_iv-NtBAku$$DOgio-3ZgTDjWBQjZn4Sr",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/gold_sales",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "nfIwB7iYP4bHcX7MELOPO$$Ebrjd71DZXpuDActLChu9" : {
+      "id" : "nfIwB7iYP4bHcX7MELOPO$$Ebrjd71DZXpuDActLChu9",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "silver_customers_orders",
+        "slug" : "silver_customers_orders",
+        "x" : 840,
+        "y" : 440
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "BGLVdWVyUgrPOGXlryLLi$$MMyOGQ0m5TZLQVH5oyWyp",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "DVy4UnrkTr5bspGytrsxU$$lyGLXZ00xi67LiFwMgSyX",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/silver_customers_orders",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "MqtM2fJ2bF1AbDqIHv6lo$$NZf93RF8Ob4kZ8bvMLYRS" : {
+      "id" : "MqtM2fJ2bF1AbDqIHv6lo$$NZf93RF8Ob4kZ8bvMLYRS",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "gold_top_customers",
+        "slug" : "gold_top_customers",
+        "x" : 1260,
+        "y" : 440
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nIT4hFq1YBKOfeTVDLnSK$$WpmdZbPKihEYNXpvBweHm",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "98cVy2YUUPaYXGyTR3PtE$$isgpe28Z7rMh1RdoNCWsI",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/gold_top_customers",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "dGLlgh0MlrH9oT1Mo-bI-$$Pw0Dl5zJnJmq5p_RPqASk",
+    "source" : "RPMwjvRCF4gh0GyPqS6tH$$3iOuiHEFYwFRuE-py0k8C",
+    "target" : "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY",
+    "sourcePort" : "BnfWeBedbZ_49y7JvNOuk$$2QMkwUGHkFpniAkmOaQho",
+    "targetPort" : "9SBpUfUKNNtvmvR2Xb9bQ$$FK-nU0qpgvL_1ugWz9uFn"
+  }, {
+    "id" : "xSWj4GmtmashBnCdsRS8d$$iTctJJjIyNujtaybWkAlB",
+    "source" : "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY",
+    "target" : "nfIwB7iYP4bHcX7MELOPO$$Ebrjd71DZXpuDActLChu9",
+    "sourcePort" : "mVOpOILZa7_KJoemjUubZ$$dHSz5GppEqUILVy6XeCgN",
+    "targetPort" : "BGLVdWVyUgrPOGXlryLLi$$MMyOGQ0m5TZLQVH5oyWyp"
+  }, {
+    "id" : "GckWlUd9Nguu_oLZ30W6I$$SEcMWKHRwoGhAOn7A4q9V",
+    "source" : "nfIwB7iYP4bHcX7MELOPO$$Ebrjd71DZXpuDActLChu9",
+    "target" : "mK5TjFICbE4kEVgdecp5q$$o_CjDujc7g8C3z8mvDSn9",
+    "sourcePort" : "DVy4UnrkTr5bspGytrsxU$$lyGLXZ00xi67LiFwMgSyX",
+    "targetPort" : "lZSG2qqJE-PWdHd2rGLKu$$9GsaEqnu10Vg4WkwqGnBk"
+  }, {
+    "id" : "oowG_EE4FIXfKdprl9aIO$$MGr4kiX9idK3aUjDMRIiD",
+    "source" : "mK5TjFICbE4kEVgdecp5q$$o_CjDujc7g8C3z8mvDSn9",
+    "target" : "MqtM2fJ2bF1AbDqIHv6lo$$NZf93RF8Ob4kZ8bvMLYRS",
+    "sourcePort" : "yCvh_gejRoI_iv-NtBAku$$DOgio-3ZgTDjWBQjZn4Sr",
+    "targetPort" : "nIT4hFq1YBKOfeTVDLnSK$$WpmdZbPKihEYNXpvBweHm"
+  } ]
+}
