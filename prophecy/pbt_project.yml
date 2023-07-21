@@ -1,6 +1,6 @@
 name: HelloWorld
 description: This is your personal project
-version: v0.7.0
+version: v0.9.1
 author: scott+demo2@prophecy.io
 language: python
 buildSystem: ''
