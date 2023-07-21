@@ -1,237 +1,147 @@
 name: HelloWorld
 description: This is your personal project
-version: v0.7.0
+version: v0.9.1
 author: scott+demo2@prophecy.io
 language: python
-buildSystem: wheel
+buildSystem: ''
+buildSystemDetails:
+  artefactID: helloworld
+  parentArtefactID: scott_demo2_team
+  buildSystem: wheel
+  author: null
+  createdAt: '2023-03-27 15:13:13'
 pipelines:
-  pipelines/report_top_customers:
-    name: report_top_customers
-    description: Prepare a report based on customers' spending
-    author: scott+demo2@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2022-12-14 19:37:59'
-    modifiedAt: '2022-12-14 19:37:59'
-    datasets:
-      inputs:
-      - datasets/customers_orders
-      outputs:
-      - datasets/report
-    dependencies: {}
-  pipelines/join_agg_sort:
-    name: join_agg_sort
-    description: Show an example of joining two datasets (customers and orders), aggregating
-      (sales by customer), sorting (by totals)
-    author: scott+demo2@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2022-12-14 19:37:59'
-    modifiedAt: '2022-12-14 19:37:59'
-    datasets:
-      inputs:
-      - datasets/customers
-      - datasets/orders
-      outputs:
-      - datasets/customer_totals
-    dependencies: {}
-  pipelines/farmers-markets-irs:
-    name: farmers-markets-irs
-    description: Exploration of Farmer's Market Locations By US Zip Code
-    author: scott+demo2@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2022-12-14 19:37:59'
-    modifiedAt: '2022-12-14 19:37:59'
-    datasets:
-      inputs:
-      - datasets/farmers-markets
-      - datasets/irs-zipcode-data
-      outputs:
-      - datasets/farmers_market_tax_report
-    dependencies: {}
-  pipelines/customers_orders:
-    name: customers_orders
-    description: Aggregates total spending's for each customer
-    author: scott+demo2@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2023-03-20 16:08:36'
-    datasets:
-      inputs: []
-      outputs:
-      - datasets/customers_orders
-    dependencies: {}
-  pipelines/cleanup_data:
-    name: cleanup_data
+  pipelines/silver_customers_orders:
+    name: silver_customers_orders
     description: ''
     author: scott+demo2@prophecy.io
     mode: batch
+    artefactID: ''
     language: python
-    createdAt: '2023-03-09 19:56:29'
-    modifiedAt: '2023-03-09 19:57:23'
+    createdAt: '2023-07-13 16:49:10'
     datasets:
-      inputs: []
-      outputs: []
+      inputs:
+      - datasets/bronze_customers
+      - datasets/bronze_orders
+      - datasets/silver_irs_zipcode
+      outputs:
+      - datasets/silver_customers
+      - datasets/silver_order_customer_details
+      - datasets/silver_orders
+    subgraphs: []
+    dependencies: {}
+  pipelines/gold_sales:
+    name: gold_sales
+    description: ''
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-07-13 18:32:25'
+    datasets:
+      inputs:
+      - datasets/silver_order_customer_details
+      outputs:
+      - datasets/gold_sales_by_zip_date
+      - datasets/gold_total_sales_by_customer
+    subgraphs: []
+    dependencies: {}
+  pipelines/gold_top_customers:
+    name: gold_top_customers
+    description: ''
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-07-13 18:45:24'
+    datasets:
+      inputs:
+      - datasets/gold_total_sales_by_customer
+      - datasets/silver_customers
+      - datasets/silver_irs_zipcode
+      outputs:
+      - datasets/gold_top50_customers_by_spend
+    subgraphs: []
+    dependencies: {}
+  pipelines/silver_zip_codes:
+    name: silver_zip_codes
+    description: ''
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-07-13 18:54:01'
+    datasets:
+      inputs:
+      - datasets/bronze_irs_zipcode
+      outputs:
+      - datasets/silver_irs_zipcode
+    subgraphs: []
+    dependencies: {}
+  pipelines/raw_bronze:
+    name: raw_bronze
+    description: ''
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-07-13 19:20:19'
+    datasets:
+      inputs:
+      - datasets/raw_customers
+      - datasets/raw_irs_zipcode
+      - datasets/raw_orders
+      outputs:
+      - datasets/bronze_customers
+      - datasets/bronze_irs_zipcode
+      - datasets/bronze_orders
+    subgraphs: []
     dependencies: {}
 datasets:
-  datasets/orders:
-    name: orders
-    description: All the orders placed by the customers
-    author: scott+demo2@prophecy.io
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2022-12-14 19:37:58'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 1342
-        datasetType: File
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2022-12-14 19:37:58'
-        modifiedAt: '2022-12-14 19:37:58'
-  datasets/irs-zipcode-data:
-    name: irs-zipcode-data
-    description: Irs zipcode data
-    author: scott+demo2@prophecy.io
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2022-12-14 19:37:58'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 1342
-        datasetType: File
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2022-12-14 19:37:58'
-        modifiedAt: '2022-12-14 19:37:58'
-  datasets/customers_orders:
-    name: customers_orders
-    description: Customers by total of their purchases
-    author: scott+demo2@prophecy.io
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2022-12-14 19:37:58'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 1342
-        datasetType: File
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2022-12-14 19:37:58'
-        modifiedAt: '2022-12-14 19:37:58'
-  datasets/customers:
-    name: customers
-    description: All the customers
-    author: scott+demo2@prophecy.io
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2022-12-14 19:37:58'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 1342
-        datasetType: File
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2022-12-14 19:37:58'
-        modifiedAt: '2022-12-14 19:37:58'
-  datasets/farmers_market_tax_report:
-    name: farmers_market_tax_report
-    description: Farmer's market tax report
-    author: scott+demo2@prophecy.io
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2022-12-14 19:37:58'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 1342
-        datasetType: File
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2022-12-14 19:37:58'
-        modifiedAt: '2022-12-14 19:37:58'
-  datasets/farmers-markets:
-    name: farmers-markets
-    description: Farmer's Market data
-    author: scott+demo2@prophecy.io
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2022-12-14 19:37:58'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 1342
-        datasetType: File
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2022-12-14 19:37:58'
-        modifiedAt: '2022-12-14 19:37:58'
-  datasets/historic_events_flat:
-    name: historic_events_flat
-    description: Historic events flat
-    author: scott+demo2@prophecy.io
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2022-12-14 19:37:58'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 1342
-        datasetType: File
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2022-12-14 19:37:58'
-        modifiedAt: '2022-12-14 19:37:58'
-  datasets/report:
-    name: report
-    description: Final report for the bank
-    author: scott+demo2@prophecy.io
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2022-12-14 19:37:58'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 1342
-        datasetType: File
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2022-12-14 19:37:58'
-        modifiedAt: '2022-12-14 19:37:58'
-  datasets/old_events:
-    name: old_events
-    description: Old events data
-    author: scott+demo2@prophecy.io
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2022-12-14 19:37:58'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 1342
-        datasetType: File
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2022-12-14 19:37:58'
-        modifiedAt: '2022-12-14 19:37:58'
-  datasets/customer_totals:
-    name: customer_totals
-    description: Customers by total of their purchases
-    author: scott+demo2@prophecy.io
-    createdAt: '2022-12-14 19:37:58'
-    modifiedAt: '2022-12-14 19:37:58'
-    mode: batch
-    physicalDatasets:
-      dev:
-        fabricId: 1342
-        datasetType: File
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2022-12-14 19:37:58'
-        modifiedAt: '2022-12-14 19:37:58'
-  datasets/scottdemo_customers_orders:
-    name: scottdemo_customers_orders
+  datasets/bronze_orders:
+    name: bronze_orders
     description: ''
     author: scott+demo2@prophecy.io
-    createdAt: '2023-02-14 19:02:49'
-    modifiedAt: '2023-02-14 19:02:49'
+    createdAt: '2023-07-12 21:07:12'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: File
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-12 21:07:12'
+  datasets/bronze_customers:
+    name: bronze_customers
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-12 21:08:08'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: File
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-12 21:08:08'
+  datasets/bronze_irs_zipcode:
+    name: bronze_irs_zipcode
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-12 21:09:09'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: File
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-12 21:09:09'
+  datasets/silver_irs_zipcode:
+    name: silver_irs_zipcode
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-13 16:59:23'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -239,8 +149,124 @@ datasets:
         datasetType: Database
         description: ''
         author: scott+demo2@prophecy.io
-        createdAt: '2023-02-14 19:02:49'
-        modifiedAt: '2023-02-14 19:02:49'
+        createdAt: '2023-07-13 16:59:23'
+  datasets/silver_orders:
+    name: silver_orders
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-13 17:02:28'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-13 17:02:28'
+  datasets/silver_customers:
+    name: silver_customers
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-13 17:13:56'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-13 17:13:56'
+  datasets/gold_total_sales_by_customer:
+    name: gold_total_sales_by_customer
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-13 17:43:15'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-13 17:43:15'
+  datasets/silver_order_customer_details:
+    name: silver_order_customer_details
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-13 18:23:03'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-13 18:23:03'
+  datasets/gold_sales_by_zip_date:
+    name: gold_sales_by_zip_date
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-13 18:38:51'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-13 18:38:51'
+  datasets/gold_top50_customers_by_spend:
+    name: gold_top50_customers_by_spend
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-13 19:05:05'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-13 19:05:05'
+  datasets/raw_customers:
+    name: raw_customers
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-13 19:22:07'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: File
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-13 19:22:07'
+  datasets/raw_orders:
+    name: raw_orders
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-13 19:22:43'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: File
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-13 19:22:43'
+  datasets/raw_irs_zipcode:
+    name: raw_irs_zipcode
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-07-13 19:23:27'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: File
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-07-13 19:23:27'
 templates: {}
 jobs:
   jobs/HelloProd-customers:
@@ -267,7 +293,6 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2023-02-10 03:28:19'
-    modifiedAt: '2023-02-10 03:28:19'
     author: scott+demo2@prophecy.io
   jobs/HelloDev-customers:
     name: HelloDev-customers
@@ -293,19 +318,56 @@ jobs:
       clusterId: null
     enabled: null
     createdAt: '2023-02-10 03:24:54'
-    modifiedAt: '2023-02-10 03:24:54'
     author: scott+demo2@prophecy.io
-libraries: []
-subgraphs:
-  subgraphs/CleanupSubgraph:
-    name: CleanupSubgraph
+  jobs/EndToEndJob:
+    name: EndToEndJob
     description: ''
+    fabricUID: 1571
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 ? * 1 *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/silver_customers_orders
+    - pipelines/silver_zip_codes
+    - pipelines/gold_sales
+    - pipelines/gold_top_customers
+    - pipelines/raw_bronze
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-07-13 19:31:54'
     author: scott+demo2@prophecy.io
-    language: python
-    mode: batch
-    createdAt: '2023-03-09 19:57:23'
-    modifiedAt: '2023-03-09 19:57:23'
+functions:
+  author: null
+  createdAt: '2023-03-27 15:13:13'
+  gems: {}
+  udfs:
+    udfs/rand_zip_index:
+      name: rand_zip_index
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: scott+demo2@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+  udafs: {}
+  expressions: {}
+subgraphs: {}
 sqlModels: {}
+sqlMacros: {}
+sqlSeeds: {}
+sqlSources: {}
+sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies: []
 projectDependencies: {}
