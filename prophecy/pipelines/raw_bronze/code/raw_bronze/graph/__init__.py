@@ -1,5 +1,6 @@
 from .bronze_orders import bronze_orders
 from .raw_customers import raw_customers
+from .SchemaTransform_1 import SchemaTransform_1
 from .bronze_irs_zipcode import bronze_irs_zipcode
 from .raw_irs_zipcode import raw_irs_zipcode
 from .ReformatCustomers import ReformatCustomers
