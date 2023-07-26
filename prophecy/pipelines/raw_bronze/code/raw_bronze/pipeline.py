@@ -13,7 +13,6 @@ def pipeline(spark: SparkSession) -> None:
     df_ReformatIRS = ReformatIRS(spark, df_raw_irs_zipcode)
     df_ReformatOrders = ReformatOrders(spark, df_raw_orders)
     df_raw_customers = raw_customers(spark)
-    df_SchemaTransform_1 = SchemaTransform_1(spark, df_raw_customers)
     df_ReformatCustomers = ReformatCustomers(spark, df_raw_customers)
     bronze_orders(spark, df_ReformatOrders)
     bronze_customers(spark, df_ReformatCustomers)
@@ -30,8 +29,14 @@ def main():
     Utils.initializeFromArgs(spark, parse_args())
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/raw_bronze")
     registerUDFs(spark)
-    
-    MetricsCollector.start(spark = spark, pipelineId = "pipelines/raw_bronze")
+
+    try:
+        
+        MetricsCollector.start(spark = spark, pipelineId = "pipelines/raw_bronze", config = Config)
+    except :
+        
+        MetricsCollector.start(spark = spark, pipelineId = "pipelines/raw_bronze")
+
     pipeline(spark)
     MetricsCollector.end(spark)
 

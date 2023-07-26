@@ -1,6 +1,7 @@
 {
   "metainfo" : {
     "id" : "1",
+    "uri" : "pipelines/gold_sales",
     "language" : "python",
     "fabricId" : "1571",
     "frontEndLanguage" : "sql",

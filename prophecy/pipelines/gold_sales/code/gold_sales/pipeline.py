@@ -27,8 +27,14 @@ def main():
     Utils.initializeFromArgs(spark, parse_args())
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/gold_sales")
     registerUDFs(spark)
-    
-    MetricsCollector.start(spark = spark, pipelineId = "pipelines/gold_sales")
+
+    try:
+        
+        MetricsCollector.start(spark = spark, pipelineId = "pipelines/gold_sales", config = Config)
+    except :
+        
+        MetricsCollector.start(spark = spark, pipelineId = "pipelines/gold_sales")
+
     pipeline(spark)
     MetricsCollector.end(spark)
 
