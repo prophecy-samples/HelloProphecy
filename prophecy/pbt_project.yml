@@ -63,6 +63,21 @@ pipelines:
       - datasets/gold_top50_customers_by_spend
     subgraphs: []
     dependencies: {}
+  pipelines/silver_zip_codes:
+    name: silver_zip_codes
+    description: ''
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-07-13 18:54:01'
+    datasets:
+      inputs:
+      - datasets/bronze_irs_zipcode
+      outputs:
+      - datasets/silver_irs_zipcode
+    subgraphs: []
+    dependencies: {}
   pipelines/raw_bronze:
     name: raw_bronze
     description: ''
@@ -82,19 +97,6 @@ pipelines:
       - datasets/bronze_orders
     subgraphs: []
     dependencies: {}
-  pipelines/ExtraPipeline:
-    name: ExtraPipeline
-    description: ''
-    author: scott+demo2@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2023-07-26 18:24:32'
-    datasets:
-      inputs: []
-      outputs: []
-    subgraphs: []
-    dependencies: {}
   pipelines/BranchAPipeline:
     name: BranchAPipeline
     description: ''
@@ -106,21 +108,6 @@ pipelines:
     datasets:
       inputs: []
       outputs: []
-    subgraphs: []
-    dependencies: {}
-  pipelines/silver_zip_codes:
-    name: silver_zip_codes
-    description: ''
-    author: scott+demo2@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2023-07-13 18:54:01'
-    datasets:
-      inputs:
-      - datasets/bronze_irs_zipcode
-      outputs:
-      - datasets/silver_irs_zipcode
     subgraphs: []
     dependencies: {}
 datasets:
