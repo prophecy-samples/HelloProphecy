@@ -97,19 +97,6 @@ pipelines:
       - datasets/bronze_orders
     subgraphs: []
     dependencies: {}
-  pipelines/ExtraPipeline:
-    name: ExtraPipeline
-    description: ''
-    author: scott+demo2@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2023-07-26 18:24:32'
-    datasets:
-      inputs: []
-      outputs: []
-    subgraphs: []
-    dependencies: {}
 datasets:
   datasets/bronze_orders:
     name: bronze_orders
