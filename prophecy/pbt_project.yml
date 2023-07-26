@@ -1,6 +1,6 @@
 name: HelloWorld
 description: This is your personal project
-version: v0.9.1
+version: 0.12.0
 author: scott+demo2@prophecy.io
 language: python
 buildSystem: ''
@@ -95,19 +95,6 @@ pipelines:
       - datasets/bronze_customers
       - datasets/bronze_irs_zipcode
       - datasets/bronze_orders
-    subgraphs: []
-    dependencies: {}
-  pipelines/ExtraPipeline:
-    name: ExtraPipeline
-    description: ''
-    author: scott+demo2@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2023-07-26 18:24:32'
-    datasets:
-      inputs: []
-      outputs: []
     subgraphs: []
     dependencies: {}
 datasets:
