@@ -1,6 +1,7 @@
 {
   "metainfo" : {
     "id" : "1",
+    "uri" : "pipelines/silver_customers_orders",
     "language" : "python",
     "fabricId" : "1571",
     "frontEndLanguage" : "sql",
@@ -928,6 +929,15 @@
               }
             }, {
               "name" : "account_flags",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "full_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
