@@ -97,19 +97,6 @@ pipelines:
       - datasets/bronze_orders
     subgraphs: []
     dependencies: {}
-  pipelines/ExtraPipeline:
-    name: ExtraPipeline
-    description: ''
-    author: scott+demo2@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2023-07-26 18:24:32'
-    datasets:
-      inputs: []
-      outputs: []
-    subgraphs: []
-    dependencies: {}
 datasets:
   datasets/bronze_orders:
     name: bronze_orders
@@ -282,56 +269,6 @@ datasets:
         createdAt: '2023-07-13 19:23:27'
 templates: {}
 jobs:
-  jobs/HelloProd-customers:
-    name: HelloProd-customers
-    description: ''
-    fabricUID: 1572
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 12 * * ? *
-    timeout: null
-    alerting:
-      emails: scott@prophecy.io
-      onStart: false
-      onSuccess: true
-      onFailure: true
-    pipelines:
-    - pipelines/customers_orders
-    - pipelines/report_top_customers
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: true
-    createdAt: '2023-02-10 03:28:19'
-    author: scott+demo2@prophecy.io
-  jobs/HelloDev-customers:
-    name: HelloDev-customers
-    description: ''
-    fabricUID: 1571
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0 * * ? *
-    timeout: null
-    alerting:
-      emails: scott@prophecy.io
-      onStart: false
-      onSuccess: true
-      onFailure: true
-    pipelines:
-    - pipelines/customers_orders
-    - pipelines/report_top_customers
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: null
-    createdAt: '2023-02-10 03:24:54'
-    author: scott+demo2@prophecy.io
   jobs/EndToEndJob:
     name: EndToEndJob
     description: ''
