@@ -125,7 +125,7 @@
               }
             }, {
               "name" : "amount",
-              "type" : "double",
+              "type" : "float",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -436,7 +436,7 @@
               }
             }, {
               "name" : "amount",
-              "type" : "double",
+              "type" : "float",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -565,7 +565,7 @@
               }
             }, {
               "name" : "amount",
-              "type" : "double",
+              "type" : "float",
               "nullable" : true,
               "metadata" : {
                 "description" : "",

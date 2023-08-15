@@ -1,6 +1,7 @@
 {
   "metainfo" : {
     "id" : "1",
+    "uri" : "pipelines/gold_top_customers",
     "language" : "python",
     "fabricId" : "1571",
     "frontEndLanguage" : "sql",
@@ -60,65 +61,21 @@
     "target" : "0VqVgj9CNr5HUE65Hzsw-$$ltsiOJ4twWeVvuuKLyOBW",
     "targetPort" : "k8DFmp-XAQYU18A2wNnip$$m5tFeDF37QkUePt1v5XGZ"
   }, {
-    "id" : "JDzvD6l_hPdf5pYjsDpv5$$KDfIpGKxEY7XBZ-NsBmTQ",
+    "id" : "wzPOk_lx3sb8HA629wlDc$$nAQmvnFUpFo1qO0kHvitO",
     "source" : "0VqVgj9CNr5HUE65Hzsw-$$ltsiOJ4twWeVvuuKLyOBW",
     "sourcePort" : "wUsB0Dga97QNF2tqvM8ca$$3jZNzR2bEU8oQ4mQq5UK-",
-    "target" : "jZl-BRXjYBuMagwal78eh$$cQuCnZDd39L-ChNfeNRjf",
-    "targetPort" : "xTpyZy-w-Ii-R2xPaR3sE$$c8_QAVAVUdBYYgN02wRtM"
-  }, {
-    "id" : "fQZHZIUUw93CIFAnz8iun",
-    "source" : "uZwVgZdppgqx4i_RuYdoA$$iVnEsLkSUKOiFlGQfNRH7",
-    "sourcePort" : "-tgjZy3ujl8Vf_h_pcBW5$$hoNduIS574dhxn9-TfUZv",
-    "target" : "jZl-BRXjYBuMagwal78eh$$cQuCnZDd39L-ChNfeNRjf",
-    "targetPort" : "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU"
-  }, {
-    "id" : "4zpl6ri_l8ShnmFtzo_5V",
-    "source" : "NmY6Y6ySefeqIGhh50ikX$$6rsdT6vF4uof8NMLPSzqu",
-    "sourcePort" : "2QFS84WyBkzYnLMgHh71Z$$vUTaOJHxU6lbV2WmPxvfK",
-    "target" : "jZl-BRXjYBuMagwal78eh$$cQuCnZDd39L-ChNfeNRjf",
-    "targetPort" : "nxUyxU12MM60GGj9EeMch$$qDHRhQTh0KTCk-R5Uy9HG"
-  }, {
-    "id" : "TXzDPaoM3lUPclE8kBG4O$$t3MgbG8sTWwcmfZJ6sR3g",
-    "source" : "jZl-BRXjYBuMagwal78eh$$cQuCnZDd39L-ChNfeNRjf",
-    "sourcePort" : "BelDJIxhST6DKp6Z0Y-yX$$IEPG8B8PllCZLlFdpUY0M",
     "target" : "tD0z7Hu8Y-buf6xKuj5Ad$$9e6S1OXpJ24f_rdDcTXDD",
     "targetPort" : "cqj0ijn3pMhxYuoG4qhon$$Up_Fk1qpTN_GpGMaunvMC"
   } ],
   "processes" : {
-    "uZwVgZdppgqx4i_RuYdoA$$iVnEsLkSUKOiFlGQfNRH7" : {
-      "id" : "uZwVgZdppgqx4i_RuYdoA$$iVnEsLkSUKOiFlGQfNRH7",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "silver_customers",
-        "slug" : "silver_customers",
-        "x" : 820,
-        "y" : 640,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "-tgjZy3ujl8Vf_h_pcBW5$$hoNduIS574dhxn9-TfUZv",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/silver_customers"
-      }
-    },
     "tD0z7Hu8Y-buf6xKuj5Ad$$9e6S1OXpJ24f_rdDcTXDD" : {
       "id" : "tD0z7Hu8Y-buf6xKuj5Ad$$9e6S1OXpJ24f_rdDcTXDD",
       "component" : "Target",
       "metadata" : {
         "label" : "gold_top50_customers_by_spend",
         "slug" : "gold_top50_customers_by_spend",
-        "x" : 1220,
-        "y" : 640,
+        "x" : 1040,
+        "y" : 500,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -131,6 +88,15 @@
           "schema" : {
             "type" : "struct",
             "fields" : [ {
+              "name" : "customer_id",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
               "name" : "orders",
               "type" : "long",
               "nullable" : false,
@@ -142,96 +108,6 @@
             }, {
               "name" : "total_spend",
               "type" : "double",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "customer_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "first_name",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "last_name",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "phone",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "email",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "zipcode",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "state",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "zipcode_is_high_income",
-              "type" : "boolean",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "account_open_date",
-              "type" : "date",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "account_flags",
-              "type" : "string",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -318,32 +194,6 @@
         } ]
       }
     },
-    "NmY6Y6ySefeqIGhh50ikX$$6rsdT6vF4uof8NMLPSzqu" : {
-      "id" : "NmY6Y6ySefeqIGhh50ikX$$6rsdT6vF4uof8NMLPSzqu",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "silver_irs_zipcode",
-        "slug" : "silver_irs_zipcode",
-        "x" : 820,
-        "y" : 780,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "2QFS84WyBkzYnLMgHh71Z$$vUTaOJHxU6lbV2WmPxvfK",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/silver_irs_zipcode"
-      }
-    },
     "z5re_BybsrU1NoAakKhHs$$mJHvXLjnDNcmck2eH7J7q" : {
       "id" : "z5re_BybsrU1NoAakKhHs$$mJHvXLjnDNcmck2eH7J7q",
       "component" : "Source",
@@ -368,351 +218,6 @@
       },
       "properties" : {
         "datasetId" : "datasets/gold_total_sales_by_customer"
-      }
-    },
-    "jZl-BRXjYBuMagwal78eh$$cQuCnZDd39L-ChNfeNRjf" : {
-      "id" : "jZl-BRXjYBuMagwal78eh$$cQuCnZDd39L-ChNfeNRjf",
-      "component" : "Join",
-      "metadata" : {
-        "label" : "JoinCustomerInfo",
-        "slug" : "JoinCustomerInfo",
-        "x" : 1040,
-        "y" : 640,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "xTpyZy-w-Ii-R2xPaR3sE$$c8_QAVAVUdBYYgN02wRtM",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "customer_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "orders",
-              "type" : "long",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "total_spend",
-              "type" : "double",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        }, {
-          "id" : "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU",
-          "slug" : "in1",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "customer_id",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "first_name",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "last_name",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "phone",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "email",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "zipcode",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "account_open_date",
-              "type" : "date",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "account_flags",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        }, {
-          "id" : "nxUyxU12MM60GGj9EeMch$$qDHRhQTh0KTCk-R5Uy9HG",
-          "slug" : "in2",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "zipcode",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "state",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "high_income_percent",
-              "type" : "double",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "high_income_returns",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "low_income_returns",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "all_returns",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "is_high_income",
-              "type" : "boolean",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "outputs" : [ {
-          "id" : "BelDJIxhST6DKp6Z0Y-yX$$IEPG8B8PllCZLlFdpUY0M",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "conditions" : [ {
-          "alias" : "in1",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in0.customer_id=in1.customer_id"
-          },
-          "joinType" : "inner"
-        }, {
-          "alias" : "in2",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in1.zipcode=in2.zipcode"
-          },
-          "joinType" : "inner"
-        } ],
-        "expressions" : [ {
-          "target" : "orders",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in0.orders"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "total_spend",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in0.total_spend"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "customer_id",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in0.customer_id"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "first_name",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in1.first_name"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "last_name",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in1.last_name"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "phone",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in1.phone"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "email",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in1.email"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "zipcode",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in1.zipcode"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "state",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in2.state"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "zipcode_is_high_income",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in2.is_high_income"
-          },
-          "description" : "",
-          "_row_id" : "c_1711"
-        }, {
-          "target" : "account_open_date",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in1.account_open_date"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "account_flags",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "in1.account_flags"
-          },
-          "description" : "",
-          "_row_id" : null
-        } ],
-        "hints" : [ {
-          "id" : "xTpyZy-w-Ii-R2xPaR3sE$$c8_QAVAVUdBYYgN02wRtM",
-          "alias" : "in0",
-          "hintType" : "none",
-          "propagateColumns" : false
-        }, {
-          "id" : "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU",
-          "alias" : "in1",
-          "hintType" : "none",
-          "propagateColumns" : false
-        }, {
-          "id" : "nxUyxU12MM60GGj9EeMch$$qDHRhQTh0KTCk-R5Uy9HG",
-          "alias" : "in2",
-          "hintType" : "none",
-          "propagateColumns" : false
-        } ],
-        "allIn1" : null,
-        "activeTab" : "expressions",
-        "columnsSelector" : [ "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU##zipcode", "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU##customer_id", "xTpyZy-w-Ii-R2xPaR3sE$$c8_QAVAVUdBYYgN02wRtM##customer_id", "nxUyxU12MM60GGj9EeMch$$qDHRhQTh0KTCk-R5Uy9HG##zipcode", "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU##first_name", "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU##email", "nxUyxU12MM60GGj9EeMch$$qDHRhQTh0KTCk-R5Uy9HG##state", "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU##account_open_date", "xTpyZy-w-Ii-R2xPaR3sE$$c8_QAVAVUdBYYgN02wRtM##total_spend", "nxUyxU12MM60GGj9EeMch$$qDHRhQTh0KTCk-R5Uy9HG##is_high_income", "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU##zipcode", "xTpyZy-w-Ii-R2xPaR3sE$$c8_QAVAVUdBYYgN02wRtM##customer_id", "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU##phone", "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU##last_name", "2K1Br6hGVGEogAndLKai0$$oYcPMdPtz4HYDUX8UExaU##account_flags", "xTpyZy-w-Ii-R2xPaR3sE$$c8_QAVAVUdBYYgN02wRtM##orders" ],
-        "allIn0" : null,
-        "whereClause" : null,
-        "headAlias" : "in0"
       }
     },
     "0VqVgj9CNr5HUE65Hzsw-$$ltsiOJ4twWeVvuuKLyOBW" : {

@@ -6,55 +6,65 @@ schema:
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Customer ID
       mappings: []
-      tags: []
+      tags:
+      - type: user
+        name: primary
   - name: first_name
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Customer first name
       mappings: []
-      tags: []
+      tags:
+      - type: user
+        name: pii
   - name: last_name
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Customer last name
       mappings: []
-      tags: []
+      tags:
+      - type: user
+        name: pii
   - name: phone
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Customer phone number
       mappings: []
-      tags: []
+      tags:
+      - type: user
+        name: pii
   - name: email
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Customer Email
       mappings: []
-      tags: []
+      tags:
+      - type: user
+        name: pii
   - name: country_code
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Customer country code
       mappings: []
       tags: []
   - name: account_open_date
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: The date the the Customer opened their account
       mappings: []
       tags: []
   - name: account_flags
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Customer account flags
       mappings: []
       tags: []

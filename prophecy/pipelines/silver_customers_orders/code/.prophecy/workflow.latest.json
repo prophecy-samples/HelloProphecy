@@ -140,7 +140,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Order status",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -149,7 +149,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Order category",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -216,36 +216,48 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer first name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "last_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer last name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "phone",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer phone number",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "email",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer Email",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "zipcode",
@@ -270,7 +282,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer account flags",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -381,7 +393,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Order status",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -390,7 +402,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Order category",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -434,36 +446,48 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer first name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "last_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer last name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "phone",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer phone number",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "email",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer Email",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "zipcode",
@@ -488,7 +512,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer account flags",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -776,18 +800,24 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer first name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "last_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer last name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "zipcode",
@@ -803,7 +833,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer account flags",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -878,43 +908,55 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer first name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "last_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer last name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "phone",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer phone number",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "email",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer Email",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "country_code",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer country code",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -932,7 +974,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer account flags",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -1069,7 +1111,7 @@
         } ],
         "allIn1" : null,
         "activeTab" : "expressions",
-        "columnsSelector" : [ "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##customer_id", "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p##row_number", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##phone", "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p##zipcode", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##account_flags", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##account_open_date", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##last_name", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##customer_id", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##email", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##first_name" ],
+        "columnsSelector" : [ "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##customer_id", "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p##row_number", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##customer_id", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##account_open_date", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##account_flags", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##email", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##last_name", "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p##zipcode", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##first_name", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##phone" ],
         "allIn0" : null,
         "whereClause" : null,
         "headAlias" : "in0"

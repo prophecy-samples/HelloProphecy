@@ -17,7 +17,7 @@ schema:
       mappings: []
       tags: []
   - name: amount
-    type: double
+    type: float
     nullable: true
     metadata:
       description: ''
