@@ -57,8 +57,6 @@ pipelines:
     datasets:
       inputs:
       - datasets/gold_total_sales_by_customer
-      - datasets/silver_customers
-      - datasets/silver_irs_zipcode
       outputs:
       - datasets/gold_top50_customers_by_spend
     subgraphs: []
@@ -95,19 +93,6 @@ pipelines:
       - datasets/bronze_customers
       - datasets/bronze_irs_zipcode
       - datasets/bronze_orders
-    subgraphs: []
-    dependencies: {}
-  pipelines/BranchAPipeline:
-    name: BranchAPipeline
-    description: ''
-    author: scott+demo2@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2023-07-26 18:30:54'
-    datasets:
-      inputs: []
-      outputs: []
     subgraphs: []
     dependencies: {}
 datasets:
