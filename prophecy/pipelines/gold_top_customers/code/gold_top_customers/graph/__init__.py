@@ -1,7 +1,4 @@
 from .Top50 import Top50
-from .JoinCustomerInfo import JoinCustomerInfo
-from .silver_irs_zipcode import silver_irs_zipcode
 from .gold_top50_customers_by_spend import gold_top50_customers_by_spend
 from .OrderByTotalSpend import OrderByTotalSpend
 from .gold_total_sales_by_customer import gold_total_sales_by_customer
-from .silver_customers import silver_customers

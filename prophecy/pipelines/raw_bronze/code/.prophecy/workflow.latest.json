@@ -2024,25 +2024,31 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Order ID",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                } ]
               }
             }, {
               "name" : "customer_id",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer ID",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "order_status",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Order status",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -2051,7 +2057,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Order category",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -2060,7 +2066,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Date the order was made",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -2069,7 +2075,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Total amount for the order",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -2158,52 +2164,67 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer ID",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "primary"
+                } ]
               }
             }, {
               "name" : "first_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer first name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "last_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer last name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "phone",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer phone number",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "email",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer Email",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "country_code",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer country code",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -2212,7 +2233,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "The date the the Customer opened their account",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -2221,7 +2242,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer account flags",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -2304,7 +2325,7 @@
         } ],
         "importString" : "customer_id,cast(customer_id as int)\nfirst_name,first_name\nlast_name,last_name\nphone,phone\nemail,email\ncountry_code,country_code\naccount_open_date,cast(account_open_date as date)\naccount_flags,account_flags\nfull_name,``concat(first_name, last_name)``",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##country_code", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##first_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##phone", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##last_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_flags", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##email" ]
+        "columnsSelector" : [ "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_flags", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##first_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##email", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##phone", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##last_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##country_code" ]
       }
     },
     "iglnhNUK82jUsoZuECDVd$$M5o0AceH5z7ARLWUc78wr" : {
@@ -2349,7 +2370,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Order status",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -2358,7 +2379,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Order category",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -2451,43 +2472,55 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer first name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "last_name",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer last name",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "phone",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer phone number",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "email",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer Email",
                 "mappings" : [ ],
-                "tags" : [ ]
+                "tags" : [ {
+                  "type" : "user",
+                  "name" : "pii"
+                } ]
               }
             }, {
               "name" : "country_code",
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer country code",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -2505,7 +2538,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "",
+                "description" : "Customer account flags",
                 "mappings" : [ ],
                 "tags" : [ ]
               }

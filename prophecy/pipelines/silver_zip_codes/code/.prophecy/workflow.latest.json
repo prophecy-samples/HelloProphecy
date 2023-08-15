@@ -279,8 +279,8 @@
         "allowSelection" : true,
         "pivotColumn" : null,
         "pivotValues" : [ ],
-        "activeTab" : "aggregate",
-        "columnsSelector" : [ "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##state", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##income_bracket", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##num_returns", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##zipcode" ],
+        "activeTab" : "groupBy",
+        "columnsSelector" : [ "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##income_bracket", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##state", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##num_returns", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##zipcode" ],
         "groupBy" : [ {
           "target" : "zipcode",
           "expression" : {
