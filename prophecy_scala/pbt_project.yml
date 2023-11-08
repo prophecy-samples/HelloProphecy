@@ -1,0 +1,323 @@
+name: HelloProphecyScala
+description: ''
+version: 0.0.1
+author: scott+demo2@prophecy.io
+language: scala
+buildSystem: ''
+buildSystemDetails:
+  artefactID: helloprophecyscala
+  parentArtefactID: scott_demo2_team
+  buildSystem: maven
+  author: null
+  createdAt: '2023-08-14 22:44:10'
+pipelines:
+  pipelines/raw_bronze:
+    name: raw_bronze
+    description: Load from raw CSV files to the Bronze (L0) layer
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: scala
+    createdAt: '2023-08-14 22:44:10'
+    datasets:
+      inputs:
+      - datasets/raw_customers
+      - datasets/raw_irs_zipcode
+      - datasets/raw_orders
+      outputs:
+      - datasets/bronze_customers
+      - datasets/bronze_irs_zipcode
+      - datasets/bronze_orders
+    subgraphs: []
+    dependencies: {}
+  pipelines/silver_customers_orders:
+    name: silver_customers_orders
+    description: Pipeline to join Customers and Orders from the Bronze (L0) layer
+      into the Silver (L1) layer
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: scala
+    createdAt: '2023-08-14 23:02:04'
+    datasets:
+      inputs:
+      - datasets/bronze_customers
+      - datasets/bronze_orders
+      - datasets/silver_irs_zipcode
+      outputs:
+      - datasets/silver_customers
+      - datasets/silver_orders
+      - datasets/silver_orders_customer_details
+    subgraphs: []
+    dependencies: {}
+  pipelines/silver_zip_codes:
+    name: silver_zip_codes
+    description: Process Bronze (L0) layer IRS data into Silver (L1) layer
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: scala
+    createdAt: '2023-08-14 23:12:30'
+    datasets:
+      inputs:
+      - datasets/bronze_irs_zipcode
+      outputs:
+      - datasets/silver_irs_zipcode
+    subgraphs: []
+    dependencies: {}
+  pipelines/gold_sales:
+    name: gold_sales
+    description: Process Silver(L1) sales data into Gold (L2) layer
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: scala
+    createdAt: '2023-08-14 23:59:46'
+    datasets:
+      inputs:
+      - datasets/silver_orders_customer_details
+      outputs:
+      - datasets/gold_sales_by_zip_date
+      - datasets/gold_total_sales_by_customer
+    subgraphs: []
+    dependencies: {}
+  pipelines/gold_top_customers:
+    name: gold_top_customers
+    description: 'Process Gold (L2) sales data back into Gold (L2) layer '
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: scala
+    createdAt: '2023-08-15 00:08:49'
+    datasets:
+      inputs:
+      - datasets/gold_total_sales_by_customer
+      outputs:
+      - datasets/gold_top50_customers_by_spend
+    subgraphs: []
+    dependencies: {}
+datasets:
+  datasets/raw_customers:
+    name: raw_customers
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-14 22:45:42'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: File
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-14 22:45:42'
+  datasets/bronze_customers:
+    name: bronze_customers
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-14 22:55:48'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-14 22:55:48'
+  datasets/raw_orders:
+    name: raw_orders
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-14 22:56:23'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: File
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-14 22:56:23'
+  datasets/raw_irs_zipcode:
+    name: raw_irs_zipcode
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-14 22:57:05'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: File
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-14 22:57:05'
+  datasets/bronze_orders:
+    name: bronze_orders
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-14 22:59:16'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-14 22:59:16'
+  datasets/bronze_irs_zipcode:
+    name: bronze_irs_zipcode
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-14 22:59:57'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-14 22:59:57'
+  datasets/silver_orders:
+    name: silver_orders
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-14 23:03:32'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-14 23:03:32'
+  datasets/silver_irs_zipcode:
+    name: silver_irs_zipcode
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-14 23:45:26'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-14 23:45:26'
+  datasets/silver_orders_customer_details:
+    name: silver_orders_customer_details
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-14 23:52:04'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-14 23:52:04'
+  datasets/silver_customers:
+    name: silver_customers
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-14 23:52:49'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-14 23:52:49'
+  datasets/gold_sales_by_zip_date:
+    name: gold_sales_by_zip_date
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-15 00:04:29'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-15 00:04:29'
+  datasets/gold_total_sales_by_customer:
+    name: gold_total_sales_by_customer
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-15 00:07:02'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-15 00:07:02'
+  datasets/gold_top50_customers_by_spend:
+    name: gold_top50_customers_by_spend
+    description: ''
+    author: scott+demo2@prophecy.io
+    createdAt: '2023-08-15 00:15:43'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1571
+        datasetType: Database
+        description: ''
+        author: scott+demo2@prophecy.io
+        createdAt: '2023-08-15 00:15:43'
+templates: {}
+jobs:
+  jobs/EndToEndJob:
+    name: EndToEndJob
+    description: Run the entire HelloProphecy process from end to end
+    fabricUID: 1571
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1/1 * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/silver_customers_orders
+    - pipelines/silver_zip_codes
+    - pipelines/gold_sales
+    - pipelines/gold_top_customers
+    - pipelines/raw_bronze
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-08-15 00:41:43'
+    author: scott+demo2@prophecy.io
+functions:
+  author: null
+  createdAt: '2023-08-14 22:44:10'
+  gems: {}
+  udfs:
+    udfs/rand_zip_index:
+      name: rand_zip_index
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: scott+demo2@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+  udafs: {}
+  expressions: {}
+subgraphs: {}
+sqlModels: {}
+sqlMacros: {}
+sqlSeeds: {}
+sqlSources: {}
+sqlUnreferencedSources: {}
+sqlPipeline: null
+dependencies: '[]'
+projectDependencies: {}
+pipelineConfigurations: {}
