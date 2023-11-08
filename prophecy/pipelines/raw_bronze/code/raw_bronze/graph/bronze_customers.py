@@ -7,4 +7,4 @@ from raw_bronze.config.ConfigStore import *
 from raw_bronze.udfs.UDFs import *
 
 def bronze_customers(spark: SparkSession, in0: DataFrame):
-    in0.write.format("delta").mode("overwrite").saveAsTable(f"scottdemo.bronze_customers")
+    in0.write.format("delta").mode("overwrite").saveAsTable("`scottdemo`.`bronze_customers`")

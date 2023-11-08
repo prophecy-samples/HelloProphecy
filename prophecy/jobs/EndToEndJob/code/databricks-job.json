@@ -10,6 +10,14 @@
     }
   }, {
     "PipelineComponent" : {
+      "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/raw_bronze-1.0-py3-none-any.whl",
+      "nodeName" : "raw_bronze_1",
+      "id" : "uljmMvyC1AxYNIoYPqsGm$$d-RvN4Ddbk51YPlhV9ZEU",
+      "language" : "python",
+      "pipelineId" : "pipelines/raw_bronze"
+    }
+  }, {
+    "PipelineComponent" : {
       "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/silver_zip_codes-1.0-py3-none-any.whl",
       "nodeName" : "silver_zip_codes",
       "id" : "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY",
@@ -79,11 +87,32 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.6"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.5.10"
+          "package" : "prophecy-libs==1.6.9"
+        }
+      }, {
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/raw_bronze-1.0-py3-none-any.whl"
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0
+    }, {
+      "task_key" : "raw_bronze_1",
+      "job_cluster_key" : "EndToEndJob_default_small",
+      "python_wheel_task" : {
+        "package_name" : "raw_bronze",
+        "entry_point" : "main",
+        "parameters" : [ "-i", "default", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"
+        }
+      }, {
+        "pypi" : {
+          "package" : "prophecy-libs==1.6.9"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/raw_bronze-1.0-py3-none-any.whl"
@@ -94,6 +123,8 @@
       "task_key" : "silver_zip_codes",
       "depends_on" : [ {
         "task_key" : "raw_bronze"
+      }, {
+        "task_key" : "raw_bronze_1"
       } ],
       "job_cluster_key" : "EndToEndJob_default_small",
       "python_wheel_task" : {
@@ -103,11 +134,11 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.6"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.5.10"
+          "package" : "prophecy-libs==1.6.9"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/silver_zip_codes-1.0-py3-none-any.whl"
@@ -127,11 +158,11 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.6"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.5.10"
+          "package" : "prophecy-libs==1.6.9"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/silver_customers_orders-1.0-py3-none-any.whl"
@@ -151,11 +182,11 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.6"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.5.10"
+          "package" : "prophecy-libs==1.6.9"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/gold_sales-1.0-py3-none-any.whl"
@@ -175,11 +206,11 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.6"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"
         }
       }, {
         "pypi" : {
-          "package" : "prophecy-libs==1.5.10"
+          "package" : "prophecy-libs==1.6.9"
         }
       }, {
         "whl" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/gold_top_customers-1.0-py3-none-any.whl"
@@ -198,5 +229,5 @@
     "clusterMode" : "Single"
   },
   "secret_scope" : "prophecy_jobs_2905",
-  "sorted_processes" : [ "RPMwjvRCF4gh0GyPqS6tH$$3iOuiHEFYwFRuE-py0k8C", "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY", "nfIwB7iYP4bHcX7MELOPO$$Ebrjd71DZXpuDActLChu9", "mK5TjFICbE4kEVgdecp5q$$o_CjDujc7g8C3z8mvDSn9", "MqtM2fJ2bF1AbDqIHv6lo$$NZf93RF8Ob4kZ8bvMLYRS" ]
+  "sorted_processes" : [ "moZNbkw5gs5bhFqUOHlvI$$6Tg7iUjtqlu6CeR8vLEse", "RPMwjvRCF4gh0GyPqS6tH$$3iOuiHEFYwFRuE-py0k8C", "uljmMvyC1AxYNIoYPqsGm$$d-RvN4Ddbk51YPlhV9ZEU", "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY", "nfIwB7iYP4bHcX7MELOPO$$Ebrjd71DZXpuDActLChu9", "mK5TjFICbE4kEVgdecp5q$$o_CjDujc7g8C3z8mvDSn9", "MqtM2fJ2bF1AbDqIHv6lo$$NZf93RF8Ob4kZ8bvMLYRS" ]
 }

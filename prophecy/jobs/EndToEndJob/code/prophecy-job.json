@@ -150,13 +150,53 @@
         }
       }
     },
+    "uljmMvyC1AxYNIoYPqsGm$$d-RvN4Ddbk51YPlhV9ZEU" : {
+      "id" : "uljmMvyC1AxYNIoYPqsGm$$d-RvN4Ddbk51YPlhV9ZEU",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "raw_bronze_1",
+        "slug" : "raw_bronze_1",
+        "x" : 460,
+        "y" : 300
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "u1Bu_41CP63f6-jGraYv_$$Go_lQWf5FKKKotJqwUL4i",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "_oi7ghQhaSYU2eKUjt6yR$$fZQnBguIfNu432FNGKkHw",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/raw_bronze",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
     "mK5TjFICbE4kEVgdecp5q$$o_CjDujc7g8C3z8mvDSn9" : {
       "id" : "mK5TjFICbE4kEVgdecp5q$$o_CjDujc7g8C3z8mvDSn9",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "gold_sales",
         "slug" : "gold_sales",
-        "x" : 1040,
+        "x" : 1060,
         "y" : 440
       },
       "ports" : {
@@ -221,7 +261,16 @@
       "properties" : {
         "pipelineId" : "pipelines/silver_customers_orders",
         "configurations" : {
-          "schema" : [ ],
+          "schema" : [ {
+            "name" : "ZipCodes",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          } ],
           "instances" : {
             "HelloProphecy" : [ "default" ]
           },
@@ -236,7 +285,7 @@
       "metadata" : {
         "label" : "gold_top_customers",
         "slug" : "gold_top_customers",
-        "x" : 1260,
+        "x" : 1280,
         "y" : 440
       },
       "ports" : {
@@ -295,5 +344,11 @@
     "target" : "MqtM2fJ2bF1AbDqIHv6lo$$NZf93RF8Ob4kZ8bvMLYRS",
     "sourcePort" : "yCvh_gejRoI_iv-NtBAku$$DOgio-3ZgTDjWBQjZn4Sr",
     "targetPort" : "nIT4hFq1YBKOfeTVDLnSK$$WpmdZbPKihEYNXpvBweHm"
+  }, {
+    "id" : "NvaVXU3eT7-MXE0w-mR8C",
+    "source" : "uljmMvyC1AxYNIoYPqsGm$$d-RvN4Ddbk51YPlhV9ZEU",
+    "target" : "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY",
+    "sourcePort" : "_oi7ghQhaSYU2eKUjt6yR$$fZQnBguIfNu432FNGKkHw",
+    "targetPort" : "9SBpUfUKNNtvmvR2Xb9bQ$$FK-nU0qpgvL_1ugWz9uFn"
   } ]
 }

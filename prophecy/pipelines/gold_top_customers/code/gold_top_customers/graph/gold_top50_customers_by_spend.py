@@ -7,4 +7,4 @@ from gold_top_customers.config.ConfigStore import *
 from gold_top_customers.udfs.UDFs import *
 
 def gold_top50_customers_by_spend(spark: SparkSession, in0: DataFrame):
-    in0.write.format("delta").mode("overwrite").saveAsTable(f"scottdemo.gold_top50_customers_by_spend")
+    in0.write.format("delta").mode("overwrite").saveAsTable("`scottdemo`.`gold_top50_customers_by_spend`")

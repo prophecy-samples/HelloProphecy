@@ -7,4 +7,4 @@ from silver_customers_orders.config.ConfigStore import *
 from silver_customers_orders.udfs.UDFs import *
 
 def silver_order_customer_details(spark: SparkSession, in0: DataFrame):
-    in0.write.format("delta").mode("overwrite").saveAsTable(f"scottdemo.silver_order_customer_details")
+    in0.write.format("delta").mode("overwrite").saveAsTable("`scottdemo`.`silver_order_customer_details`")
