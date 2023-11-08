@@ -78,7 +78,20 @@ pipelines:
     dependencies: {}
   pipelines/raw_bronze:
     name: raw_bronze
-    description: ''
+    description: The pipeline consists of several modules that read in and manipulate
+      data related to customers, orders, and IRS tax data. The raw_customers module
+      reads in customer data from a CSV file and creates a Spark DataFrame with a
+      specified schema. The bronze_orders module writes the input DataFrame to a Delta
+      Lake table for efficient querying and analysis of payment data. The ReformatCustomers
+      module reformats customer data for improved quality and consistency. The raw_orders
+      module reads in raw order data and creates a DataFrame with a specified schema.
+      The ReformatIRS module reformats IRS tax data for easier analysis and reporting.
+      The ReformatOrders module reformats order data for improved consistency and
+      accuracy. The bronze_irs_zipcode module saves the input DataFrame as a Delta
+      table for data warehousing and analysis. The bronze_customers module writes
+      the input DataFrame to a Delta table for further data processing and analysis.
+      The raw_irs_zipcode module reads in IRS tax data by zip code and aggregates
+      it into a Spark DataFrame for further analysis and insights.
     author: scott+demo2@prophecy.io
     mode: batch
     artefactID: ''
@@ -295,10 +308,51 @@ jobs:
     enabled: null
     createdAt: '2023-07-13 19:31:54'
     author: scott+demo2@prophecy.io
+  jobs/AirflowEndToEndJob:
+    name: AirflowEndToEndJob
+    description: ''
+    fabricUID: 6726
+    scheduler:
+      Prophecy: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: None
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/silver_customers_orders
+    - pipelines/silver_zip_codes
+    - pipelines/gold_sales
+    - pipelines/gold_top_customers
+    - pipelines/raw_bronze
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-11-08 17:35:57'
+    author: scott+demo2@prophecy.io
+gemContainer:
+  languageVersion: '3.10'
+  gemLibsVersion: 1.3.4.0
+  gems:
+    gems/MyLimit:
+      name: MyLimit
+      category: Transform
+      subCategory: ''
+      description: null
+      author: scott+demo2@prophecy.io
+      mode: batch
+      files:
+      - scott_demo2_team_helloworld/gems/MyLimit.py
+      createdAt: '2023-11-08 18:07:56'
 functions:
   author: null
   createdAt: '2023-03-27 15:13:13'
-  gems: {}
   udfs:
     udfs/rand_zip_index:
       name: rand_zip_index
@@ -318,5 +372,21 @@ sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies: []
-projectDependencies: {}
+projectDependencies:
+  '12654':
+    projectUID: 12654
+    projectName: ProphecySparkBasicsPython
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=
+    version: 0.0.4
+    isDefault: true
+    author: null
+    createdAt: '2023-09-28 08:42:10'
+  '12655':
+    projectUID: 12655
+    projectName: ProphecyWarehousePython
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12655.git&subPath=
+    version: 0.0.2
+    isDefault: true
+    author: null
+    createdAt: '2023-09-28 08:42:10'
 pipelineConfigurations: {}

@@ -1,5 +1,8 @@
 {
   "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
     "id" : "1",
     "uri" : "pipelines/raw_bronze",
     "language" : "python",
@@ -10,7 +13,7 @@
       "language" : "python",
       "udfs" : [ ],
       "functionPackageName" : "scott_demo2_team.helloworld.functions",
-      "sharedFunctionPackageNames" : [ ]
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
     },
     "udafs" : {
       "language" : "python",
@@ -36,7 +39,15 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
-    "dependentProjectExternalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -97,7 +108,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem reads in raw order data from a CSV file and creates a DataFrame with a specified schema. The schema includes fields for order ID, customer ID, order status, order category, order date, and amount. This allows for easy manipulation and analysis of the order data within the Spark environment."
       },
       "ports" : {
         "inputs" : [ ],
@@ -106,7 +118,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/raw_orders"
@@ -123,7 +136,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem reformats IRS data by selecting specific columns and renaming them for easier analysis and reporting. The selected columns include information on state, zip code, income, tax deductions, and various tax credits. This could be useful for tax planning, policy analysis, and research on income inequality."
       },
       "ports" : {
         "inputs" : [ {
@@ -1166,7 +1180,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
@@ -1971,7 +1986,11 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A02650", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N59660", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00650", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N10600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##MARS2", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A01400", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##MARS4", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N85300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N2", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03230", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00101", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00200", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07240", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A10960", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03210", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A04800", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N26270", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A85300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A01000", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A59660", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N11901", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N02300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N06500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##agi_stub", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A09400", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A11902", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N04470", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N10960", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N19300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N09400", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03270", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N02650", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07180", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N59720", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00200", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07230", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##MARS1", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A02300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07100", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07260", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03240", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##SCHF", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N18450", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03240", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N11070", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A18425", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A85330", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07180", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N85330", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N18300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07220", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##STATE", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N02900", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##STATEFIPS", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A18450", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A11070", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00900", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00100", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A01700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A11901", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03220", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03150", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A06500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07230", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##zipcode", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A19300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N02500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A04470", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A02500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03230", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00650", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07220", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N10300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03270", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03150", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N05800", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N01700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07260", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A10300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A05800", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N18500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03220", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N01400", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N19700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N11902", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07240", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A10600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07100", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N04800", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##NUMDEP", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N01000", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N18425", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00900", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A26270", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A18300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A02900", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A19700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A09600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##PREP", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N09600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A59720", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03210", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A18500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N1" ]
+        "columnsSelector" : [ "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A26270", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03210", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A04470", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N18300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N09400", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A09600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A85330", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03210", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A05800", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N09600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07260", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A01400", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N1", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N02500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A10300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N18450", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00650", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03150", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07180", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##zipcode", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A02300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N2", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A09400", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03230", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A01700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A02650", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##STATEFIPS", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N18425", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03220", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03270", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##SCHF", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##NUMDEP", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##STATE", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N10600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N19700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03270", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N59660", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03240", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00200", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A18425", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N11902", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07240", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07180", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07240", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##MARS2", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N06500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00200", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07220", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07230", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##agi_stub", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N10960", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03220", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07100", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N11901", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N85330", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A04800", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A59720", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03150", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##PREP", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N02900", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A18450", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07230", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A03240", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A10600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00900", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A19700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N18500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07100", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N85300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N59720", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A85300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00101", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A06500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A11070", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00650", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N04800", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N03230", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A59660", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N04470", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A18500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00100", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N01400", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A11902", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A18300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##MARS1", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N02300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A19300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N02650", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A01000", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A00600", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N01000", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N26270", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N19300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N05800", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00900", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N11070", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A02900", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A07220", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A10960", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##MARS4", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N00700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N01700", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A02500", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N07260", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##N10300", "iwG9Ea_Z68m8cxc-WUB8Q$$ezfAsvCIzHQI4G4rzsuTl##A11901" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
       }
     },
     "z_791NI970teHg6lAJKkf$$cDZauHUFPDYEG2r0zfnkj" : {
@@ -1985,7 +2004,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem reads in a CSV file containing IRS tax data by zip code and aggregates it into a Spark DataFrame. The schema is defined explicitly using StructType and StructField, and the CSV file is read in using the spark.read method with options for header and separator. This DataFrame can be used for further analysis and insights into tax data by zip code."
       },
       "ports" : {
         "inputs" : [ ],
@@ -1994,7 +2014,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/raw_irs_zipcode"
@@ -2011,7 +2032,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem reformats the data types of the order_id, customer_id, order_date, and amount fields to their appropriate data types. This ensures data consistency and accuracy, and makes it easier to perform calculations and analyses on the data."
       },
       "ports" : {
         "inputs" : [ {
@@ -2088,7 +2110,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
@@ -2137,7 +2160,11 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##amount", "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##order_category", "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##order_id", "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##customer_id", "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##order_status", "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##order_date" ]
+        "columnsSelector" : [ "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##order_status", "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##customer_id", "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##order_date", "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##amount", "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##order_category", "w15kbXDtgjnqDzVsRsmq8$$dSLPmly01BLBRr7z0gEW-##order_id" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
       }
     },
     "ZSyGtVMGJyq1pGcVW7KeN$$M3lUEpf8rtN0AEQlLugRA" : {
@@ -2151,7 +2178,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem reformats customer data by casting the customer_id and account_open_date fields to their respective data types. It also concatenates the first name and last name fields into a single full name field. This could improve data quality and consistency, and make it easier for business users to work with the data."
       },
       "ports" : {
         "inputs" : [ {
@@ -2255,7 +2283,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
@@ -2325,7 +2354,11 @@
         } ],
         "importString" : "customer_id,cast(customer_id as int)\nfirst_name,first_name\nlast_name,last_name\nphone,phone\nemail,email\ncountry_code,country_code\naccount_open_date,cast(account_open_date as date)\naccount_flags,account_flags\nfull_name,``concat(first_name, last_name)``",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_flags", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##first_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##email", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##phone", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##last_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##country_code" ]
+        "columnsSelector" : [ "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_open_date", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##customer_id", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##email", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##country_code", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##last_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_flags", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##first_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##phone" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
       }
     },
     "iglnhNUK82jUsoZuECDVd$$M5o0AceH5z7ARLWUc78wr" : {
@@ -2339,7 +2372,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem writes the input DataFrame to a Delta Lake table named \"bronze_orders\" in the \"scottdemo\" database. This could be used for data storage and management, and to enable efficient querying and analysis of the payment data."
       },
       "ports" : {
         "inputs" : [ {
@@ -2407,7 +2441,8 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/bronze_orders"
@@ -2424,7 +2459,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem reads in a CSV file containing customer data and creates a Spark DataFrame with the specified schema. The CSV file is located in a DBFS directory and is read in using the specified options for header, separator, and schema. This provides a way to easily access and manipulate customer data within a Spark environment."
       },
       "ports" : {
         "inputs" : [ ],
@@ -2433,7 +2469,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/raw_customers"
@@ -2450,7 +2487,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem writes the input DataFrame to a Delta table named \"bronze_customers\" in the \"scottdemo\" database. This could be used as a staging area for further data processing and analysis."
       },
       "ports" : {
         "inputs" : [ {
@@ -2557,7 +2595,8 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/bronze_customers"
@@ -2574,7 +2613,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem saves the input DataFrame as a Delta table in the `bronze_irs_zipcode` table in the `scottdemo` database. This could be used for data warehousing and data lake purposes, enabling efficient querying and analysis of the data."
       },
       "ports" : {
         "inputs" : [ {
@@ -3614,7 +3654,8 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/bronze_irs_zipcode"
@@ -3625,6 +3666,7 @@
     "inputs" : [ ],
     "outputs" : [ ],
     "selectedInputFields" : [ ],
-    "isCustomOutputSchema" : false
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
   }
 }

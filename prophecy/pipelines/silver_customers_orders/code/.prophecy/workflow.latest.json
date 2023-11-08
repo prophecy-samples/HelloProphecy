@@ -1,5 +1,8 @@
 {
   "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
     "id" : "1",
     "uri" : "pipelines/silver_customers_orders",
     "language" : "python",
@@ -10,7 +13,7 @@
       "language" : "python",
       "udfs" : [ ],
       "functionPackageName" : "scott_demo2_team.helloworld.functions",
-      "sharedFunctionPackageNames" : [ ]
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
     },
     "udafs" : {
       "language" : "python",
@@ -19,7 +22,16 @@
     "configuration" : {
       "common" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "ZipCodes",
+          "kind" : {
+            "type" : "record",
+            "fields" : [ ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : true,
+          "isReferenced" : false
+        } ]
       },
       "oldCommon" : {
         "type" : "record",
@@ -36,7 +48,15 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
-    "dependentProjectExternalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -60,12 +80,6 @@
     "sourcePort" : "A385WLkimflm4gtazK2Uo$$xKLZeUGteh4VQ1j8vNnvV",
     "target" : "wsq0Dys926nkPE6NXaxm3$$Gno7HYazsg7bfqZd8kk2S",
     "targetPort" : "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu"
-  }, {
-    "id" : "68JWIVhO_LSEQmJnOjjp3",
-    "source" : "m1J_zy9uwRxGhnWiA3tYv$$vA5poV_VjPcfjJem71JNm",
-    "sourcePort" : "l6hRa2x_Qr1OWkJOl31XR$$Z8xaEMURl0A8IFm0FoIna",
-    "target" : "wsq0Dys926nkPE6NXaxm3$$Gno7HYazsg7bfqZd8kk2S",
-    "targetPort" : "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p"
   }, {
     "id" : "PPXV8zQpo8BUI8jjlhNqt",
     "source" : "wsq0Dys926nkPE6NXaxm3$$Gno7HYazsg7bfqZd8kk2S",
@@ -91,11 +105,11 @@
     "target" : "_YyTR0PtH5p0TLjHr6Mae$$q0sUWTkPuKp0YXbXw-nj0",
     "targetPort" : "D59pAx12sZH1_SfcOJLay$$g7PaN_Nbfvts-VmjTlbDP"
   }, {
-    "id" : "6yFylyDSrFEdq6IoF9Pc7$$tH06Z1FaE_HOVF9aHpUkW",
-    "source" : "83JRStv6q-e9O1Z2fVnpo$$yu2ufRy7afSFuKs8s9rX6",
-    "sourcePort" : "QsGzE3riwH5alzZYZyZ3n$$SwlDadIxr9MA1LwlNY80k",
-    "target" : "m1J_zy9uwRxGhnWiA3tYv$$vA5poV_VjPcfjJem71JNm",
-    "targetPort" : "N26zPdkNjcFlBAQdsKNhr$$aey_Cx-KuEd7Ev5mFT8Xf"
+    "id" : "mAjdXqzgUSgju9G-z5iBL",
+    "source" : "5PkWxbAF37Vv7b99LDy2R$$k0AEGIx2O-0wNmEQa7q18",
+    "sourcePort" : "-IGoXcl-9LjSgYjjpM8LH$$Kh-GBe8cxHmUzd0nFnxi3",
+    "target" : "wsq0Dys926nkPE6NXaxm3$$Gno7HYazsg7bfqZd8kk2S",
+    "targetPort" : "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p"
   } ],
   "processes" : {
     "oBxlwKa7tUdDEa566DFLp$$lD6YxvGnNi1-e9dq7K-s5" : {
@@ -177,11 +191,191 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/silver_orders"
       }
+    },
+    "5PkWxbAF37Vv7b99LDy2R$$k0AEGIx2O-0wNmEQa7q18" : {
+      "id" : "5PkWxbAF37Vv7b99LDy2R$$k0AEGIx2O-0wNmEQa7q18",
+      "component" : "Subgraph",
+      "metadata" : {
+        "label" : "ZipCodes",
+        "slug" : "ZipCodes",
+        "x" : 500,
+        "y" : 1000,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "n6DZhdiGij5RT5qDvs26Y$$ALjZawvYHRhBlz02WhCX8",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "-IGoXcl-9LjSgYjjpM8LH$$Kh-GBe8cxHmUzd0nFnxi3",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { },
+      "connections" : [ {
+        "id" : "6yFylyDSrFEdq6IoF9Pc7$$tH06Z1FaE_HOVF9aHpUkW",
+        "source" : "83JRStv6q-e9O1Z2fVnpo$$yu2ufRy7afSFuKs8s9rX6",
+        "sourcePort" : "QsGzE3riwH5alzZYZyZ3n$$SwlDadIxr9MA1LwlNY80k",
+        "target" : "m1J_zy9uwRxGhnWiA3tYv$$vA5poV_VjPcfjJem71JNm",
+        "targetPort" : "N26zPdkNjcFlBAQdsKNhr$$aey_Cx-KuEd7Ev5mFT8Xf"
+      }, {
+        "id" : "68JWIVhO_LSEQmJnOjjp3",
+        "source" : "m1J_zy9uwRxGhnWiA3tYv$$vA5poV_VjPcfjJem71JNm",
+        "sourcePort" : "l6hRa2x_Qr1OWkJOl31XR$$Z8xaEMURl0A8IFm0FoIna",
+        "target" : "5PkWxbAF37Vv7b99LDy2R$$k0AEGIx2O-0wNmEQa7q18",
+        "targetPort" : "-IGoXcl-9LjSgYjjpM8LH$$Kh-GBe8cxHmUzd0nFnxi3"
+      } ],
+      "processes" : {
+        "83JRStv6q-e9O1Z2fVnpo$$yu2ufRy7afSFuKs8s9rX6" : {
+          "id" : "83JRStv6q-e9O1Z2fVnpo$$yu2ufRy7afSFuKs8s9rX6",
+          "component" : "Source",
+          "metadata" : {
+            "label" : "silver_irs_zipcode",
+            "slug" : "silver_irs_zipcode",
+            "x" : 340,
+            "y" : 960,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ ],
+            "outputs" : [ {
+              "id" : "QsGzE3riwH5alzZYZyZ3n$$SwlDadIxr9MA1LwlNY80k",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "datasetId" : "datasets/silver_irs_zipcode"
+          }
+        },
+        "m1J_zy9uwRxGhnWiA3tYv$$vA5poV_VjPcfjJem71JNm" : {
+          "id" : "m1J_zy9uwRxGhnWiA3tYv$$vA5poV_VjPcfjJem71JNm",
+          "component" : "SQLStatement",
+          "metadata" : {
+            "label" : "UniqueZipCodes",
+            "slug" : "UniqueZipCodes",
+            "x" : 580,
+            "y" : 960,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "N26zPdkNjcFlBAQdsKNhr$$aey_Cx-KuEd7Ev5mFT8Xf",
+              "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "zipcode",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "high_income_percent",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "high_income_returns",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "low_income_returns",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "all_returns",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "is_high_income",
+                  "type" : "boolean",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "l6hRa2x_Qr1OWkJOl31XR$$Z8xaEMURl0A8IFm0FoIna",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "fileTabs" : [ {
+              "path" : "out",
+              "id" : "l6hRa2x_Qr1OWkJOl31XR$$Z8xaEMURl0A8IFm0FoIna",
+              "language" : "sql",
+              "content" : "SELECT \n    row_number() OVER (PARTITION BY 1 ORDER BY zipcode ASC) AS row_number, \n    zipcode \nFROM (\n    SELECT distinct zipcode from in0 order by zipcode asc\n)"
+            } ],
+            "inputPortNames" : [ "in0" ]
+          },
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/SQLStatement",
+            "projectName" : "ProphecySparkBasicsPython"
+          }
+        }
+      },
+      "externalDependencies" : [ ]
     },
     "CsMvWOsysydiGPSw_uAKP$$GFb4BPva5TwHuqlgiaayl" : {
       "id" : "CsMvWOsysydiGPSw_uAKP$$GFb4BPva5TwHuqlgiaayl",
@@ -292,7 +486,8 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/silver_customers"
@@ -318,36 +513,11 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/bronze_orders"
-      }
-    },
-    "83JRStv6q-e9O1Z2fVnpo$$yu2ufRy7afSFuKs8s9rX6" : {
-      "id" : "83JRStv6q-e9O1Z2fVnpo$$yu2ufRy7afSFuKs8s9rX6",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "silver_irs_zipcode",
-        "slug" : "silver_irs_zipcode",
-        "x" : 340,
-        "y" : 960,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "QsGzE3riwH5alzZYZyZ3n$$SwlDadIxr9MA1LwlNY80k",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/silver_irs_zipcode"
       }
     },
     "9asNvYZ1AuHzhApwn0yYC$$n4GabvaN8cV42-g3ws1qX" : {
@@ -525,7 +695,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "conditions" : [ {
@@ -626,109 +797,10 @@
         "allIn0" : null,
         "whereClause" : null,
         "headAlias" : "in0"
-      }
-    },
-    "m1J_zy9uwRxGhnWiA3tYv$$vA5poV_VjPcfjJem71JNm" : {
-      "id" : "m1J_zy9uwRxGhnWiA3tYv$$vA5poV_VjPcfjJem71JNm",
-      "component" : "SQLStatement",
-      "metadata" : {
-        "label" : "UniqueZipCodes",
-        "slug" : "UniqueZipCodes",
-        "x" : 580,
-        "y" : 960,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
       },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "N26zPdkNjcFlBAQdsKNhr$$aey_Cx-KuEd7Ev5mFT8Xf",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "zipcode",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "state",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "high_income_percent",
-              "type" : "double",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "high_income_returns",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "low_income_returns",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "all_returns",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "is_high_income",
-              "type" : "boolean",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "outputs" : [ {
-          "id" : "l6hRa2x_Qr1OWkJOl31XR$$Z8xaEMURl0A8IFm0FoIna",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "fileTabs" : [ {
-          "path" : "out",
-          "id" : "l6hRa2x_Qr1OWkJOl31XR$$Z8xaEMURl0A8IFm0FoIna",
-          "language" : "sql",
-          "content" : "SELECT \n    row_number() OVER (PARTITION BY 1 ORDER BY zipcode ASC) AS row_number, \n    zipcode \nFROM (\n    SELECT distinct zipcode from in0 order by zipcode asc\n)"
-        } ],
-        "inputPortNames" : [ "in0" ]
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsPython"
       }
     },
     "_YyTR0PtH5p0TLjHr6Mae$$q0sUWTkPuKp0YXbXw-nj0" : {
@@ -843,7 +915,8 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/silver_order_customer_details"
@@ -869,7 +942,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/bronze_customers"
@@ -1022,7 +1096,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "conditions" : [ {
@@ -1115,6 +1190,10 @@
         "allIn0" : null,
         "whereClause" : null,
         "headAlias" : "in0"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Join",
+        "projectName" : "ProphecySparkBasicsPython"
       }
     }
   },
@@ -1122,6 +1201,7 @@
     "inputs" : [ ],
     "outputs" : [ ],
     "selectedInputFields" : [ ],
-    "isCustomOutputSchema" : false
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
   }
 }

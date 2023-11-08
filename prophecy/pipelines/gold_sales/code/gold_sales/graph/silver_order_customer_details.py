@@ -7,4 +7,4 @@ from gold_sales.config.ConfigStore import *
 from gold_sales.udfs.UDFs import *
 
 def silver_order_customer_details(spark: SparkSession) -> DataFrame:
-    return spark.read.table(f"scottdemo.silver_order_customer_details")
+    return spark.read.table("`scottdemo`.`silver_order_customer_details`")
