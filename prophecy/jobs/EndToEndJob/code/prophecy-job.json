@@ -55,8 +55,8 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "3978",
-      "name" : "DummyFabric",
+      "id" : "7083",
+      "name" : "dev",
       "clusterSizes" : {
         "default" : "Small",
         "availableClusterSizes" : [ "Small" ]
@@ -100,6 +100,46 @@
       },
       "properties" : {
         "pipelineId" : "pipelines/silver_zip_codes",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "QbqKyT1qH_wbXboch_Jjn$$nKzTtzRsCn856DRyrzxki" : {
+      "id" : "QbqKyT1qH_wbXboch_Jjn$$nKzTtzRsCn856DRyrzxki",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "raw_bronze_4",
+        "slug" : "raw_bronze_4",
+        "x" : 460,
+        "y" : 700
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_O3fAOXcJPYGBXu7-Grlo$$SXViTXLiwlAX_Cm2zE6Ht",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "3fqJHgYciMuW_vQlMIuLH$$oeLXL8MszqdAQaKB_Itxi",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/raw_bronze",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
@@ -230,6 +270,46 @@
         }
       }
     },
+    "8PF48kvISFbKh-EKPv0HH$$Q4Tw4z9_LAw417_Tq0IOp" : {
+      "id" : "8PF48kvISFbKh-EKPv0HH$$Q4Tw4z9_LAw417_Tq0IOp",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "raw_bronze_5",
+        "slug" : "raw_bronze_5",
+        "x" : 460,
+        "y" : 560
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8rsQ9nP6bMQZcwiMlKBCk$$jx4hYdApuZP5kTAZpBkmT",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "PsRQQZfXcPf1f1rQYUL-s$$7gNMc04V7br5rS8FnP7X-",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/raw_bronze",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
     "nfIwB7iYP4bHcX7MELOPO$$Ebrjd71DZXpuDActLChu9" : {
       "id" : "nfIwB7iYP4bHcX7MELOPO$$Ebrjd71DZXpuDActLChu9",
       "component" : "Pipeline",
@@ -271,6 +351,86 @@
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : true
           } ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "OmsNdT5TJTYVYNjegYzFe$$j1V3UBGEHgpWjf5N0cdEn" : {
+      "id" : "OmsNdT5TJTYVYNjegYzFe$$j1V3UBGEHgpWjf5N0cdEn",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "raw_bronze_3",
+        "slug" : "raw_bronze_3",
+        "x" : 460,
+        "y" : 840
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UmrgE0lZhe7k9ao-WgPAM$$Ik-rnkS8Zd5X_GpGjw6D0",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "kYva-YQ2bq8dLWXP7WhSP$$chG9R23R0G2bRk8A5TYms",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/raw_bronze",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : {
+            "HelloProphecy" : [ "default" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "ZmrBIZbT1ZCqIv3NyZdNg$$CHVMuPa2YSOaMXUnK2krK" : {
+      "id" : "ZmrBIZbT1ZCqIv3NyZdNg$$CHVMuPa2YSOaMXUnK2krK",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "raw_bronze_2",
+        "slug" : "raw_bronze_2",
+        "x" : 460,
+        "y" : 160
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "saw5k_gs_V-1QXQL3Y58f$$p3qaR2Ny-iSksy5rOlOy7",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "y3do0xBqpAwceaplhMZXJ$$CK1VOuiigEV8QO3d7kc2t",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/raw_bronze",
+        "configurations" : {
+          "schema" : [ ],
           "instances" : {
             "HelloProphecy" : [ "default" ]
           },
@@ -349,6 +509,30 @@
     "source" : "uljmMvyC1AxYNIoYPqsGm$$d-RvN4Ddbk51YPlhV9ZEU",
     "target" : "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY",
     "sourcePort" : "_oi7ghQhaSYU2eKUjt6yR$$fZQnBguIfNu432FNGKkHw",
+    "targetPort" : "9SBpUfUKNNtvmvR2Xb9bQ$$FK-nU0qpgvL_1ugWz9uFn"
+  }, {
+    "id" : "4I33ySfVqgmhcDppUhnrr",
+    "source" : "ZmrBIZbT1ZCqIv3NyZdNg$$CHVMuPa2YSOaMXUnK2krK",
+    "target" : "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY",
+    "sourcePort" : "y3do0xBqpAwceaplhMZXJ$$CK1VOuiigEV8QO3d7kc2t",
+    "targetPort" : "9SBpUfUKNNtvmvR2Xb9bQ$$FK-nU0qpgvL_1ugWz9uFn"
+  }, {
+    "id" : "JwG4phfFXV_vIr2yj3bKF",
+    "source" : "8PF48kvISFbKh-EKPv0HH$$Q4Tw4z9_LAw417_Tq0IOp",
+    "target" : "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY",
+    "sourcePort" : "PsRQQZfXcPf1f1rQYUL-s$$7gNMc04V7br5rS8FnP7X-",
+    "targetPort" : "9SBpUfUKNNtvmvR2Xb9bQ$$FK-nU0qpgvL_1ugWz9uFn"
+  }, {
+    "id" : "r-KdgYOAwjG0IEPqQxar_",
+    "source" : "QbqKyT1qH_wbXboch_Jjn$$nKzTtzRsCn856DRyrzxki",
+    "target" : "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY",
+    "sourcePort" : "3fqJHgYciMuW_vQlMIuLH$$oeLXL8MszqdAQaKB_Itxi",
+    "targetPort" : "9SBpUfUKNNtvmvR2Xb9bQ$$FK-nU0qpgvL_1ugWz9uFn"
+  }, {
+    "id" : "XXbbRrf3PbrDTcYVPRHV9",
+    "source" : "OmsNdT5TJTYVYNjegYzFe$$j1V3UBGEHgpWjf5N0cdEn",
+    "target" : "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY",
+    "sourcePort" : "kYva-YQ2bq8dLWXP7WhSP$$chG9R23R0G2bRk8A5TYms",
     "targetPort" : "9SBpUfUKNNtvmvR2Xb9bQ$$FK-nU0qpgvL_1ugWz9uFn"
   } ]
 }

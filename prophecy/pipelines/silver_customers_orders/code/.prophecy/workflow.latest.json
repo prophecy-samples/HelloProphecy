@@ -118,8 +118,8 @@
       "metadata" : {
         "label" : "silver_orders",
         "slug" : "silver_orders",
-        "x" : 1000,
-        "y" : 460,
+        "x" : 1040,
+        "y" : 520,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -955,8 +955,8 @@
       "metadata" : {
         "label" : "CustomerZipCodes",
         "slug" : "CustomerZipCodes",
-        "x" : 800,
-        "y" : 880,
+        "x" : 760,
+        "y" : 980,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1186,7 +1186,7 @@
         } ],
         "allIn1" : null,
         "activeTab" : "expressions",
-        "columnsSelector" : [ "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##customer_id", "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p##row_number", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##customer_id", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##account_open_date", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##account_flags", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##email", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##last_name", "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p##zipcode", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##first_name", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##phone" ],
+        "columnsSelector" : [ "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##customer_id", "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p##row_number", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##last_name", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##account_flags", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##email", "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p##zipcode", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##account_open_date", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##customer_id", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##phone", "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu##first_name" ],
         "allIn0" : null,
         "whereClause" : null,
         "headAlias" : "in0"
