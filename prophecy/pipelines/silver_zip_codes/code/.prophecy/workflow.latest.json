@@ -97,7 +97,7 @@
       "metadata" : {
         "label" : "silver_irs_zipcode",
         "slug" : "silver_irs_zipcode",
-        "x" : 360,
+        "x" : 420,
         "y" : 60,
         "phase" : 0,
         "cache" : false,
@@ -192,7 +192,7 @@
       "metadata" : {
         "label" : "SumIncomeBracketsByZip",
         "slug" : "SumIncomeBracketsByZip",
-        "x" : 40,
+        "x" : 60,
         "y" : 60,
         "phase" : 0,
         "cache" : false,
@@ -293,7 +293,7 @@
         "pivotColumn" : null,
         "pivotValues" : [ ],
         "activeTab" : "groupBy",
-        "columnsSelector" : [ "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##income_bracket", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##state", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##num_returns", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##zipcode" ],
+        "columnsSelector" : [ "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##state", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##income_bracket", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##zipcode", "ulzj4rRzI1QlQOkvT95FD$$cvoEJarquCanFrabmGtSZ##num_returns" ],
         "groupBy" : [ {
           "target" : "zipcode",
           "expression" : {
@@ -2508,7 +2508,7 @@
       "metadata" : {
         "label" : "CalcIsHighIncome",
         "slug" : "CalcIsHighIncome",
-        "x" : 200,
+        "x" : 220,
         "y" : 60,
         "phase" : 0,
         "cache" : false,
@@ -2632,7 +2632,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "eKKn98Bj5sHX93Y4BIad6$$xLwZnOz0sAcfVcHs5Usmr##high_income_returns", "eKKn98Bj5sHX93Y4BIad6$$xLwZnOz0sAcfVcHs5Usmr##all_returns", "eKKn98Bj5sHX93Y4BIad6$$xLwZnOz0sAcfVcHs5Usmr##low_income_returns", "eKKn98Bj5sHX93Y4BIad6$$xLwZnOz0sAcfVcHs5Usmr##zipcode", "eKKn98Bj5sHX93Y4BIad6$$xLwZnOz0sAcfVcHs5Usmr##state" ]
+        "columnsSelector" : [ "eKKn98Bj5sHX93Y4BIad6$$xLwZnOz0sAcfVcHs5Usmr##low_income_returns", "eKKn98Bj5sHX93Y4BIad6$$xLwZnOz0sAcfVcHs5Usmr##zipcode", "eKKn98Bj5sHX93Y4BIad6$$xLwZnOz0sAcfVcHs5Usmr##state", "eKKn98Bj5sHX93Y4BIad6$$xLwZnOz0sAcfVcHs5Usmr##high_income_returns", "eKKn98Bj5sHX93Y4BIad6$$xLwZnOz0sAcfVcHs5Usmr##all_returns" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Reformat",
