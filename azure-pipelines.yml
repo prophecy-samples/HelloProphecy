@@ -18,7 +18,7 @@ steps:
 #    architecture: 'x64'
 - script: |
     sudo apt-get install -y python-pip 
-    pip install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
+    pip3 install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
   displayName: 'Install dependencies'
 - script: |
     pbt build --path prophecy
