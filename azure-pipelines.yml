@@ -17,17 +17,27 @@ steps:
 #    addToPath: true
 #    architecture: 'x64'
 - script: |
+    curl -s "https://get.sdkman.io" | bash
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+
     sudo apt-get install -y python3-pip 
     pip3 install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
+
+    sdk install scala 2.12.18
+    sdk install spark 3.3.0
+    sdk use scala 2.12.18
+    sdk use spark 3.3.0
   env:
     PATH: /home/AzDevOps/.local/bin:$(PATH)
   displayName: 'Install dependencies'
 - script: |
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
     pbt build --path prophecy
   env:
     PATH: /home/AzDevOps/.local/bin:$(PATH)
   displayName: 'PBT build'
 - script: |
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
     pbt test --path prophecy
   displayName: 'PBT test'
   env:
