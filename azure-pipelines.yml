@@ -17,10 +17,11 @@ steps:
 #    addToPath: true
 #    architecture: 'x64'
 - script: |
+    sudo apt-get install -y python3-pip zip
     curl -s "https://get.sdkman.io" | bash
     source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-    sudo apt-get install -y python3-pip 
+    
     pip3 install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
 
     sdk install scala 2.12.18
