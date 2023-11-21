@@ -17,6 +17,7 @@ steps:
 #    addToPath: true
 #    architecture: 'x64'
 - script: |
+    python3 -m pip install
     pip install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
   displayName: 'Install dependencies'
 - script: |
