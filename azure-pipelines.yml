@@ -8,8 +8,7 @@ trigger:
     include:
     - '*'
 
-pool:
-  vmImage: ubuntu-latest
+pool: AzureBuildScaleSet
 
 steps:
 - task: UsePythonVersion@0
