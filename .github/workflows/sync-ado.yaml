@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  test-on-push:
+  ado-push:
     runs-on: ubuntu-latest
 
     steps:
