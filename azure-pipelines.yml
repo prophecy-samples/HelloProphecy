@@ -11,11 +11,11 @@ trigger:
 pool: AzureBuildScaleSet
 
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-    addToPath: true
-    architecture: 'x64'
+#- task: UsePythonVersion@0
+#  inputs:
+#    versionSpec: '3.x'
+#    addToPath: true
+#    architecture: 'x64'
 - script: |
     pip3 install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
   displayName: 'Install dependencies'
