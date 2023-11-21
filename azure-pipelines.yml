@@ -17,7 +17,7 @@ steps:
 #    addToPath: true
 #    architecture: 'x64'
 - script: |
-    sudo apt-get install python-pip 
+    sudo apt-get install -y python-pip 
     pip install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
   displayName: 'Install dependencies'
 - script: |
