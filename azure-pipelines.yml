@@ -26,8 +26,10 @@ steps:
 
     sdk install scala 2.12.18
     sdk install spark 3.3.0
+    sdk install java 11.0.14-ms
     sdk use scala 2.12.18
     sdk use spark 3.3.0
+    sdk use java 11.0.14-ms
   env:
     PATH: /home/AzDevOps/.local/bin:$(PATH)
   displayName: 'Install dependencies'
