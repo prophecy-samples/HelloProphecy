@@ -19,11 +19,17 @@ steps:
 - script: |
     sudo apt-get install -y python3-pip 
     pip3 install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
+  env:
+    PATH: /home/AzDevOps/.local/bin:$(PATH)
   displayName: 'Install dependencies'
 - script: |
     pbt build --path prophecy
+  env:
+    PATH: /home/AzDevOps/.local/bin:$(PATH)
   displayName: 'PBT build'
 - script: |
     pbt test --path prophecy
   displayName: 'PBT test'
+  env:
+    PATH: /home/AzDevOps/.local/bin:$(PATH)
 
