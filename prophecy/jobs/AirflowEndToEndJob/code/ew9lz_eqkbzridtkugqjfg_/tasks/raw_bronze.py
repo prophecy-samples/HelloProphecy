@@ -31,7 +31,7 @@ def raw_bronze():
             "entry_point": "main", 
             "parameters": ["-i", "default", "-O", "{}"]
           }, 
-          "libraries": [{"maven" : {"coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"}},                          {"pypi" : {"package" : "prophecy-libs==1.6.9"}},                          {
+          "libraries": [{"maven" : {"coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.35"}},                          {"pypi" : {"package" : "prophecy-libs==1.7.0"}},                          {
                            "whl": "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/raw_bronze-1.0-py3-none-any.whl"
                          }]
         },
