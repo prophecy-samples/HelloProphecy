@@ -52,3 +52,6 @@ jobs:
           body: ${{ steps.tag_version.outputs.changelog }}
           artifacts: helloprophecy-${{steps.tag_version.new_tag}}.tar.gz
           prerelease: true
+      - name: Deploy to Databricks
+        run:
+            pbt deploy --path prophecy
