@@ -2334,7 +2334,7 @@
           "target" : "account_open_date",
           "expression" : {
             "format" : "sql",
-            "expression" : "cast(account_open_date as string)"
+            "expression" : "cast(account_open_date as date)"
           },
           "description" : ""
         }, {
@@ -2354,7 +2354,7 @@
         } ],
         "importString" : "customer_id,cast(customer_id as int)\nfirst_name,first_name\nlast_name,last_name\nphone,phone\nemail,email\ncountry_code,country_code\naccount_open_date,cast(account_open_date as date)\naccount_flags,account_flags\nfull_name,``concat(first_name, last_name)``",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##last_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##first_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_open_date", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##customer_id", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##phone", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##email", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##country_code", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_flags" ]
+        "columnsSelector" : [ "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_open_date", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##last_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##first_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##phone", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##customer_id", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_flags", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##country_code", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##email" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Reformat",
@@ -2564,7 +2564,7 @@
               }
             }, {
               "name" : "account_open_date",
-              "type" : "string",
+              "type" : "date",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -3668,22 +3668,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.ZSyGtVMGJyq1pGcVW7KeN$$M3lUEpf8rtN0AEQlLugRA.test.unitTests[0].data.qsaXtb9A1b6UDfYeTZJTL$$Gz092FzwIQqZDmKwEm6j_.schema.fields[1].dataType",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Data type of out.account_open_date is not correct in the test Unit Test .",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }

@@ -14,7 +14,7 @@ def ReformatCustomers(spark: SparkSession, in0: DataFrame) -> DataFrame:
         col("phone"), 
         col("email"), 
         col("country_code"), 
-        col("account_open_date").cast(StringType()).alias("account_open_date"), 
+        col("account_open_date").cast(DateType()).alias("account_open_date"), 
         col("account_flags"), 
         concat(col("first_name"), col("last_name")).alias("full_name")
     )

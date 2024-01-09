@@ -349,7 +349,9 @@ gemContainer:
       mode: batch
       files:
       - scott_demo2_team_helloworld/gems/MyLimit.py
+      dependencies: null
       createdAt: '2023-11-08 18:07:56'
+  dependencies: null
 functions:
   author: null
   createdAt: '2023-03-27 15:13:13'
@@ -364,6 +366,7 @@ functions:
       createdAt: '2022-12-15 18:04:50'
   udafs: {}
   expressions: {}
+  airflowFunctions: {}
 subgraphs: {}
 sqlModels: {}
 sqlMacros: {}
@@ -389,4 +392,6 @@ projectDependencies:
     isDefault: true
     author: null
     createdAt: '2023-09-28 08:42:10'
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}
