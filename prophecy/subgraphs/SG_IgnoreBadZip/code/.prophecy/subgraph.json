@@ -1,0 +1,94 @@
+{
+  "id" : "RC4Arxewn1Ds9wXRm1FOr",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "j_MMat_I6VJ3l64_vPDKi",
+      "slug" : "in0",
+      "isStreaming" : false
+    } ],
+    "outputs" : [ {
+      "id" : "MRl9JVJGGk3JhdZLWxtu4",
+      "slug" : "out0",
+      "isStreaming" : false
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "properties" : {
+    "packageName" : "com.contoso"
+  },
+  "connections" : [ {
+    "id" : "LOlFdawHmdqf9RfMNF2qr",
+    "source" : "RC4Arxewn1Ds9wXRm1FOr",
+    "sourcePort" : "j_MMat_I6VJ3l64_vPDKi",
+    "target" : "VNn780E2foT9MYcGYPedM",
+    "targetPort" : "PxVEPov6JGCD8hzx2d9QL"
+  }, {
+    "id" : "uBJLSyKbvtQ4Gym0BoWw7",
+    "source" : "VNn780E2foT9MYcGYPedM",
+    "sourcePort" : "TXNXH95C_FmMxjAChQPw6",
+    "target" : "RC4Arxewn1Ds9wXRm1FOr",
+    "targetPort" : "MRl9JVJGGk3JhdZLWxtu4"
+  } ],
+  "processes" : {
+    "VNn780E2foT9MYcGYPedM" : {
+      "id" : "VNn780E2foT9MYcGYPedM",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "IgnoreBadZip_1",
+        "slug" : "IgnoreBadZip_1",
+        "x" : -200,
+        "y" : -20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PxVEPov6JGCD8hzx2d9QL",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "TXNXH95C_FmMxjAChQPw6",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "zipcode != '00000' and zipcode != '99999' and zipcode is not null"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Filter",
+        "projectId" : "12654",
+        "projectName" : "ProphecySparkBasicsPython",
+        "version" : "0.0.4"
+      }
+    }
+  },
+  "externalDependencies" : [ ]
+}

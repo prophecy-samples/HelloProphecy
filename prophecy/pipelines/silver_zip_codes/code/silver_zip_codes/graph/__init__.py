@@ -1,4 +1,4 @@
-from .IgnoreBadZip import IgnoreBadZip
+from .SG_IgnoreBadZip import SG_IgnoreBadZip
 from .CalcIsHighIncome import CalcIsHighIncome
 from .bronze_irs_zipcode import bronze_irs_zipcode
 from .silver_irs_zipcode import silver_irs_zipcode

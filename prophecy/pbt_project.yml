@@ -32,7 +32,19 @@ pipelines:
     dependencies: {}
   pipelines/gold_sales:
     name: gold_sales
-    description: ''
+    description: This codebase contains a series of functions that manipulate and
+      analyze customer and sales data. The `silver_order_customer_details` function
+      reads in data from a table, while the `Cleanup` function selects and renames
+      specific columns for easier analysis. The `TotalByZipCodeAndDate` function groups
+      data by zip code and order date, and calculates total sales, average sales,
+      and order count for each group. The `SortByDateAndZip` function sorts data by
+      order date and zip code. The `gold_sales_by_zip_date` function merges data into
+      an existing table or creates a new table if it does not exist. The `SumAmounts`
+      function groups data by customer ID and calculates the total number of orders
+      and total spend for each customer. The `gold_total_sales_by_customer` function
+      merges data into an existing table or creates a new table if it does not exist.
+      These functions can be used to gain insights into customer behavior, sales patterns,
+      and other key metrics for business decision-making.
     author: scott+demo2@prophecy.io
     mode: batch
     artefactID: ''
@@ -74,7 +86,8 @@ pipelines:
       - datasets/bronze_irs_zipcode
       outputs:
       - datasets/silver_irs_zipcode
-    subgraphs: []
+    subgraphs:
+    - subgraphs/SG_IgnoreBadZip
     dependencies: {}
   pipelines/raw_bronze:
     name: raw_bronze
@@ -106,6 +119,19 @@ pipelines:
       - datasets/bronze_customers
       - datasets/bronze_irs_zipcode
       - datasets/bronze_orders
+    subgraphs: []
+    dependencies: {}
+  pipelines/copilot_pipeline:
+    name: copilot_pipeline
+    description: ''
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-01-09 18:14:09'
+    datasets:
+      inputs: []
+      outputs: []
     subgraphs: []
     dependencies: {}
 datasets:
@@ -367,7 +393,15 @@ functions:
   udafs: {}
   expressions: {}
   airflowFunctions: {}
-subgraphs: {}
+subgraphs:
+  subgraphs/SG_IgnoreBadZip:
+    name: SG_IgnoreBadZip
+    description: ''
+    author: scott+demo2@prophecy.io
+    language: python
+    artefactID: ''
+    mode: batch
+    createdAt: '2024-01-09 18:08:21'
 sqlModels: {}
 sqlMacros: {}
 sqlSeeds: {}

@@ -108,7 +108,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem calculates the age of the customer's account at the time of each order by subtracting the order date from the account open date. It also selects relevant fields such as order ID, customer ID, amount, order date, zipcode, and account flags for further analysis and reporting."
       },
       "ports" : {
         "inputs" : [ {
@@ -269,10 +270,10 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##account_flags", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##account_open_date", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##order_id", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##order_date", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##amount", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##zipcode", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##customer_id" ]
+        "columnsSelector" : [ "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##order_date", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##zipcode", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##amount", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##account_flags", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##customer_id", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##account_open_date", "7Sl1POjLs_iThUKfZHrKm$$YnFjYVPWqnHtkKkI5URlN##order_id" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "gemId" : "gitUri=&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -287,7 +288,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem updates or inserts data into a Delta table named `gold_sales_by_zip_date` based on the `zipcode` and `order_date` columns. If the table already exists, it performs an update on matching records and inserts new records if there are no matches. If the table does not exist, it creates a new Delta table and saves the input data to it."
       },
       "ports" : {
         "inputs" : [ {
@@ -364,7 +366,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem updates or inserts data into a Delta table named \"gold_total_sales_by_customer\" based on the customer_id identifier. If the table already exists, it performs an update on the matching records and inserts new records if there are no matches. If the table does not exist, it creates a new table and saves the data in Delta format. This could be useful for maintaining a real-time view of customer sales data for analysis and reporting."
       },
       "ports" : {
         "inputs" : [ {
@@ -423,7 +426,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem groups payment data by customer and calculates the total number of orders and the total amount spent by each customer. This information can be used to identify high-value customers, understand customer spending patterns, and personalize customer engagement."
       },
       "ports" : {
         "inputs" : [ {
@@ -530,7 +534,7 @@
         "pivotColumn" : null,
         "pivotValues" : [ ],
         "activeTab" : "aggregate",
-        "columnsSelector" : [ "p2jAQt4FQ95GTpHzIrNZx$$s0hnqBRZkl_fO5l7h837X##order_id", "p2jAQt4FQ95GTpHzIrNZx$$s0hnqBRZkl_fO5l7h837X##customer_id", "p2jAQt4FQ95GTpHzIrNZx$$s0hnqBRZkl_fO5l7h837X##amount" ],
+        "columnsSelector" : [ "p2jAQt4FQ95GTpHzIrNZx$$s0hnqBRZkl_fO5l7h837X##amount", "p2jAQt4FQ95GTpHzIrNZx$$s0hnqBRZkl_fO5l7h837X##customer_id", "p2jAQt4FQ95GTpHzIrNZx$$s0hnqBRZkl_fO5l7h837X##order_id" ],
         "groupBy" : [ {
           "target" : "customer_id",
           "expression" : {
@@ -542,7 +546,7 @@
         } ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Aggregate",
+        "gemId" : "gitUri=&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Aggregate",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -557,7 +561,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem aggregates payment data by zip code and order date. For each zip code and date combination, it calculates the total amount paid, average amount paid, and number of orders. This provides insights into regional spending patterns and can help businesses tailor their marketing and promotional efforts to specific areas and time periods."
       },
       "ports" : {
         "inputs" : [ {
@@ -692,7 +697,7 @@
         } ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Aggregate",
+        "gemId" : "gitUri=&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Aggregate",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -707,7 +712,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem sorts payment data by order date and zip code in ascending order. This could be useful for analyzing regional trends and identifying patterns in customer behaviour based on location and time."
       },
       "ports" : {
         "inputs" : [ {
@@ -789,7 +795,7 @@
         } ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/OrderBy",
+        "gemId" : "gitUri=&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/OrderBy",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -804,7 +810,8 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "This gem reads data from a table named 'silver_order_customer_details' in the 'scottdemo' database. This could be used to access and analyze customer and order data stored in the table."
       },
       "ports" : {
         "inputs" : [ ],
