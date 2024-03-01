@@ -47,7 +47,18 @@
     "hadoopConf" : [ ],
     "codeMode" : "sparse",
     "buildSystem" : "maven",
-    "externalDependencies" : [ ],
+    "externalDependencies" : [ {
+      "type" : "pypi",
+      "modifiedAt" : "2024-03-01T17:43:41.339Z",
+      "package" : "requests==2.31.0",
+      "name" : "requests",
+      "description" : "",
+      "enabled" : true,
+      "id" : "3EsoSXUDRs-DDl2M_YJG2",
+      "createdAt" : "2024-03-01T17:43:41.339Z",
+      "entity" : "Pipeline",
+      "editable" : true
+    } ],
     "dependentProjectExternalDependencies" : [ {
       "projectUID" : "12654",
       "projectName" : "ProphecySparkBasicsPython",
