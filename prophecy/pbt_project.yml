@@ -11,25 +11,6 @@ buildSystemDetails:
   author: null
   createdAt: '2023-03-27 15:13:13'
 pipelines:
-  pipelines/silver_customers_orders:
-    name: silver_customers_orders
-    description: ''
-    author: scott+demo2@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2023-07-13 16:49:10'
-    datasets:
-      inputs:
-      - datasets/bronze_customers
-      - datasets/bronze_orders
-      - datasets/silver_irs_zipcode
-      outputs:
-      - datasets/silver_customers
-      - datasets/silver_order_customer_details
-      - datasets/silver_orders
-    subgraphs: []
-    dependencies: {}
   pipelines/gold_sales:
     name: gold_sales
     description: This codebase contains a series of functions that manipulate and
@@ -67,10 +48,8 @@ pipelines:
     language: python
     createdAt: '2023-07-13 18:45:24'
     datasets:
-      inputs:
-      - datasets/gold_total_sales_by_customer
-      outputs:
-      - datasets/gold_top50_customers_by_spend
+      inputs: []
+      outputs: []
     subgraphs: []
     dependencies: {}
   pipelines/silver_zip_codes:
@@ -132,6 +111,25 @@ pipelines:
     datasets:
       inputs: []
       outputs: []
+    subgraphs: []
+    dependencies: {}
+  pipelines/silver_customers_orders:
+    name: silver_customers_orders
+    description: ''
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-07-13 16:49:10'
+    datasets:
+      inputs:
+      - datasets/bronze_customers
+      - datasets/bronze_orders
+      - datasets/silver_irs_zipcode
+      outputs:
+      - datasets/silver_customers
+      - datasets/silver_order_customer_details
+      - datasets/silver_orders
     subgraphs: []
     dependencies: {}
 datasets:
@@ -252,19 +250,6 @@ datasets:
         description: ''
         author: scott+demo2@prophecy.io
         createdAt: '2023-07-13 18:38:51'
-  datasets/gold_top50_customers_by_spend:
-    name: gold_top50_customers_by_spend
-    description: ''
-    author: scott+demo2@prophecy.io
-    createdAt: '2023-07-13 19:05:05'
-    mode: batch
-    physicalDatasets:
-      HelloDev:
-        fabricId: 1571
-        datasetType: Database
-        description: ''
-        author: scott+demo2@prophecy.io
-        createdAt: '2023-07-13 19:05:05'
   datasets/raw_customers:
     name: raw_customers
     description: ''
@@ -375,6 +360,7 @@ gemContainer:
       mode: batch
       files:
       - scott_demo2_team_helloworld/gems/MyLimit.py
+      gemType: ComponentGem
       dependencies: null
       createdAt: '2023-11-08 18:07:56'
   dependencies: null

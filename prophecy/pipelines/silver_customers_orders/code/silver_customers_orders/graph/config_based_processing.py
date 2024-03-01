@@ -6,5 +6,7 @@ from prophecy.libs import typed_lit
 from silver_customers_orders.config.ConfigStore import *
 from silver_customers_orders.udfs.UDFs import *
 
-def bronze_customers(spark: SparkSession) -> DataFrame:
-    return spark.read.table(f"`{Config.ENVIRONMENT}`.`bronze_customers`")
+def config_based_processing(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    Config = json.load("config.json")[Config.ENVIRONMENT]
+
+    return out0

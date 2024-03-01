@@ -7,7 +7,7 @@ setup(
     package_data = {'prophecy_config_instances' : ['*.json', '*.py', '*.conf']},
     description = 'workflow',
     install_requires = [
-'prophecy-libs==1.7.3'],
+'prophecy-libs==1.7.4'],
     entry_points = {
 'console_scripts' : [
 'main = gold_top_customers.pipeline:main'], },

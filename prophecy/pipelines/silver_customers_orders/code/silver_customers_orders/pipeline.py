@@ -1,7 +1,6 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
-from prophecy.utils import *
 from silver_customers_orders.config.ConfigStore import *
 from silver_customers_orders.udfs.UDFs import *
 from prophecy.utils import *
@@ -14,6 +13,7 @@ def pipeline(spark: SparkSession) -> None:
     df_bronze_customers = bronze_customers(spark)
     df_CustomerZipCodes = CustomerZipCodes(spark, df_bronze_customers, df_ZipCodes)
     silver_customers(spark, df_CustomerZipCodes)
+    df_config_based_processing = config_based_processing(spark)
     df_ByCustomerId = ByCustomerId(spark, df_bronze_orders, df_CustomerZipCodes)
     silver_order_customer_details(spark, df_ByCustomerId)
 

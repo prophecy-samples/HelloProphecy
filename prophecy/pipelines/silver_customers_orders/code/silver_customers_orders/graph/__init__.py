@@ -1,4 +1,5 @@
 from .silver_order_customer_details import silver_order_customer_details
+from .config_based_processing import config_based_processing
 from .CustomerZipCodes import CustomerZipCodes
 from .silver_customers import silver_customers
 from .ByCustomerId import ByCustomerId
