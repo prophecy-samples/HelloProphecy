@@ -1,13 +1,13 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
-from prophecy.utils import *
 from silver_customers_orders.config.ConfigStore import *
 from silver_customers_orders.udfs.UDFs import *
 from prophecy.utils import *
 from silver_customers_orders.graph import *
 
 def pipeline(spark: SparkSession) -> None:
+    df_Script_1 = Script_1(spark)
     df_bronze_orders = bronze_orders(spark)
     silver_orders(spark, df_bronze_orders)
     df_ZipCodes = ZipCodes(spark, Config.ZipCodes)

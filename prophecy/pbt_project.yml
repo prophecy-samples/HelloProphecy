@@ -349,7 +349,22 @@ gemContainer:
       mode: batch
       files:
       - scott_demo2_team_helloworld/gems/MyLimit.py
+      gemType: ComponentGem
+      dependencies: null
       createdAt: '2023-11-08 18:07:56'
+    gems/DPSparkInit:
+      name: DPSparkInit
+      category: Custom
+      subCategory: ''
+      description: null
+      author: rj@prophecy.io
+      mode: batch
+      files:
+      - scott_demo2_team_helloworld/gems/test3.py
+      gemType: ComponentGem
+      dependencies: []
+      createdAt: '2024-02-07 22:21:58'
+  dependencies: null
 functions:
   author: null
   createdAt: '2023-03-27 15:13:13'
@@ -364,6 +379,7 @@ functions:
       createdAt: '2022-12-15 18:04:50'
   udafs: {}
   expressions: {}
+  airflowFunctions: {}
 subgraphs: {}
 sqlModels: {}
 sqlMacros: {}
@@ -377,16 +393,18 @@ projectDependencies:
     projectUID: 12654
     projectName: ProphecySparkBasicsPython
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=
-    version: 0.0.4
+    version: 0.2.4
     isDefault: true
     author: null
-    createdAt: '2023-09-28 08:42:10'
+    createdAt: '2024-04-01 17:53:37'
   '12655':
     projectUID: 12655
     projectName: ProphecyWarehousePython
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12655.git&subPath=
-    version: 0.0.2
+    version: 0.0.3
     isDefault: true
     author: null
-    createdAt: '2023-09-28 08:42:10'
+    createdAt: '2024-04-01 17:54:08'
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}

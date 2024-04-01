@@ -7,7 +7,15 @@ from gold_sales.config.ConfigStore import *
 from gold_sales.udfs.UDFs import *
 
 def gold_sales_by_zip_date(spark: SparkSession, in0: DataFrame):
-    if spark.catalog._jcatalog.tableExists("`scottdemo`.`gold_sales_by_zip_date`"):
+    from pyspark.sql.utils import AnalysisException
+
+    try:
+        desc_table = spark.sql("describe formatted `scottdemo`.`gold_sales_by_zip_date`")
+        table_exists = True
+    except AnalysisException as e:
+        table_exists = False
+
+    if table_exists:
         from delta.tables import DeltaTable, DeltaMergeBuilder
         DeltaTable\
             .forName(spark, "`scottdemo`.`gold_sales_by_zip_date`")\

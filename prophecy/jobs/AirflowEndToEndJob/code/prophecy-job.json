@@ -19,16 +19,23 @@
       "pool" : "FAsMEzD_",
       "do_xcom_push" : true
     },
-    "jobClusterMode" : {
-      "clusterMode" : "Single"
-    },
     "availableFabrics" : [ {
-      "id" : "6726",
-      "name" : "AirflowDemo",
-      "trialStartDate" : 1699463795584
+      "id" : "6817",
+      "name" : "workdayAirflowFabric"
+    }, {
+      "id" : "8615",
+      "name" : "AirflowFab3",
+      "trialStartDate" : 1705001938144
+    }, {
+      "id" : "10488",
+      "name" : "Airflow-prophecy-development",
+      "trialStartDate" : 1710963838316
+    }, {
+      "id" : "10547",
+      "name" : "rjAirflowFabricMWAA1"
     } ],
-    "catchup" : true,
     "endDate" : "2023-11-29",
+    "catchup" : true,
     "scheduleTimeZone" : "UTC",
     "dagParams" : {
       "instances" : {
@@ -36,6 +43,12 @@
       },
       "params" : { },
       "selected" : "default"
+    },
+    "airflowFunctions" : [ ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false
     }
   },
   "processes" : {
@@ -78,10 +91,16 @@
             "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "value" : "default",
+            "type" : "literal"
+          }
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/silver_customers_orders"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/silver_customers_orders"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -116,10 +135,16 @@
             "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "value" : "default",
+            "type" : "literal"
+          }
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/raw_bronze"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/raw_bronze"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -154,10 +179,16 @@
             "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "value" : "default",
+            "type" : "literal"
+          }
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/gold_top_customers"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/gold_top_customers"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -192,10 +223,16 @@
             "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "value" : "default",
+            "type" : "literal"
+          }
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/silver_zip_codes"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/silver_zip_codes"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -230,10 +267,16 @@
             "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "value" : "default",
+            "type" : "literal"
+          }
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/gold_sales"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/gold_sales"
+        }
       },
       "connections" : [ ],
       "processes" : { }

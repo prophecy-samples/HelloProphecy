@@ -2,3 +2,5 @@ version: 1
 configurations:
 - default
 dependencies: []
+pipelineVersion:
+  version: '2'
