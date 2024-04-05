@@ -19,16 +19,13 @@
       "pool" : "FAsMEzD_",
       "do_xcom_push" : true
     },
-    "jobClusterMode" : {
-      "clusterMode" : "Single"
-    },
     "availableFabrics" : [ {
-      "id" : "6726",
-      "name" : "AirflowDemo",
-      "trialStartDate" : 1699463795584
+      "id" : "10831",
+      "name" : "AFDemo",
+      "trialStartDate" : 1712170303465
     } ],
-    "catchup" : true,
     "endDate" : "2023-11-29",
+    "catchup" : true,
     "scheduleTimeZone" : "UTC",
     "dagParams" : {
       "instances" : {
@@ -36,6 +33,12 @@
       },
       "params" : { },
       "selected" : "default"
+    },
+    "airflowFunctions" : [ ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false
     }
   },
   "processes" : {
@@ -81,7 +84,10 @@
           "selectedInstance" : "default"
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/silver_customers_orders"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/silver_customers_orders"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -119,7 +125,10 @@
           "selectedInstance" : "default"
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/raw_bronze"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/raw_bronze"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -157,7 +166,10 @@
           "selectedInstance" : "default"
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/gold_top_customers"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/gold_top_customers"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -195,7 +207,10 @@
           "selectedInstance" : "default"
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/silver_zip_codes"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/silver_zip_codes"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -233,7 +248,10 @@
           "selectedInstance" : "default"
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/gold_sales"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/gold_sales"
+        }
       },
       "connections" : [ ],
       "processes" : { }

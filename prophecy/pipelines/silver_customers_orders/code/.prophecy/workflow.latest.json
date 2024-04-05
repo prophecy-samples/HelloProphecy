@@ -3,6 +3,13 @@
     "migrationVersions" : {
       "gemBuilderVersion" : "v1"
     },
+    "codeGenConfiguration" : {
+      "editableConfig" : false,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.83",
+        "pyPiVersion" : "1.8.13"
+      }
+    },
     "id" : "1",
     "uri" : "pipelines/silver_customers_orders",
     "language" : "python",
@@ -75,7 +82,7 @@
       "value" : 1000
     },
     "topLevelPackage" : "silver_customers_orders",
-    "configurationVersion" : "v1"
+    "configurationVersion" : "v2"
   },
   "connections" : [ {
     "id" : "DLcXBPs1ly3XAt2bHXFvy",
@@ -83,12 +90,6 @@
     "sourcePort" : "_qcLKijRPiEy1HM6H4DPF$$GWSCL4WD4JXGFnIlnjl4a",
     "target" : "oBxlwKa7tUdDEa566DFLp$$lD6YxvGnNi1-e9dq7K-s5",
     "targetPort" : "5Gdn0MU2wEs5S6dhUZzio$$YQeS5Az9ILcC1-syvWtq_"
-  }, {
-    "id" : "Try90ONYtEIl3-fmKka1L",
-    "source" : "mZpqaTWvZ1XIlT3c1alzE$$0fZTxYl4vuVXwWM8MBhkN",
-    "sourcePort" : "A385WLkimflm4gtazK2Uo$$xKLZeUGteh4VQ1j8vNnvV",
-    "target" : "wsq0Dys926nkPE6NXaxm3$$Gno7HYazsg7bfqZd8kk2S",
-    "targetPort" : "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu"
   }, {
     "id" : "PPXV8zQpo8BUI8jjlhNqt",
     "source" : "wsq0Dys926nkPE6NXaxm3$$Gno7HYazsg7bfqZd8kk2S",
@@ -119,6 +120,12 @@
     "sourcePort" : "-IGoXcl-9LjSgYjjpM8LH$$Kh-GBe8cxHmUzd0nFnxi3",
     "target" : "wsq0Dys926nkPE6NXaxm3$$Gno7HYazsg7bfqZd8kk2S",
     "targetPort" : "-FraCoTvEkmTA1dZrCpro$$xQFk5V1z3v5dBIoM4L39p"
+  }, {
+    "id" : "_Nyn2HUw_vOjLeAj6O5fs",
+    "source" : "mZpqaTWvZ1XIlT3c1alzE$$0fZTxYl4vuVXwWM8MBhkN",
+    "sourcePort" : "A385WLkimflm4gtazK2Uo$$xKLZeUGteh4VQ1j8vNnvV",
+    "target" : "wsq0Dys926nkPE6NXaxm3$$Gno7HYazsg7bfqZd8kk2S",
+    "targetPort" : "0vRvgwwkGmDcZAEz9Hgj3$$cMA8VhjXMGz7FPRi86gcu"
   } ],
   "processes" : {
     "oBxlwKa7tUdDEa566DFLp$$lD6YxvGnNi1-e9dq7K-s5" : {
@@ -127,8 +134,8 @@
       "metadata" : {
         "label" : "silver_orders",
         "slug" : "silver_orders",
-        "x" : 1040,
-        "y" : 520,
+        "x" : 1000,
+        "y" : 540,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -213,8 +220,8 @@
       "metadata" : {
         "label" : "ZipCodes",
         "slug" : "ZipCodes",
-        "x" : 500,
-        "y" : 1000,
+        "x" : 560,
+        "y" : 1040,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -526,38 +533,6 @@
       },
       "properties" : {
         "datasetId" : "datasets/bronze_orders"
-      }
-    },
-    "vHW1GyHDjzI1xe54pXxOi$$i1oNMP34fC1-oZqb75rQI" : {
-      "id" : "vHW1GyHDjzI1xe54pXxOi$$i1oNMP34fC1-oZqb75rQI",
-      "component" : "Script",
-      "metadata" : {
-        "label" : "config_based_processing",
-        "slug" : "config_based_processing",
-        "x" : 260,
-        "y" : 620,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "r1Z7p0eSgvIT2-SdRVAY5$$LA7LRRwyh5xdX1VNFF-s5",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "TZ7P7TP_sy9nj3D1ymJVA$$MxAIb_Hw7hTy0tJiZoPM9",
-          "slug" : "out0"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : true,
-        "autoUpdateOnRun" : true
-      },
-      "properties" : {
-        "script" : "Config = json.load(\"config.json\")[Config.ENVIRONMENT]",
-        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
-        "scriptMethodFooter" : "    return out0"
       }
     },
     "9asNvYZ1AuHzhApwn0yYC$$n4GabvaN8cV42-g3ws1qX" : {
@@ -968,8 +943,8 @@
       "metadata" : {
         "label" : "bronze_customers",
         "slug" : "bronze_customers",
-        "x" : 580,
-        "y" : 740,
+        "x" : 560,
+        "y" : 900,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1243,23 +1218,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.vHW1GyHDjzI1xe54pXxOi$$i1oNMP34fC1-oZqb75rQI",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Please connect input port in0",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 1
-  } ]
+  }
 }

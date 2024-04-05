@@ -13,7 +13,6 @@ def pipeline(spark: SparkSession) -> None:
     df_bronze_customers = bronze_customers(spark)
     df_CustomerZipCodes = CustomerZipCodes(spark, df_bronze_customers, df_ZipCodes)
     silver_customers(spark, df_CustomerZipCodes)
-    df_config_based_processing = config_based_processing(spark)
     df_ByCustomerId = ByCustomerId(spark, df_bronze_orders, df_CustomerZipCodes)
     silver_order_customer_details(spark, df_ByCustomerId)
 
@@ -23,21 +22,12 @@ def main():
                 .config("spark.sql.legacy.allowUntypedScalaUDF", "true")\
                 .enableHiveSupport()\
                 .appName("Prophecy Pipeline")\
-                .getOrCreate()\
-                .newSession()
+                .getOrCreate()
     Utils.initializeFromArgs(spark, parse_args())
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/silver_customers_orders")
     registerUDFs(spark)
-
-    try:
-        
-        MetricsCollector.start(spark = spark, pipelineId = "pipelines/silver_customers_orders", config = Config)
-    except :
-        
-        MetricsCollector.start(spark = spark, pipelineId = "pipelines/silver_customers_orders")
-
-    pipeline(spark)
-    MetricsCollector.end(spark)
+    
+    MetricsCollector.instrument(spark = spark, pipelineId = "pipelines/silver_customers_orders", config = Config)(pipeline)
 
 if __name__ == "__main__":
     main()

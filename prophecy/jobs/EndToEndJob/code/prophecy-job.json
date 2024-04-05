@@ -101,7 +101,16 @@
       "properties" : {
         "pipelineId" : "pipelines/silver_zip_codes",
         "configurations" : {
-          "schema" : [ ],
+          "schema" : [ {
+            "name" : "SG_IgnoreBadZip",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          } ],
           "instances" : {
             "HelloProphecy" : [ "default" ]
           },
@@ -350,9 +359,18 @@
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : true
+          }, {
+            "name" : "ENVIRONMENT",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "dev"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
           } ],
           "instances" : {
-            "HelloProphecy" : [ "default" ]
+            "HelloProphecy" : [ "default", "dev_env", "prod_env", "test_env" ]
           },
           "overrides" : { },
           "selectedInstance" : "default"

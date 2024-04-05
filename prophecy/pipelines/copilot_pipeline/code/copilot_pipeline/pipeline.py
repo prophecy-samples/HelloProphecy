@@ -1,7 +1,6 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
-from prophecy.utils import *
 from copilot_pipeline.config.ConfigStore import *
 from copilot_pipeline.udfs.UDFs import *
 from prophecy.utils import *

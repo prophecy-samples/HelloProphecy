@@ -3,6 +3,13 @@
     "migrationVersions" : {
       "gemBuilderVersion" : "v1"
     },
+    "codeGenConfiguration" : {
+      "editableConfig" : false,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.83",
+        "pyPiVersion" : "1.8.13"
+      }
+    },
     "id" : "1",
     "uri" : "pipelines/raw_bronze",
     "language" : "python",
@@ -57,7 +64,7 @@
       "value" : 1000
     },
     "topLevelPackage" : "raw_bronze",
-    "configurationVersion" : "v1"
+    "configurationVersion" : "v2"
   },
   "connections" : [ {
     "id" : "N9mzX773nc2REqY1PMy2l$$lbLntyLjM51EenTQyW_Wq",
@@ -2354,7 +2361,7 @@
         } ],
         "importString" : "customer_id,cast(customer_id as int)\nfirst_name,first_name\nlast_name,last_name\nphone,phone\nemail,email\ncountry_code,country_code\naccount_open_date,cast(account_open_date as date)\naccount_flags,account_flags\nfull_name,``concat(first_name, last_name)``",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##customer_id", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##country_code", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_open_date", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_flags", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##email", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##phone", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##first_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##last_name" ]
+        "columnsSelector" : [ "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##country_code", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_open_date", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##customer_id", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##last_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##first_name", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##phone", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##account_flags", "MBRtrfAl-KvbCq2bpSzdv$$1yAU9HicqGYh_bmd9_8jh##email" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Reformat",
