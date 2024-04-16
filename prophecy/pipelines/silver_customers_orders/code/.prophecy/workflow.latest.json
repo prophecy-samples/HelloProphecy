@@ -479,7 +479,7 @@
               }
             }, {
               "name" : "account_open_date",
-              "type" : "date",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -685,7 +685,7 @@
               }
             }, {
               "name" : "account_open_date",
-              "type" : "date",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -875,7 +875,7 @@
               }
             }, {
               "name" : "account_open_date",
-              "type" : "date",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -1051,7 +1051,7 @@
               }
             }, {
               "name" : "account_open_date",
-              "type" : "date",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : {
                 "description" : "",
@@ -1218,5 +1218,40 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  }
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.9asNvYZ1AuHzhApwn0yYC$$n4GabvaN8cV42-g3ws1qX.test.unitTests[0].data.Xa6uSrkThDI94MdIFk8Fo$$WQShN3BMV2tWYCWdYwMJI.schema.fields[3].dataType",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Data type of in1.account_open_date is not correct in the test Unit Test 0.",
+    "tags" : [ ],
+    "relatedInformation" : [ ],
+    "diagnosticType" : 1
+  }, {
+    "property" : "$.workflow.processes.9asNvYZ1AuHzhApwn0yYC$$n4GabvaN8cV42-g3ws1qX.test.unitTests[0].data.MIh7qI2idGA0AmrpPhGpT$$H2-AOkr5c6xSbWMNOYtIi.schema.fields[0].dataType",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Data type of out.account_open_date is not correct in the test Unit Test 0.",
+    "tags" : [ ],
+    "relatedInformation" : [ ],
+    "diagnosticType" : 1
+  } ]
 }

@@ -3,6 +3,13 @@
     "migrationVersions" : {
       "gemBuilderVersion" : "v1"
     },
+    "codeGenConfiguration" : {
+      "editableConfig" : false,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.83",
+        "pyPiVersion" : "1.8.13"
+      }
+    },
     "id" : "1",
     "uri" : "pipelines/gold_top_customers",
     "language" : "python",
@@ -39,7 +46,15 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
-    "dependentProjectExternalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -49,7 +64,7 @@
       "value" : 1000
     },
     "topLevelPackage" : "gold_top_customers",
-    "configurationVersion" : "v1"
+    "configurationVersion" : "v2"
   },
   "connections" : [ ],
   "processes" : { },

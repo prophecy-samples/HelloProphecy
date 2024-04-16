@@ -31,7 +31,7 @@ schema:
       mappings: []
       tags: []
   - name: account_open_date
-    type: date
+    type: integer
     nullable: true
     metadata:
       description: ''

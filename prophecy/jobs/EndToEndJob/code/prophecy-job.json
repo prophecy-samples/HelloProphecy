@@ -67,6 +67,19 @@
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }
       }
+    }, {
+      "id" : "10916",
+      "name" : "MyNewFabric",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
     } ]
   },
   "processes" : {

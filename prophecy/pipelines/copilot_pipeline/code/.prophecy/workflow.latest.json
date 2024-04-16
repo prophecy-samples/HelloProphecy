@@ -4,7 +4,11 @@
       "gemBuilderVersion" : "v1"
     },
     "codeGenConfiguration" : {
-      "editableConfig" : true
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "7.1.83",
+        "pyPiVersion" : "1.8.13"
+      }
     },
     "id" : "1",
     "uri" : "pipelines/copilot_pipeline",
@@ -60,7 +64,7 @@
       "value" : 1000
     },
     "topLevelPackage" : "copilot_pipeline",
-    "configurationVersion" : "v1"
+    "configurationVersion" : "v2"
   },
   "connections" : [ ],
   "processes" : { },

@@ -14,21 +14,12 @@ def main():
                 .config("spark.sql.legacy.allowUntypedScalaUDF", "true")\
                 .enableHiveSupport()\
                 .appName("Prophecy Pipeline")\
-                .getOrCreate()\
-                .newSession()
+                .getOrCreate()
     Utils.initializeFromArgs(spark, parse_args())
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/copilot_pipeline")
     registerUDFs(spark)
-
-    try:
-        
-        MetricsCollector.start(spark = spark, pipelineId = "pipelines/copilot_pipeline", config = Config)
-    except :
-        
-        MetricsCollector.start(spark = spark, pipelineId = "pipelines/copilot_pipeline")
-
-    pipeline(spark)
-    MetricsCollector.end(spark)
+    
+    MetricsCollector.instrument(spark = spark, pipelineId = "pipelines/copilot_pipeline", config = Config)(pipeline)
 
 if __name__ == "__main__":
     main()
