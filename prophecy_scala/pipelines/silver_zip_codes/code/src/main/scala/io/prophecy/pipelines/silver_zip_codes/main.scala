@@ -1,10 +1,8 @@
 package io.prophecy.pipelines.silver_zip_codes
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.silver_zip_codes.config.Context
 import io.prophecy.pipelines.silver_zip_codes.config._
 import io.prophecy.pipelines.silver_zip_codes.udfs.UDFs._
-import io.prophecy.pipelines.silver_zip_codes.udfs._
 import io.prophecy.pipelines.silver_zip_codes.udfs.PipelineInitCode._
 import io.prophecy.pipelines.silver_zip_codes.graph._
 import org.apache.spark._
@@ -36,21 +34,13 @@ object Main {
       .config("spark.sql.legacy.allowUntypedScalaUDF", "true")
       .enableHiveSupport()
       .getOrCreate()
-      .newSession()
     val context = Context(spark, config)
     spark.conf
       .set("prophecy.metadata.pipeline.uri", "pipelines/silver_zip_codes")
     registerUDFs(spark)
-    try MetricsCollector.start(spark,
-                               "pipelines/silver_zip_codes",
-                               context.config
-    )
-    catch {
-      case _: Throwable =>
-        MetricsCollector.start(spark, "pipelines/silver_zip_codes")
+    MetricsCollector.instrument(spark, "pipelines/silver_zip_codes") {
+      apply(context)
     }
-    apply(context)
-    MetricsCollector.end(spark)
   }
 
 }

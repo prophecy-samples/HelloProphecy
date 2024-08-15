@@ -30,6 +30,8 @@ object raw_customers {
           )
         )
       )
-      .load("dbfs:/Prophecy/scott+demo2@prophecy.io/CustomersDatasetInput.csv")
+      .load(
+        "dbfs:/prophecy_training/HelloWorldDefault/CustomersDatasetInput.csv"
+      )
 
 }

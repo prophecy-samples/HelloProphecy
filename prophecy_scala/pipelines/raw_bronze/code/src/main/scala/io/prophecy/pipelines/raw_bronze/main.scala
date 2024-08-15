@@ -1,10 +1,8 @@
 package io.prophecy.pipelines.raw_bronze
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.raw_bronze.config.Context
 import io.prophecy.pipelines.raw_bronze.config._
 import io.prophecy.pipelines.raw_bronze.udfs.UDFs._
-import io.prophecy.pipelines.raw_bronze.udfs._
 import io.prophecy.pipelines.raw_bronze.udfs.PipelineInitCode._
 import io.prophecy.pipelines.raw_bronze.graph._
 import org.apache.spark._
@@ -37,17 +35,12 @@ object Main {
       .config("spark.sql.legacy.allowUntypedScalaUDF", "true")
       .enableHiveSupport()
       .getOrCreate()
-      .newSession()
     val context = Context(spark, config)
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/raw_bronze")
     registerUDFs(spark)
-    try MetricsCollector.start(spark, "pipelines/raw_bronze", context.config)
-    catch {
-      case _: Throwable =>
-        MetricsCollector.start(spark, "pipelines/raw_bronze")
+    MetricsCollector.instrument(spark, "pipelines/raw_bronze") {
+      apply(context)
     }
-    apply(context)
-    MetricsCollector.end(spark)
   }
 
 }

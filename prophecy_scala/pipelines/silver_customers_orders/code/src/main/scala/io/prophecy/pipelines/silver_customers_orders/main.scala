@@ -1,10 +1,8 @@
 package io.prophecy.pipelines.silver_customers_orders
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.silver_customers_orders.config.Context
 import io.prophecy.pipelines.silver_customers_orders.config._
 import io.prophecy.pipelines.silver_customers_orders.udfs.UDFs._
-import io.prophecy.pipelines.silver_customers_orders.udfs._
 import io.prophecy.pipelines.silver_customers_orders.udfs.PipelineInitCode._
 import io.prophecy.pipelines.silver_customers_orders.graph._
 import org.apache.spark._
@@ -39,22 +37,14 @@ object Main {
       .config("spark.sql.legacy.allowUntypedScalaUDF", "true")
       .enableHiveSupport()
       .getOrCreate()
-      .newSession()
     val context = Context(spark, config)
     spark.conf.set("prophecy.metadata.pipeline.uri",
                    "pipelines/silver_customers_orders"
     )
     registerUDFs(spark)
-    try MetricsCollector.start(spark,
-                               "pipelines/silver_customers_orders",
-                               context.config
-    )
-    catch {
-      case _: Throwable =>
-        MetricsCollector.start(spark, "pipelines/silver_customers_orders")
+    MetricsCollector.instrument(spark, "pipelines/silver_customers_orders") {
+      apply(context)
     }
-    apply(context)
-    MetricsCollector.end(spark)
   }
 
 }

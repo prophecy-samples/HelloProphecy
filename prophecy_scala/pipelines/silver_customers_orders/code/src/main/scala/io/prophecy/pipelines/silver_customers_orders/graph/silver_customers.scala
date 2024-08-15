@@ -15,6 +15,6 @@ object silver_customers {
     in.write
       .format("delta")
       .mode("overwrite")
-      .saveAsTable("scottdemoscala.silver_customers")
+      .saveAsTable("`scottdemoscala`.`silver_customers`")
 
 }

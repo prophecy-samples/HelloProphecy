@@ -1,16 +1,26 @@
 {
   "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : false,
+      "plibVersion" : {
+        "mavenVersion" : "8.0.31"
+      }
+    },
     "id" : "1",
     "uri" : "pipelines/raw_bronze",
     "language" : "scala",
-    "fabricId" : "1571",
+    "fabricId" : "16433",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
       "language" : "scala",
       "udfs" : [ ],
       "functionPackageName" : "scott_demo2_team.helloprophecyscala.functions",
-      "sharedFunctionPackageNames" : [ ]
+      "sharedFunctionPackageNames" : [ "io.prophecy.scalagems.functions", "io.prophecy.warehousegems.functions" ]
     },
     "udafs" : {
       "language" : "scala",
@@ -36,7 +46,15 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
-    "dependentProjectExternalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12651",
+      "projectName" : "ProphecySparkBasicsScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12652",
+      "projectName" : "ProphecyWarehouseScala",
+      "externalDependencies" : [ ]
+    } ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -46,7 +64,7 @@
       "value" : 1000
     },
     "topLevelPackage" : "io.prophecy.pipelines.raw_bronze",
-    "configurationVersion" : "v1"
+    "configurationVersion" : "v2"
   },
   "connections" : [ {
     "id" : "hJs86PJHaHNU3CQGX4lYo$$H9M-igul4GetayauIiROe",
@@ -201,7 +219,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "columnsSelector" : [ "6G9cCcAOZ73TYvXI9I9L2$$ZgAkRW5do38iaC3RShEQm##customer_id", "6G9cCcAOZ73TYvXI9I9L2$$ZgAkRW5do38iaC3RShEQm##first_name", "6G9cCcAOZ73TYvXI9I9L2$$ZgAkRW5do38iaC3RShEQm##last_name", "6G9cCcAOZ73TYvXI9I9L2$$ZgAkRW5do38iaC3RShEQm##phone", "6G9cCcAOZ73TYvXI9I9L2$$ZgAkRW5do38iaC3RShEQm##email", "6G9cCcAOZ73TYvXI9I9L2$$ZgAkRW5do38iaC3RShEQm##country_code", "6G9cCcAOZ73TYvXI9I9L2$$ZgAkRW5do38iaC3RShEQm##account_open_date", "6G9cCcAOZ73TYvXI9I9L2$$ZgAkRW5do38iaC3RShEQm##account_flags" ],
@@ -269,6 +288,10 @@
           },
           "description" : ""
         } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
       }
     },
     "e5L6vGTI04eLilj37znxT$$iNyhJqm0XGT6k3Nkb2tAR" : {
@@ -282,7 +305,9 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Loads customer data from a CSV file, enabling access to essential customer information for further analysis.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ ],
@@ -291,7 +316,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/raw_customers"
@@ -1348,7 +1374,8 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/bronze_irs_zipcode"
@@ -2408,7 +2435,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "columnsSelector" : [ "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##STATEFIPS", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##STATE", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##zipcode", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##agi_stub", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N1", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##MARS1", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##MARS2", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##MARS4", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##PREP", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N2", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##NUMDEP", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A00100", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N02650", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A02650", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N00200", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A00200", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N00300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A00300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N00600", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A00600", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N00650", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A00650", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N00700", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A00700", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N00900", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A00900", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N01000", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A01000", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N01400", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A01400", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N01700", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A01700", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##SCHF", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N02300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A02300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N02500", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A02500", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N26270", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A26270", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N02900", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A02900", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N03220", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A03220", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N03300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A03300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N03270", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A03270", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N03150", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A03150", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N03210", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A03210", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N03230", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A03230", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N03240", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A03240", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N04470", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A04470", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A00101", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N18425", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A18425", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N18450", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A18450", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N18500", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A18500", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N18300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A18300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N19300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A19300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N19700", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A19700", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N04800", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A04800", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N05800", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A05800", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N09600", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A09600", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N07100", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A07100", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N07300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A07300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N07180", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A07180", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N07230", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A07230", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N07240", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A07240", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N07220", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A07220", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N07260", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A07260", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N09400", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A09400", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N10600", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A10600", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N59660", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A59660", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N59720", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A59720", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N11070", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A11070", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N10960", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A10960", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N06500", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A06500", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N10300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A10300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N85330", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A85330", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N85300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A85300", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N11901", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A11901", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##N11902", "3OlV60cz6xM_F9G00j4f6$$DBM6Q3M0D6yQDA8aT_b2M##A11902" ],
@@ -3211,6 +3239,10 @@
           },
           "description" : ""
         } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
       }
     },
     "wEFNMjcSNBlXgGJUihaMf$$I5aOMYeseWrsGMHvFLtbP" : {
@@ -3224,7 +3256,9 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Loads raw order data from a CSV file for further analysis.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ ],
@@ -3233,7 +3267,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/raw_orders"
@@ -3327,7 +3362,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "columnsSelector" : [ "jZIlDRETKo2SlyWTO5Abr$$tUKoHPHE5LEgz6HHU3_Eo##order_id", "jZIlDRETKo2SlyWTO5Abr$$tUKoHPHE5LEgz6HHU3_Eo##customer_id", "jZIlDRETKo2SlyWTO5Abr$$tUKoHPHE5LEgz6HHU3_Eo##order_status", "jZIlDRETKo2SlyWTO5Abr$$tUKoHPHE5LEgz6HHU3_Eo##order_category", "jZIlDRETKo2SlyWTO5Abr$$tUKoHPHE5LEgz6HHU3_Eo##order_date", "jZIlDRETKo2SlyWTO5Abr$$tUKoHPHE5LEgz6HHU3_Eo##amount" ],
@@ -3374,6 +3410,10 @@
           },
           "description" : ""
         } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
       }
     },
     "PoK5qOCcfGEzcgiXZe6Mz$$94-w4mFCrOq49Oeu7njqh" : {
@@ -3396,7 +3436,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/raw_irs_zipcode"
@@ -3481,7 +3522,8 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/bronze_orders"
@@ -3605,7 +3647,8 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/bronze_customers"
@@ -3616,6 +3659,7 @@
     "inputs" : [ ],
     "outputs" : [ ],
     "selectedInputFields" : [ ],
-    "isCustomOutputSchema" : false
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
   }
 }

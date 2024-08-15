@@ -41,16 +41,20 @@ schema:
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Customer first name
       mappings: []
-      tags: []
+      tags:
+      - type: user
+        name: pii
   - name: last_name
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Customer last name
       mappings: []
-      tags: []
+      tags:
+      - type: user
+        name: pii
   - name: zipcode
     type: string
     nullable: true
@@ -62,6 +66,6 @@ schema:
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Customer account flags
       mappings: []
       tags: []

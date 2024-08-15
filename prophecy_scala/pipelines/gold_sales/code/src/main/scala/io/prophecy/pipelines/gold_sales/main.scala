@@ -1,10 +1,8 @@
 package io.prophecy.pipelines.gold_sales
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.gold_sales.config.Context
 import io.prophecy.pipelines.gold_sales.config._
 import io.prophecy.pipelines.gold_sales.udfs.UDFs._
-import io.prophecy.pipelines.gold_sales.udfs._
 import io.prophecy.pipelines.gold_sales.udfs.PipelineInitCode._
 import io.prophecy.pipelines.gold_sales.graph._
 import org.apache.spark._
@@ -37,17 +35,12 @@ object Main {
       .config("spark.sql.legacy.allowUntypedScalaUDF", "true")
       .enableHiveSupport()
       .getOrCreate()
-      .newSession()
     val context = Context(spark, config)
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/gold_sales")
     registerUDFs(spark)
-    try MetricsCollector.start(spark, "pipelines/gold_sales", context.config)
-    catch {
-      case _: Throwable =>
-        MetricsCollector.start(spark, "pipelines/gold_sales")
+    MetricsCollector.instrument(spark, "pipelines/gold_sales") {
+      apply(context)
     }
-    apply(context)
-    MetricsCollector.end(spark)
   }
 
 }
