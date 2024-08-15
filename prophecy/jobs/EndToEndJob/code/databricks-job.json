@@ -97,7 +97,7 @@
         "spark_conf" : {
           "spark.databricks.cluster.profile" : "singleNode",
           "spark.master" : "local[*, 4]",
-          "spark.prophecy.metadata.fabric.id" : "1571",
+          "spark.prophecy.metadata.fabric.id" : "16433",
           "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/EndToEndJob",
           "spark.prophecy.metadata.is.interactive.run" : "false",
           "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
