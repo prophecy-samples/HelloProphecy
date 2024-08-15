@@ -3,6 +3,14 @@
     "migrationVersions" : {
       "gemBuilderVersion" : "v1"
     },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : false,
+      "plibVersion" : {
+        "mavenVersion" : "8.0.31",
+        "pyPiVersion" : "1.9.9"
+      }
+    },
     "id" : "1",
     "uri" : "pipelines/gold_sales",
     "language" : "python",
@@ -57,7 +65,7 @@
       "value" : 1000
     },
     "topLevelPackage" : "gold_sales",
-    "configurationVersion" : "v1"
+    "configurationVersion" : "v2"
   },
   "connections" : [ {
     "id" : "EUWSMCykGr0vL9vo9zZuQ",

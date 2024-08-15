@@ -3,6 +3,14 @@
     "migrationVersions" : {
       "gemBuilderVersion" : "v1"
     },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : false,
+      "plibVersion" : {
+        "mavenVersion" : "8.0.31",
+        "pyPiVersion" : "1.9.9"
+      }
+    },
     "id" : "1",
     "uri" : "pipelines/silver_customers_orders",
     "language" : "python",
@@ -66,7 +74,7 @@
       "value" : 1000
     },
     "topLevelPackage" : "silver_customers_orders",
-    "configurationVersion" : "v1"
+    "configurationVersion" : "v2"
   },
   "connections" : [ {
     "id" : "DLcXBPs1ly3XAt2bHXFvy",
@@ -374,8 +382,7 @@
             "projectName" : "ProphecySparkBasicsPython"
           }
         }
-      },
-      "externalDependencies" : [ ]
+      }
     },
     "CsMvWOsysydiGPSw_uAKP$$GFb4BPva5TwHuqlgiaayl" : {
       "id" : "CsMvWOsysydiGPSw_uAKP$$GFb4BPva5TwHuqlgiaayl",
