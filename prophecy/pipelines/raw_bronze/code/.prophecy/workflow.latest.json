@@ -3,6 +3,14 @@
     "migrationVersions" : {
       "gemBuilderVersion" : "v1"
     },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : false,
+      "plibVersion" : {
+        "mavenVersion" : "8.0.31",
+        "pyPiVersion" : "1.9.9"
+      }
+    },
     "id" : "1",
     "uri" : "pipelines/raw_bronze",
     "language" : "python",
@@ -57,7 +65,7 @@
       "value" : 1000
     },
     "topLevelPackage" : "raw_bronze",
-    "configurationVersion" : "v1"
+    "configurationVersion" : "v2"
   },
   "connections" : [ {
     "id" : "N9mzX773nc2REqY1PMy2l$$lbLntyLjM51EenTQyW_Wq",

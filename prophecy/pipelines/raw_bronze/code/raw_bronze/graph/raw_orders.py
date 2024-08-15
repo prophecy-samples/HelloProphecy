@@ -15,4 +15,4 @@ def raw_orders(spark: SparkSession) -> DataFrame:
         )\
         .option("header", True)\
         .option("sep", ",")\
-        .csv("dbfs:/Prophecy/nathan@prophecy.io/OrdersDatasetInput.csv")
+        .csv("dbfs:/prophecy_training/HelloWorldDefault/OrdersDatasetInput.csv")
