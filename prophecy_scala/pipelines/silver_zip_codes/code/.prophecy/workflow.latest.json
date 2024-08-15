@@ -1,5 +1,15 @@
 {
   "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : false,
+      "plibVersion" : {
+        "mavenVersion" : "8.0.31"
+      }
+    },
     "id" : "1",
     "uri" : "pipelines/silver_zip_codes",
     "language" : "scala",
@@ -10,7 +20,7 @@
       "language" : "scala",
       "udfs" : [ ],
       "functionPackageName" : "scott_demo2_team.helloprophecyscala.functions",
-      "sharedFunctionPackageNames" : [ ]
+      "sharedFunctionPackageNames" : [ "io.prophecy.scalagems.functions", "io.prophecy.warehousegems.functions" ]
     },
     "udafs" : {
       "language" : "scala",
@@ -36,7 +46,15 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
-    "dependentProjectExternalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12651",
+      "projectName" : "ProphecySparkBasicsScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12652",
+      "projectName" : "ProphecyWarehouseScala",
+      "externalDependencies" : [ ]
+    } ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -46,7 +64,7 @@
       "value" : 1000
     },
     "topLevelPackage" : "io.prophecy.pipelines.silver_zip_codes",
-    "configurationVersion" : "v1"
+    "configurationVersion" : "v2"
   },
   "connections" : [ {
     "id" : "MVbJbv25InvB3CaOc-DCG$$1cNSB_1g0nqoB2dMKpofa",
@@ -1134,7 +1152,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "columnsSelector" : [ "LeNprQ6dAcef5UU-jxVRI$$eSReZdeE9183QHEX1ZV7W##zipcode" ],
@@ -1142,6 +1161,10 @@
           "format" : "sql",
           "expression" : "zipcode != '00000' and zipcode != '99999' and zipcode is not null"
         }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsScala"
       }
     },
     "Zq8KjkScrcNi87O-P2mQb$$GS-rvXkjBZPQgH5v23dCf" : {
@@ -1164,7 +1187,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/bronze_irs_zipcode"
@@ -1243,7 +1267,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "columnsSelector" : [ "sWjWA0q2KP7V7Y7YHYV5n$$p_KOb4xJkAqWzv0xAvPfB##zipcode", "sWjWA0q2KP7V7Y7YHYV5n$$p_KOb4xJkAqWzv0xAvPfB##state", "sWjWA0q2KP7V7Y7YHYV5n$$p_KOb4xJkAqWzv0xAvPfB##high_income_returns", "sWjWA0q2KP7V7Y7YHYV5n$$p_KOb4xJkAqWzv0xAvPfB##all_returns", "sWjWA0q2KP7V7Y7YHYV5n$$p_KOb4xJkAqWzv0xAvPfB##low_income_returns" ],
@@ -1297,6 +1322,10 @@
           },
           "description" : ""
         } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
       }
     },
     "_HMxfevvvtSTAD5r71WPZ$$t1NvFO7knIfENsXtZDFMa" : {
@@ -2353,7 +2382,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "columnsSelector" : [ "_lDpBSML96tfF_ZEkbPwH$$UpwoYrfE_4-tuJiP2VrAS##zipcode", "_lDpBSML96tfF_ZEkbPwH$$UpwoYrfE_4-tuJiP2VrAS##agi_stub", "_lDpBSML96tfF_ZEkbPwH$$UpwoYrfE_4-tuJiP2VrAS##N1", "_lDpBSML96tfF_ZEkbPwH$$UpwoYrfE_4-tuJiP2VrAS##STATE" ],
@@ -2386,6 +2416,10 @@
           },
           "description" : ""
         } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsScala"
       }
     },
     "fJI_pr64ExqgXB4XnysiU$$LgUfdlGcvxbwwdLPyOzuA" : {
@@ -2476,7 +2510,8 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/silver_irs_zipcode"
@@ -2546,7 +2581,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "allIns" : false,
@@ -2598,6 +2634,10 @@
           },
           "description" : ""
         } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Aggregate",
+        "projectName" : "ProphecySparkBasicsScala"
       }
     }
   },
@@ -2605,6 +2645,7 @@
     "inputs" : [ ],
     "outputs" : [ ],
     "selectedInputFields" : [ ],
-    "isCustomOutputSchema" : false
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
   }
 }

@@ -54,13 +54,13 @@ class ReformatCustomersTest extends FunSuite with DataFrameSuiteBase {
     spark.conf.set("spark.sql.legacy.allowUntypedScalaUDF", "true")
     registerAllUDFs(spark)
 
-    val fabricName = System.getProperty("fabric")
+    val fabricName = System.getProperty("fabric", "default")
+    val confFilePath = Paths
+      .get(getClass.getResource(s"/config/${fabricName}.json").toURI)
+      .toString
 
-    val config = ConfigurationFactoryImpl.getConfig(
-      Array("--confFile",
-            getClass.getResource(s"/config/${fabricName}.json").getPath
-      )
-    )
+    val config =
+      ConfigurationFactoryImpl.getConfig(Array("--confFile", confFilePath))
 
     context = Context(spark, config)
   }

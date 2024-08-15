@@ -28,6 +28,6 @@ object raw_orders {
           )
         )
       )
-      .load("dbfs:/Prophecy/scott+demo2@prophecy.io/OrdersDatasetInput.csv")
+      .load("dbfs:/prophecy_training/HelloWorldDefault/OrdersDatasetInput.csv")
 
 }

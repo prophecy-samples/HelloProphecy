@@ -20,14 +20,14 @@ schema:
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Order status
       mappings: []
       tags: []
   - name: order_category
     type: string
     nullable: true
     metadata:
-      description: ''
+      description: Order category
       mappings: []
       tags: []
   - name: order_date

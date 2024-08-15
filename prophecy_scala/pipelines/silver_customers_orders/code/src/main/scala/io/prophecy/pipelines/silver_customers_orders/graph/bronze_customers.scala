@@ -12,6 +12,6 @@ import java.time._
 object bronze_customers {
 
   def apply(context: Context): DataFrame =
-    context.spark.read.table("scottdemoscala.bronze_customers")
+    context.spark.read.table("`scottdemoscala`.`bronze_customers`")
 
 }

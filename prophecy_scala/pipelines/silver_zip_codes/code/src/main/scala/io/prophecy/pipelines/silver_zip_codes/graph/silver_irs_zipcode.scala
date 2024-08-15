@@ -15,6 +15,6 @@ object silver_irs_zipcode {
     in.write
       .format("delta")
       .mode("overwrite")
-      .saveAsTable("scottdemoscala.silver_irs_zipcode")
+      .saveAsTable("`scottdemoscala`.`silver_irs_zipcode`")
 
 }
