@@ -15,6 +15,6 @@ object gold_sales_by_zip_date {
     in.write
       .format("delta")
       .mode("overwrite")
-      .saveAsTable("scottdemoscala.gold_sales_by_zip_date")
+      .saveAsTable("`scottdemoscala`.`gold_sales_by_zip_date`")
 
 }

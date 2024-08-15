@@ -15,6 +15,6 @@ object gold_top50_customers_by_spend {
     in.write
       .format("delta")
       .mode("overwrite")
-      .saveAsTable("scottdemoscala.gold_top50_customers_by_spend")
+      .saveAsTable("`scottdemoscala`.`gold_top50_customers_by_spend`")
 
 }
