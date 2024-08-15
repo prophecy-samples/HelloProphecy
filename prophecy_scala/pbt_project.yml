@@ -271,7 +271,7 @@ jobs:
   jobs/EndToEndJob:
     name: EndToEndJob
     description: Run the entire HelloProphecy process from end to end
-    fabricUID: 1571
+    fabricUID: 16433
     scheduler:
       Databricks: {}
     cloudProvider: null
@@ -293,13 +293,47 @@ jobs:
       clusterMode:
         Single: {}
       clusterId: null
-    enabled: null
+    enabled: false
     createdAt: '2023-08-15 00:41:43'
     author: scott+demo2@prophecy.io
+    models: []
+  jobs/AirflowEndToEndJob:
+    name: AirflowEndToEndJob
+    description: test job for airflow scala
+    fabricUID: 16432
+    scheduler:
+      MWAA: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: 0 0 1 * *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/silver_customers_orders
+    - pipelines/silver_zip_codes
+    - pipelines/gold_sales
+    - pipelines/gold_top_customers
+    - pipelines/raw_bronze
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2024-08-13 22:14:02'
+    author: rj@prophecy.io
+    models: []
+gemContainer:
+  languageVersion: 2.12.15
+  gemLibsVersion: 1.1.26
+  gems: {}
+  dependencies: null
 functions:
   author: null
   createdAt: '2023-08-14 22:44:10'
-  gems: {}
   udfs:
     udfs/rand_zip_index:
       name: rand_zip_index
@@ -311,13 +345,41 @@ functions:
       createdAt: '2022-12-15 18:04:50'
   udafs: {}
   expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
 subgraphs: {}
 sqlModels: {}
+sqlSnapshots: {}
+sqlTests: {}
 sqlMacros: {}
 sqlSeeds: {}
 sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline: null
-dependencies: '[]'
-projectDependencies: {}
+dependencies:
+- type: plibMaven
+  modifiedAt: '2024-08-13T18:42:31.331081Z'
+  name: plibMaven
+  version: 8.0.31
+  id: '106310315'
+  createdAt: '2024-08-13T18:42:31.33104Z'
+projectDependencies:
+  '12651':
+    projectUID: 12651
+    projectName: ProphecySparkBasicsScala
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=
+    version: 0.2.5.5
+    isDefault: true
+    author: null
+    createdAt: '2024-08-13 18:42:25'
+  '12652':
+    projectUID: 12652
+    projectName: ProphecyWarehouseScala
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12652.git&subPath=
+    version: 0.0.5
+    isDefault: true
+    author: null
+    createdAt: '2024-08-13 18:42:25'
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}
