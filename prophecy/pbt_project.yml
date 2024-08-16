@@ -46,6 +46,21 @@ pipelines:
       - datasets/gold_total_sales_by_customer
     subgraphs: []
     dependencies: {}
+  pipelines/gold_top_customers:
+    name: gold_top_customers
+    description: ''
+    author: scott+demo2@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-07-13 18:45:24'
+    datasets:
+      inputs:
+      - datasets/gold_total_sales_by_customer
+      outputs:
+      - datasets/gold_top50_customers_by_spend
+    subgraphs: []
+    dependencies: {}
   pipelines/silver_zip_codes:
     name: silver_zip_codes
     description: ''
@@ -91,21 +106,6 @@ pipelines:
       - datasets/bronze_customers
       - datasets/bronze_irs_zipcode
       - datasets/bronze_orders
-    subgraphs: []
-    dependencies: {}
-  pipelines/gold_top_customers:
-    name: gold_top_customers
-    description: ''
-    author: scott+demo2@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2023-07-13 18:45:24'
-    datasets:
-      inputs:
-      - datasets/gold_total_sales_by_customer
-      outputs:
-      - datasets/gold_top50_customers_by_spend
     subgraphs: []
     dependencies: {}
 datasets:
