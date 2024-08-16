@@ -19,16 +19,26 @@
       "pool" : "FAsMEzD_",
       "do_xcom_push" : true
     },
-    "jobClusterMode" : {
-      "clusterMode" : "Single"
-    },
     "availableFabrics" : [ {
-      "id" : "6726",
-      "name" : "AirflowDemo",
-      "trialStartDate" : 1699463795584
+      "id" : "6817",
+      "name" : "workdayAirflowFabric"
+    }, {
+      "id" : "8615",
+      "name" : "AirflowFab3",
+      "trialStartDate" : 1705001938144
+    }, {
+      "id" : "10547",
+      "name" : "rjAirflowFabricMWAA1"
+    }, {
+      "id" : "12737",
+      "name" : "Airflow-prophecy-development",
+      "trialStartDate" : 1716477924239
+    }, {
+      "id" : "16432",
+      "name" : "prophecyTeamAirflowTesting"
     } ],
-    "catchup" : true,
     "endDate" : "2023-11-29",
+    "catchup" : true,
     "scheduleTimeZone" : "UTC",
     "dagParams" : {
       "instances" : {
@@ -36,12 +46,19 @@
       },
       "params" : { },
       "selected" : "default"
+    },
+    "airflowFunctions" : [ ],
+    "dynamicPipelineStatus" : {
+      "databricks" : true,
+      "dataproc" : false,
+      "emr" : false,
+      "onprem" : false
     }
   },
   "processes" : {
     "kJBop76DMF2_pR-K8REpS$$7KYWbmSJkMJPYwI4EtPDb" : {
       "id" : "kJBop76DMF2_pR-K8REpS$$7KYWbmSJkMJPYwI4EtPDb",
-      "component" : "Pipeline",
+      "component" : "DatabricksPipeline",
       "metadata" : {
         "label" : "silver_customers",
         "slug" : "silver_customers",
@@ -78,7 +95,10 @@
             "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "type" : "literal",
+            "value" : "default"
+          }
         },
         "taskId" : null,
         "pipelineId" : "pipelines/silver_customers_orders"
@@ -88,7 +108,7 @@
     },
     "UQ4i4F6EOwXgdyqIJxTvE$$dI8lAZ_M7sWwrQfsRycXM" : {
       "id" : "UQ4i4F6EOwXgdyqIJxTvE$$dI8lAZ_M7sWwrQfsRycXM",
-      "component" : "Pipeline",
+      "component" : "DatabricksPipeline",
       "metadata" : {
         "label" : "raw_bronze",
         "slug" : "raw_bronze",
@@ -116,7 +136,10 @@
             "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "type" : "literal",
+            "value" : "default"
+          }
         },
         "taskId" : null,
         "pipelineId" : "pipelines/raw_bronze"
@@ -126,7 +149,7 @@
     },
     "m2KOLPMJuFdY2tAYo4TOY$$G9Phv0jlvLh06ShSEUzzO" : {
       "id" : "m2KOLPMJuFdY2tAYo4TOY$$G9Phv0jlvLh06ShSEUzzO",
-      "component" : "Pipeline",
+      "component" : "DatabricksPipeline",
       "metadata" : {
         "label" : "gold_top_customers",
         "slug" : "gold_top_customers",
@@ -154,7 +177,10 @@
             "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "type" : "literal",
+            "value" : "default"
+          }
         },
         "taskId" : null,
         "pipelineId" : "pipelines/gold_top_customers"
@@ -164,7 +190,7 @@
     },
     "ij7lfqyhk7t6zv-3oIHeO$$-Hjm0XBzjYrkcjwxha0I8" : {
       "id" : "ij7lfqyhk7t6zv-3oIHeO$$-Hjm0XBzjYrkcjwxha0I8",
-      "component" : "Pipeline",
+      "component" : "DatabricksPipeline",
       "metadata" : {
         "label" : "silver_zip_codes",
         "slug" : "silver_zip_codes",
@@ -192,7 +218,10 @@
             "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "type" : "literal",
+            "value" : "default"
+          }
         },
         "taskId" : null,
         "pipelineId" : "pipelines/silver_zip_codes"
@@ -202,7 +231,7 @@
     },
     "709H-8NOyWWqZSg0ixZct$$aIqk9LkdsIgAIomZUpguG" : {
       "id" : "709H-8NOyWWqZSg0ixZct$$aIqk9LkdsIgAIomZUpguG",
-      "component" : "Pipeline",
+      "component" : "DatabricksPipeline",
       "metadata" : {
         "label" : "gold_sales",
         "slug" : "gold_sales",
@@ -230,7 +259,10 @@
             "HelloProphecy" : [ "default" ]
           },
           "overrides" : { },
-          "selectedInstance" : "default"
+          "selectedInstance" : {
+            "type" : "literal",
+            "value" : "default"
+          }
         },
         "taskId" : null,
         "pipelineId" : "pipelines/gold_sales"
