@@ -326,6 +326,30 @@ jobs:
     createdAt: '2024-08-13 22:14:02'
     author: rj@prophecy.io
     models: []
+  jobs/DatabricksJob2:
+    name: DatabricksJob2
+    description: ''
+    fabricUID: 16433
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1 * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2024-08-16 18:46:21'
+    author: rj@prophecy.io
+    models: []
 gemContainer:
   languageVersion: 2.12.15
   gemLibsVersion: 1.1.26
