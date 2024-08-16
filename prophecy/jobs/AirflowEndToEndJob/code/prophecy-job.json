@@ -1,10 +1,10 @@
 {
   "metainfo" : {
     "type" : "Prophecy",
-    "fabricId" : "16432",
+    "fabricId" : "6726",
     "jobId" : "jobs/AirflowEndToEndJob",
     "name" : "AirflowEndToEndJob",
-    "dagName" : "scott_demo2_team_HelloProphecy_AirflowEndToEndJob",
+    "dagName" : "eW9lz_eqKBZRiDTKugqJfg_",
     "schedule" : "None",
     "enabled" : false,
     "alerting" : {
@@ -16,6 +16,7 @@
     "maxConcurrentRuns" : 1,
     "processDefaultSettings" : {
       "ignore_first_depends_on_past" : true,
+      "pool" : "FAsMEzD_",
       "do_xcom_push" : true
     },
     "availableFabrics" : [ {
@@ -36,9 +37,8 @@
       "id" : "16432",
       "name" : "prophecyTeamAirflowTesting"
     } ],
-    "endDate" : "2026-11-29",
-    "catchup" : false,
-    "tags" : [ ],
+    "endDate" : "2023-11-29",
+    "catchup" : true,
     "scheduleTimeZone" : "UTC",
     "dagParams" : {
       "instances" : {
@@ -49,7 +49,7 @@
     },
     "airflowFunctions" : [ ],
     "dynamicPipelineStatus" : {
-      "databricks" : false,
+      "databricks" : true,
       "dataproc" : false,
       "emr" : false,
       "onprem" : false
@@ -79,7 +79,7 @@
       "properties" : {
         "runJson" : null,
         "databricksConnId" : "",
-        "clusterSize" : "16433/small",
+        "clusterSize" : "1571/small",
         "configurations" : {
           "schema" : [ {
             "name" : "ZipCodes",
@@ -101,10 +101,7 @@
           }
         },
         "taskId" : null,
-        "pipelineId" : {
-          "type" : "literal",
-          "value" : "pipelines/silver_customers_orders"
-        }
+        "pipelineId" : "pipelines/silver_customers_orders"
       },
       "connections" : [ ],
       "processes" : { }
@@ -132,7 +129,7 @@
       "properties" : {
         "runJson" : null,
         "databricksConnId" : "",
-        "clusterSize" : "16433/small",
+        "clusterSize" : "1571/small",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
@@ -145,10 +142,7 @@
           }
         },
         "taskId" : null,
-        "pipelineId" : {
-          "type" : "literal",
-          "value" : "pipelines/raw_bronze"
-        }
+        "pipelineId" : "pipelines/raw_bronze"
       },
       "connections" : [ ],
       "processes" : { }
@@ -176,7 +170,7 @@
       "properties" : {
         "runJson" : null,
         "databricksConnId" : "",
-        "clusterSize" : "16433/small",
+        "clusterSize" : "1571/small",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
@@ -189,10 +183,7 @@
           }
         },
         "taskId" : null,
-        "pipelineId" : {
-          "type" : "literal",
-          "value" : "pipelines/gold_top_customers"
-        }
+        "pipelineId" : "pipelines/gold_top_customers"
       },
       "connections" : [ ],
       "processes" : { }
@@ -220,7 +211,7 @@
       "properties" : {
         "runJson" : null,
         "databricksConnId" : "",
-        "clusterSize" : "16433/small",
+        "clusterSize" : "1571/small",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
@@ -233,10 +224,7 @@
           }
         },
         "taskId" : null,
-        "pipelineId" : {
-          "type" : "literal",
-          "value" : "pipelines/silver_zip_codes"
-        }
+        "pipelineId" : "pipelines/silver_zip_codes"
       },
       "connections" : [ ],
       "processes" : { }
@@ -264,7 +252,7 @@
       "properties" : {
         "runJson" : null,
         "databricksConnId" : "",
-        "clusterSize" : "16433/small",
+        "clusterSize" : "1571/small",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
@@ -277,10 +265,7 @@
           }
         },
         "taskId" : null,
-        "pipelineId" : {
-          "type" : "literal",
-          "value" : "pipelines/gold_sales"
-        }
+        "pipelineId" : "pipelines/gold_sales"
       },
       "connections" : [ ],
       "processes" : { }

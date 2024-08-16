@@ -1,7 +1,7 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "16433",
+    "fabricId" : "1571",
     "jobId" : "jobs/EndToEndJob",
     "name" : "EndToEndJob",
     "schedule" : "0 0 0 ? * 1 *",
@@ -353,8 +353,7 @@
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }
       }
-    } ],
-    "accessControlList" : [ ]
+    } ]
   },
   "processes" : {
     "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY" : {

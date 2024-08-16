@@ -283,7 +283,7 @@ jobs:
   jobs/EndToEndJob:
     name: EndToEndJob
     description: ''
-    fabricUID: 16433
+    fabricUID: 1571
     scheduler:
       Databricks: {}
     cloudProvider: null
@@ -305,14 +305,14 @@ jobs:
       clusterMode:
         Single: {}
       clusterId: null
-    enabled: false
+    enabled: null
     createdAt: '2023-07-13 19:31:54'
     author: scott+demo2@prophecy.io
     models: []
   jobs/AirflowEndToEndJob:
     name: AirflowEndToEndJob
     description: ''
-    fabricUID: 16432
+    fabricUID: 6726
     scheduler:
       Prophecy: {}
     cloudProvider: null
@@ -332,11 +332,35 @@ jobs:
     - pipelines/raw_bronze
     jobClusterMode:
       clusterMode:
-        Multi: {}
+        Single: {}
       clusterId: null
-    enabled: false
+    enabled: null
     createdAt: '2023-11-08 17:35:57'
     author: scott+demo2@prophecy.io
+    models: []
+  jobs/DatabricksJob2:
+    name: DatabricksJob2
+    description: ''
+    fabricUID: 16433
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1 * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2024-08-16 18:43:05'
+    author: rj@prophecy.io
     models: []
 gemContainer:
   languageVersion: '3.10'
@@ -382,17 +406,17 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-08-13T22:13:12.523947Z'
+  modifiedAt: '2024-08-16T18:42:35.690964Z'
   name: plibMaven
   version: 8.0.31
-  id: '759164752'
-  createdAt: '2024-08-13T22:13:12.523933Z'
+  id: '105951200'
+  createdAt: '2024-08-16T18:42:35.690929Z'
 - type: plibPypi
-  modifiedAt: '2024-08-13T22:13:12.523962Z'
+  modifiedAt: '2024-08-16T18:42:35.690999Z'
   name: plibPypi
   version: 1.9.9
-  id: '1305890272'
-  createdAt: '2024-08-13T22:13:12.52396Z'
+  id: '1658241977'
+  createdAt: '2024-08-16T18:42:35.690991Z'
 projectDependencies:
   '12654':
     projectUID: 12654

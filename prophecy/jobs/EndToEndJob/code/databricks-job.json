@@ -1,5 +1,5 @@
 {
-  "fabric_id" : "16433",
+  "fabric_id" : "1571",
   "components" : [ {
     "PipelineComponent" : {
       "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/raw_bronze-1.0-py3-none-any.whl",
@@ -89,15 +89,12 @@
       "new_cluster" : {
         "spark_version" : "12.2.x-scala2.12",
         "node_type_id" : "i3.xlarge",
-        "num_workers" : 0,
-        "custom_tags" : {
-          "ResourceClass" : "SingleNode"
-        },
-        "enable_elastic_disk" : false,
+        "driver_node_type_id" : "i3.xlarge",
+        "num_workers" : 1,
+        "custom_tags" : { },
         "spark_conf" : {
-          "spark.databricks.cluster.profile" : "singleNode",
-          "spark.master" : "local[*, 4]",
-          "spark.prophecy.metadata.fabric.id" : "16433",
+          "spark.databricks.isv.product" : "prophecy",
+          "spark.prophecy.metadata.fabric.id" : "1571",
           "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/EndToEndJob",
           "spark.prophecy.metadata.is.interactive.run" : "false",
           "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
@@ -106,20 +103,9 @@
           "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "spark.prophecy.execution.metrics.disabled" : "true",
-          "spark.prophecy.execution.service.url" : "wss://execution.dp.app.prophecy.io/eventws",
-          "spark.databricks.isv.product" : "prophecy"
+          "spark.prophecy.execution.service.url" : "wss://execution.dp.app.prophecy.io/eventws"
         },
-        "spark_env_vars" : {
-          "PYSPARK_PYTHON" : "/databricks/python3/bin/python3"
-        },
-        "runtime_engine" : "STANDARD",
-        "aws_attributes" : {
-          "first_on_demand" : 1,
-          "availability" : "SPOT_WITH_FALLBACK",
-          "zone_id" : "auto",
-          "spot_bid_price_percent" : 100
-        },
-        "data_security_mode" : "SINGLE_USER"
+        "aws_attributes" : { }
       }
     } ],
     "email_notifications" : { },
@@ -361,8 +347,7 @@
       "quartz_cron_expression" : "0 0 0 ? * 1 *",
       "timezone_id" : "UTC",
       "pause_status" : "PAUSED"
-    },
-    "access_control_list" : [ ]
+    }
   },
   "cluster_mode" : {
     "clusterMode" : "Single"
