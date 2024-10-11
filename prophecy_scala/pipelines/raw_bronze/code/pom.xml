@@ -144,6 +144,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                 <version>4.9.2</version>
                 <configuration>
                     <recompileMode>incremental</recompileMode>
+                    <secondaryCacheDir>${basedir}/.sbt/1.0/zinc/org.scala-sbt/</secondaryCacheDir>
                 </configuration>
                 <executions>
                     <execution>
