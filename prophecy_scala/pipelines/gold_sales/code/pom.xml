@@ -141,11 +141,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>4.8.0</version>
+                <version>4.9.2</version>
                 <configuration>
                     <recompileMode>incremental</recompileMode>
-                    <useZincServer>true</useZincServer>
-                    <secondaryCacheDir>${basedir}/.sbt/1.0/zinc/org.scala-sbt/</secondaryCacheDir>
                 </configuration>
                 <executions>
                     <execution>
