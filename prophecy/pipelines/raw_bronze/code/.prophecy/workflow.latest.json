@@ -14,7 +14,7 @@
     "id" : "1",
     "uri" : "pipelines/raw_bronze",
     "language" : "python",
-    "fabricId" : "1571",
+    "fabricId" : "20995",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {

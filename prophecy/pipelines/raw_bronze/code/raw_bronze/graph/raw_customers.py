@@ -15,4 +15,4 @@ def raw_customers(spark: SparkSession) -> DataFrame:
         )\
         .option("header", True)\
         .option("sep", ",")\
-        .csv("dbfs:/prophecy_training/HelloWorldDefault/CustomersDatasetInput.csv")
+        .csv("dbfs:/Volumes/rj/default/default_volume/prophecy_training/CustomersDatasetInput.csv")

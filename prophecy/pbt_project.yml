@@ -278,6 +278,19 @@ datasets:
         description: ''
         author: scott+demo2@prophecy.io
         createdAt: '2023-07-13 19:23:27'
+  datasets/Amazon_EC2_Instance_Comparison:
+    name: Amazon_EC2_Instance_Comparison
+    description: ''
+    author: rj@prophecy.io
+    createdAt: '2025-01-10 22:46:08'
+    mode: batch
+    physicalDatasets:
+      prophecy-private-preview:
+        fabricId: 20995
+        datasetType: File
+        description: ''
+        author: rj@prophecy.io
+        createdAt: '2025-01-10 22:46:08'
 templates: {}
 jobs:
   jobs/EndToEndJob:
@@ -309,6 +322,7 @@ jobs:
     createdAt: '2023-07-13 19:31:54'
     author: scott+demo2@prophecy.io
     models: []
+    sqlProjects: []
   jobs/AirflowEndToEndJob:
     name: AirflowEndToEndJob
     description: ''
@@ -338,6 +352,7 @@ jobs:
     createdAt: '2023-11-08 17:35:57'
     author: scott+demo2@prophecy.io
     models: []
+    sqlProjects: []
   jobs/DatabricksJob2:
     name: DatabricksJob2
     description: ''
@@ -362,6 +377,7 @@ jobs:
     createdAt: '2024-08-16 18:43:05'
     author: rj@prophecy.io
     models: []
+    sqlProjects: []
 gemContainer:
   languageVersion: '3.10'
   gemLibsVersion: 1.3.4.0
