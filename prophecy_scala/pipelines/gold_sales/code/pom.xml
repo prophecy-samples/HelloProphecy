@@ -4,7 +4,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <groupId>HelloProphecyScala</groupId>
     <artifactId>gold_sales</artifactId>
     <description>workflow</description>
-    <version>1.0</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
     <properties>
         <scalaBaseVersion>2.12</scalaBaseVersion>
