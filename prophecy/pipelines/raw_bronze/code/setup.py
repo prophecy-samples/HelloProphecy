@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 setup(
     name = 'raw_bronze',
-    version = '1.0',
+    version = '0.0.1-prerelease1',
     packages = find_packages(include = ('raw_bronze*', )) + ['prophecy_config_instances'],
     package_dir = {'prophecy_config_instances' : 'configs/resources/config'},
     package_data = {'prophecy_config_instances' : ['*.json', '*.py', '*.conf']},

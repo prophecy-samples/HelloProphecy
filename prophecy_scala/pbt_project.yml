@@ -1,6 +1,6 @@
 name: HelloProphecyScala
 description: ''
-version: 0.0.1
+version: 0.0.1-prerelease1
 author: scott+demo2@prophecy.io
 language: scala
 buildSystem: ''
