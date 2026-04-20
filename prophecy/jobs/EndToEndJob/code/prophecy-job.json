@@ -15,7 +15,8 @@
       "emails" : "",
       "onStart" : false,
       "onSuccess" : false,
-      "onFailure" : false
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
     },
     "maxConcurrentRuns" : 1,
     "processDefaultSettings" : {
@@ -25,335 +26,10 @@
         "emails" : "",
         "onStart" : false,
         "onSuccess" : false,
-        "onFailure" : false
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
       }
-    },
-    "availableFabrics" : [ {
-      "id" : "2807",
-      "name" : "demos-unity-catalog-guides-dev",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "small-with-new-java", "large" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "12042",
-      "name" : "databricks-cluster",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "1684",
-      "name" : "workday-default",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "medium", "large" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "1571",
-      "name" : "HelloDev",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "Unity", "Photon" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "9635",
-      "name" : "meisaas",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "2055",
-      "name" : "bt-dataplatform-bi-dev01",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "prophecy_policy_dev" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "3911",
-      "name" : "fedex-demo-fabric",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "12128",
-      "name" : "databricks_execution_env",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "6671",
-      "name" : "workshop-fabric",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "7603",
-      "name" : "rjTestTCS1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "4615",
-      "name" : "product-workspace",
-      "clusterSizes" : {
-        "default" : "medium-64-cores",
-        "availableClusterSizes" : [ "medium-64-cores", "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "7175",
-      "name" : "test1delete",
-      "clusterSizes" : {
-        "default" : "test1",
-        "availableClusterSizes" : [ "test1" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "4005",
-      "name" : "demos-qa",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "6863",
-      "name" : "workshop-example-fabric",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "9636",
-      "name" : "test1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "4004",
-      "name" : "demos-prod",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "test1" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "1174",
-      "name" : "demos",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "large_autoscale" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "2588",
-      "name" : "HealthVerityDemoFabric",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "largeGroup" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "8387",
-      "name" : "dev",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "6834",
-      "name" : "lab-samples-dbx",
-      "clusterSizes" : {
-        "default" : "sumit-lab-samples",
-        "availableClusterSizes" : [ "sumit-lab-samples" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "9907",
-      "name" : "dev1",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small", "large_autoscale" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "7697",
-      "name" : "testSharedUC",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "16433",
-      "name" : "prophecyTeamDatabricksTestingGuidesProd3",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "6250",
-      "name" : "databricks-E2-prod",
-      "clusterSizes" : {
-        "default" : "adn_prod",
-        "availableClusterSizes" : [ "adn_prod", "astellas_single", "astellas_full", "ucb_single", "ucb_full", "healthverity_single", "healthverity_full", "bayer_single", "bayer_full", "moderna_single", "moderna_full", "demo-single_node" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
-      "id" : "1572",
-      "name" : "HelloProd",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    } ]
+    }
   },
   "processes" : {
     "F-dRo2e7N0ynJ2mLDe9ZW$$KxnCeW4MIt8piU30nmuzY" : {
@@ -381,7 +57,8 @@
           "emails" : "",
           "onStart" : false,
           "onSuccess" : false,
-          "onFailure" : false
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
         }
       },
       "properties" : {
@@ -393,8 +70,18 @@
           },
           "overrides" : { },
           "selectedInstance" : "default"
-        }
-      }
+        },
+        "projectId" : "5613"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     },
     "QbqKyT1qH_wbXboch_Jjn$$nKzTtzRsCn856DRyrzxki" : {
       "id" : "QbqKyT1qH_wbXboch_Jjn$$nKzTtzRsCn856DRyrzxki",
@@ -421,7 +108,8 @@
           "emails" : "",
           "onStart" : false,
           "onSuccess" : false,
-          "onFailure" : false
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
         }
       },
       "properties" : {
@@ -433,8 +121,18 @@
           },
           "overrides" : { },
           "selectedInstance" : "default"
-        }
-      }
+        },
+        "projectId" : "5613"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     },
     "RPMwjvRCF4gh0GyPqS6tH$$3iOuiHEFYwFRuE-py0k8C" : {
       "id" : "RPMwjvRCF4gh0GyPqS6tH$$3iOuiHEFYwFRuE-py0k8C",
@@ -461,7 +159,8 @@
           "emails" : "",
           "onStart" : false,
           "onSuccess" : false,
-          "onFailure" : false
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
         }
       },
       "properties" : {
@@ -473,8 +172,18 @@
           },
           "overrides" : { },
           "selectedInstance" : "default"
-        }
-      }
+        },
+        "projectId" : "5613"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     },
     "uljmMvyC1AxYNIoYPqsGm$$d-RvN4Ddbk51YPlhV9ZEU" : {
       "id" : "uljmMvyC1AxYNIoYPqsGm$$d-RvN4Ddbk51YPlhV9ZEU",
@@ -501,7 +210,8 @@
           "emails" : "",
           "onStart" : false,
           "onSuccess" : false,
-          "onFailure" : false
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
         }
       },
       "properties" : {
@@ -513,8 +223,18 @@
           },
           "overrides" : { },
           "selectedInstance" : "default"
-        }
-      }
+        },
+        "projectId" : "5613"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     },
     "mK5TjFICbE4kEVgdecp5q$$o_CjDujc7g8C3z8mvDSn9" : {
       "id" : "mK5TjFICbE4kEVgdecp5q$$o_CjDujc7g8C3z8mvDSn9",
@@ -541,7 +261,8 @@
           "emails" : "",
           "onStart" : false,
           "onSuccess" : false,
-          "onFailure" : false
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
         }
       },
       "properties" : {
@@ -553,8 +274,18 @@
           },
           "overrides" : { },
           "selectedInstance" : "default"
-        }
-      }
+        },
+        "projectId" : "5613"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     },
     "8PF48kvISFbKh-EKPv0HH$$Q4Tw4z9_LAw417_Tq0IOp" : {
       "id" : "8PF48kvISFbKh-EKPv0HH$$Q4Tw4z9_LAw417_Tq0IOp",
@@ -581,7 +312,8 @@
           "emails" : "",
           "onStart" : false,
           "onSuccess" : false,
-          "onFailure" : false
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
         }
       },
       "properties" : {
@@ -593,8 +325,18 @@
           },
           "overrides" : { },
           "selectedInstance" : "default"
-        }
-      }
+        },
+        "projectId" : "5613"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     },
     "nfIwB7iYP4bHcX7MELOPO$$Ebrjd71DZXpuDActLChu9" : {
       "id" : "nfIwB7iYP4bHcX7MELOPO$$Ebrjd71DZXpuDActLChu9",
@@ -621,7 +363,8 @@
           "emails" : "",
           "onStart" : false,
           "onSuccess" : false,
-          "onFailure" : false
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
         }
       },
       "properties" : {
@@ -642,8 +385,18 @@
           },
           "overrides" : { },
           "selectedInstance" : "default"
-        }
-      }
+        },
+        "projectId" : "5613"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     },
     "OmsNdT5TJTYVYNjegYzFe$$j1V3UBGEHgpWjf5N0cdEn" : {
       "id" : "OmsNdT5TJTYVYNjegYzFe$$j1V3UBGEHgpWjf5N0cdEn",
@@ -670,7 +423,8 @@
           "emails" : "",
           "onStart" : false,
           "onSuccess" : false,
-          "onFailure" : false
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
         }
       },
       "properties" : {
@@ -682,8 +436,18 @@
           },
           "overrides" : { },
           "selectedInstance" : "default"
-        }
-      }
+        },
+        "projectId" : "5613"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     },
     "ZmrBIZbT1ZCqIv3NyZdNg$$CHVMuPa2YSOaMXUnK2krK" : {
       "id" : "ZmrBIZbT1ZCqIv3NyZdNg$$CHVMuPa2YSOaMXUnK2krK",
@@ -710,7 +474,8 @@
           "emails" : "",
           "onStart" : false,
           "onSuccess" : false,
-          "onFailure" : false
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
         }
       },
       "properties" : {
@@ -722,8 +487,18 @@
           },
           "overrides" : { },
           "selectedInstance" : "default"
-        }
-      }
+        },
+        "projectId" : "5613"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     },
     "MqtM2fJ2bF1AbDqIHv6lo$$NZf93RF8Ob4kZ8bvMLYRS" : {
       "id" : "MqtM2fJ2bF1AbDqIHv6lo$$NZf93RF8Ob4kZ8bvMLYRS",
@@ -750,7 +525,8 @@
           "emails" : "",
           "onStart" : false,
           "onSuccess" : false,
-          "onFailure" : false
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
         }
       },
       "properties" : {
@@ -762,8 +538,18 @@
           },
           "overrides" : { },
           "selectedInstance" : "default"
-        }
-      }
+        },
+        "projectId" : "5613"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     }
   },
   "connections" : [ {

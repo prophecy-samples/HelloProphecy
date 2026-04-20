@@ -1,18 +1,22 @@
 {
   "metainfo" : {
     "migrationVersions" : {
-      "gemBuilderVersion" : "v1"
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
     },
     "functions" : { },
     "codeGenConfiguration" : {
       "editableConfig" : false,
       "plibVersion" : {
-        "mavenVersion" : "8.0.31",
-        "pyPiVersion" : "1.9.9"
+        "mavenVersion" : "9.2.0",
+        "pyPiVersion" : "2.1.16"
       }
     },
     "id" : "1",
     "uri" : "pipelines/gold_top_customers",
+    "pipelineSettingsInfo" : {
+      "isNullValuesInUnitTestsEnabled" : true
+    },
     "language" : "python",
     "fabricId" : "1571",
     "frontEndLanguage" : "sql",
@@ -215,7 +219,7 @@
         } ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/OrderBy",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.55&projectSubscriptionProjectId=12654&path=gems/OrderBy",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -308,7 +312,7 @@
         "limit" : "50"
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Limit",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.55&projectSubscriptionProjectId=12654&path=gems/Limit",
         "projectName" : "ProphecySparkBasicsPython"
       }
     }
