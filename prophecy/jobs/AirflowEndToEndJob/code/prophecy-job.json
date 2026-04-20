@@ -1,44 +1,26 @@
 {
   "metainfo" : {
     "type" : "Prophecy",
-    "fabricId" : "6726",
+    "fabricId" : "16432",
     "jobId" : "jobs/AirflowEndToEndJob",
     "name" : "AirflowEndToEndJob",
-    "dagName" : "eW9lz_eqKBZRiDTKugqJfg_",
+    "dagName" : "scott_demo2_team_HelloProphecy_AirflowEndToEndJob",
     "schedule" : "None",
     "enabled" : false,
     "alerting" : {
       "emails" : "",
       "onStart" : false,
       "onSuccess" : false,
-      "onFailure" : false
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
     },
     "maxConcurrentRuns" : 1,
     "processDefaultSettings" : {
       "ignore_first_depends_on_past" : true,
-      "pool" : "FAsMEzD_",
       "do_xcom_push" : true
     },
-    "availableFabrics" : [ {
-      "id" : "6817",
-      "name" : "workdayAirflowFabric"
-    }, {
-      "id" : "8615",
-      "name" : "AirflowFab3",
-      "trialStartDate" : 1705001938144
-    }, {
-      "id" : "10547",
-      "name" : "rjAirflowFabricMWAA1"
-    }, {
-      "id" : "12737",
-      "name" : "Airflow-prophecy-development",
-      "trialStartDate" : 1716477924239
-    }, {
-      "id" : "16432",
-      "name" : "prophecyTeamAirflowTesting"
-    } ],
-    "endDate" : "2023-11-29",
-    "catchup" : true,
+    "endDate" : "2026-11-29",
+    "catchup" : false,
     "scheduleTimeZone" : "UTC",
     "dagParams" : {
       "instances" : {
@@ -49,10 +31,11 @@
     },
     "airflowFunctions" : [ ],
     "dynamicPipelineStatus" : {
-      "databricks" : true,
+      "databricks" : false,
       "dataproc" : false,
       "emr" : false,
-      "onprem" : false
+      "onprem" : false,
+      "emr_serverless" : false
     }
   },
   "processes" : {
@@ -78,8 +61,9 @@
       "settings" : { },
       "properties" : {
         "runJson" : null,
+        "projectId" : "5613",
         "databricksConnId" : "",
-        "clusterSize" : "1571/small",
+        "clusterSize" : "16433/small",
         "configurations" : {
           "schema" : [ {
             "name" : "ZipCodes",
@@ -101,7 +85,10 @@
           }
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/silver_customers_orders"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/silver_customers_orders"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -128,8 +115,9 @@
       "settings" : { },
       "properties" : {
         "runJson" : null,
+        "projectId" : "5613",
         "databricksConnId" : "",
-        "clusterSize" : "1571/small",
+        "clusterSize" : "16433/small",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
@@ -142,7 +130,10 @@
           }
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/raw_bronze"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/raw_bronze"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -169,8 +160,9 @@
       "settings" : { },
       "properties" : {
         "runJson" : null,
+        "projectId" : "5613",
         "databricksConnId" : "",
-        "clusterSize" : "1571/small",
+        "clusterSize" : "16433/small",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
@@ -183,7 +175,10 @@
           }
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/gold_top_customers"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/gold_top_customers"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -210,8 +205,9 @@
       "settings" : { },
       "properties" : {
         "runJson" : null,
+        "projectId" : "5613",
         "databricksConnId" : "",
-        "clusterSize" : "1571/small",
+        "clusterSize" : "16433/small",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
@@ -224,7 +220,10 @@
           }
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/silver_zip_codes"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/silver_zip_codes"
+        }
       },
       "connections" : [ ],
       "processes" : { }
@@ -251,8 +250,9 @@
       "settings" : { },
       "properties" : {
         "runJson" : null,
+        "projectId" : "5613",
         "databricksConnId" : "",
-        "clusterSize" : "1571/small",
+        "clusterSize" : "16433/small",
         "configurations" : {
           "schema" : [ ],
           "instances" : {
@@ -265,7 +265,10 @@
           }
         },
         "taskId" : null,
-        "pipelineId" : "pipelines/gold_sales"
+        "pipelineId" : {
+          "type" : "literal",
+          "value" : "pipelines/gold_sales"
+        }
       },
       "connections" : [ ],
       "processes" : { }

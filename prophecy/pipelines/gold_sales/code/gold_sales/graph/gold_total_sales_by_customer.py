@@ -7,7 +7,15 @@ from gold_sales.config.ConfigStore import *
 from gold_sales.udfs.UDFs import *
 
 def gold_total_sales_by_customer(spark: SparkSession, in0: DataFrame):
-    if spark.catalog._jcatalog.tableExists("`scottdemo`.`gold_total_sales_by_customer`"):
+    from pyspark.sql.utils import AnalysisException
+
+    try:
+        desc_table = spark.sql("describe formatted `scottdemo`.`gold_total_sales_by_customer`")
+        table_exists = True
+    except AnalysisException as e:
+        table_exists = False
+
+    if table_exists:
         from delta.tables import DeltaTable, DeltaMergeBuilder
         DeltaTable\
             .forName(spark, "`scottdemo`.`gold_total_sales_by_customer`")\
