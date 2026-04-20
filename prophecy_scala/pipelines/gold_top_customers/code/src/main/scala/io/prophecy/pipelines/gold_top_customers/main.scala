@@ -25,7 +25,6 @@ object Main {
     val config = ConfigurationFactoryImpl.getConfig(args)
     val spark: SparkSession = SparkSession
       .builder()
-      .appName("Prophecy Pipeline")
       .config("spark.default.parallelism",             "4")
       .config("spark.sql.legacy.allowUntypedScalaUDF", "true")
       .enableHiveSupport()
