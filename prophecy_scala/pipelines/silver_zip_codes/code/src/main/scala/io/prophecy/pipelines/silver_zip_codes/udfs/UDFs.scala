@@ -10,7 +10,10 @@ object UDFs extends Serializable {
 
   def registerUDFs(spark: SparkSession) = {
     spark.udf.register("rand_zip_index", rand_zip_index)
-    registerAllUDFs(spark)
+    try registerAllUDFs(spark)
+    catch {
+      case _ => ()
+    }
   }
 
   def rand_zip_index = {

@@ -297,6 +297,7 @@ jobs:
     createdAt: '2023-08-15 00:41:43'
     author: scott+demo2@prophecy.io
     models: []
+    sqlProjects: []
   jobs/AirflowEndToEndJob:
     name: AirflowEndToEndJob
     description: test job for airflow scala
@@ -326,6 +327,7 @@ jobs:
     createdAt: '2024-08-13 22:14:02'
     author: rj@prophecy.io
     models: []
+    sqlProjects: []
   jobs/DatabricksJob2:
     name: DatabricksJob2
     description: ''
@@ -350,6 +352,7 @@ jobs:
     createdAt: '2024-08-16 18:46:21'
     author: rj@prophecy.io
     models: []
+    sqlProjects: []
 gemContainer:
   languageVersion: 2.12.15
   gemLibsVersion: 1.1.26
@@ -382,28 +385,35 @@ sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
 - type: plibMaven
-  modifiedAt: '2024-08-13T18:42:31.331081Z'
-  name: plibMaven
-  version: 8.0.31
+  modifiedAt: '2026-04-20T21:09:09.461Z'
+  name: ProphecyLibsScala
+  version: 9.2.0
   id: '106310315'
   createdAt: '2024-08-13T18:42:31.33104Z'
+  exclusions: []
+  enabled: true
+  description: Default dependency for Prophecy Libs
+  editable: true
+  scope: Project
+  entity: Project
 projectDependencies:
   '12651':
     projectUID: 12651
     projectName: ProphecySparkBasicsScala
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=
-    version: 0.2.5.5
+    version: 0.2.6.7
     isDefault: true
     author: null
-    createdAt: '2024-08-13 18:42:25'
+    createdAt: '2026-04-20 21:09:09'
   '12652':
     projectUID: 12652
     projectName: ProphecyWarehouseScala
     repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12652.git&subPath=
-    version: 0.0.5
+    version: 0.0.6
     isDefault: true
     author: null
-    createdAt: '2024-08-13 18:42:25'
+    createdAt: '2026-04-20 21:09:09'
 flags:
   shouldAddDefaultDependenciesIfAbsent: true
 pipelineConfigurations: {}
+projectConfigurations: {}

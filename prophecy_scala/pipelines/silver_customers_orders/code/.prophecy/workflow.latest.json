@@ -1,17 +1,21 @@
 {
   "metainfo" : {
     "migrationVersions" : {
-      "gemBuilderVersion" : "v1"
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
     },
     "functions" : { },
     "codeGenConfiguration" : {
       "editableConfig" : false,
       "plibVersion" : {
-        "mavenVersion" : "8.0.31"
+        "mavenVersion" : "9.2.0"
       }
     },
     "id" : "1",
     "uri" : "pipelines/silver_customers_orders",
+    "pipelineSettingsInfo" : {
+      "isNullValuesInUnitTestsEnabled" : true
+    },
     "language" : "scala",
     "fabricId" : "1571",
     "frontEndLanguage" : "sql",
@@ -476,7 +480,7 @@
         "headAlias" : "in0"
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Join",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.6.7&projectSubscriptionProjectId=12651&path=gems/Join",
         "projectName" : "ProphecySparkBasicsScala"
       }
     },
@@ -611,7 +615,7 @@
         "inputPortNames" : [ "in0" ]
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/SQLStatement",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.6.7&projectSubscriptionProjectId=12651&path=gems/SQLStatement",
         "projectName" : "ProphecySparkBasicsScala"
       }
     },
@@ -1004,7 +1008,7 @@
         "headAlias" : "in0"
       },
       "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Join",
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.6.7&projectSubscriptionProjectId=12651&path=gems/Join",
         "projectName" : "ProphecySparkBasicsScala"
       }
     },

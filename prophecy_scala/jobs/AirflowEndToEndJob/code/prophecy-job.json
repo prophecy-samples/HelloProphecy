@@ -11,31 +11,14 @@
       "emails" : "",
       "onStart" : false,
       "onSuccess" : false,
-      "onFailure" : false
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
     },
     "maxConcurrentRuns" : 1,
     "processDefaultSettings" : {
       "ignore_first_depends_on_past" : true,
       "do_xcom_push" : true
     },
-    "availableFabrics" : [ {
-      "id" : "6817",
-      "name" : "workdayAirflowFabric"
-    }, {
-      "id" : "8615",
-      "name" : "AirflowFab3",
-      "trialStartDate" : 1705001938144
-    }, {
-      "id" : "10547",
-      "name" : "rjAirflowFabricMWAA1"
-    }, {
-      "id" : "12737",
-      "name" : "Airflow-prophecy-development",
-      "trialStartDate" : 1716477924239
-    }, {
-      "id" : "16432",
-      "name" : "prophecyTeamAirflowTesting"
-    } ],
     "maxActiveRuns" : 1,
     "catchup" : false,
     "scheduleTimeZone" : "UTC",
@@ -51,7 +34,8 @@
       "databricks" : false,
       "dataproc" : false,
       "emr" : false,
-      "onprem" : false
+      "onprem" : false,
+      "emr_serverless" : false
     }
   },
   "processes" : {
@@ -77,6 +61,7 @@
       "settings" : { },
       "properties" : {
         "runJson" : null,
+        "projectId" : "10729",
         "databricksConnId" : "",
         "clusterSize" : "16433/small",
         "configurations" : {
@@ -121,6 +106,7 @@
       "settings" : { },
       "properties" : {
         "runJson" : null,
+        "projectId" : "10729",
         "databricksConnId" : "",
         "clusterSize" : "16433/small",
         "configurations" : {
@@ -165,6 +151,7 @@
       "settings" : { },
       "properties" : {
         "runJson" : null,
+        "projectId" : "10729",
         "databricksConnId" : "",
         "clusterSize" : "16433/small",
         "configurations" : {
@@ -209,6 +196,7 @@
       "settings" : { },
       "properties" : {
         "runJson" : null,
+        "projectId" : "10729",
         "databricksConnId" : "",
         "clusterSize" : "16433/small",
         "configurations" : {
@@ -253,6 +241,7 @@
       "settings" : { },
       "properties" : {
         "runJson" : null,
+        "projectId" : "10729",
         "databricksConnId" : "",
         "clusterSize" : "16433/small",
         "configurations" : {
